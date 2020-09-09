@@ -1,0 +1,16 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "coc.preferences.formatOnType": true,
+
+  // python
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Path": "/usr/bin/flake8",
+  "python.linting.flake8Args": ["--ignore=E501,W391,E265,E241,E114,E117"],
+  "python.formatting.autopep8Path": "/home/shivanshukmr/.local/lib/python3.8/site-packages",
+  "python.jediPath": "/home/shivanshukmr/.local/lib/python3.8/site-packages",
+
+  //highlightedyank
+  "yank.highlight.duration": 150
+}
