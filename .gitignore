@@ -1,0 +1,4 @@
+.zcompdump
+.config/zsh/zplug/.zplug/repos
+.config/nvim/autoload/plugged
+.config/nvim/.netrwhist
