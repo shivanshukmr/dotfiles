@@ -3,7 +3,7 @@
 # confirmations, etc.) must go above this block; everything else may go below.
 
 # Case Insensitive auto-completion
-autoload -U compinit -D ~/.cache/zsh/zcompdump && compinit -D ~/.cache/zsh/zcompdump
+autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \
   '+l:|?=** r:|?=**'
 
@@ -13,11 +13,10 @@ export LANG=en_US.UTF-8
 # cd -> cd + ls
 chpwd() ls -a 
 
-
 # History in cache directory:
+HISTFILE=~/.cache/zsh/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=/home/shivanshukmr/.cache/zsh/history
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -37,3 +36,5 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
+# cd is not requried
+setopt autocd
