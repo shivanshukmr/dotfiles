@@ -35,7 +35,7 @@ nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>x :bdelete<CR>
 
 " Splits
-nnoremap <leader>vs :vsplit<CR> :FZF<CR>
+nnoremap <leader>v :vsplit<CR> :FZF<CR>
 nnoremap <leader>s :split<CR> :FZF<CR>
 
 " Unmark

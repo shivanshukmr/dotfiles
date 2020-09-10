@@ -18,6 +18,9 @@ HISTFILE=~/.cache/zsh/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 
+# Don't repeat commands in history
+setopt HIST_IGNORE_ALL_DUPS
+
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
