@@ -6,7 +6,8 @@ source $ZPLUG_HOME/init.zsh
 #=======================PLUGINS=================================
 
 zplug "romkatv/powerlevel10k", as:theme, depth:1
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug "zplug/zplug", hook-build:'zplug --self-manage'
+zplug "zsh-users/zsh-autosuggestions"
 
 #===============================================================
 
