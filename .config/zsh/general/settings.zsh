@@ -38,3 +38,6 @@ bindkey -v '^?' backward-delete-char
 
 # cd is not requried
 setopt autocd
+
+# FZF includes hidden files
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
