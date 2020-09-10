@@ -1,4 +1,5 @@
 # dotfiles
 
-1. zplug install
-2. :PlugInstall in neovim
+1. Do a ```--bare --recurse-submodules``` clone
+2. zplug install
+3. :PlugInstall
