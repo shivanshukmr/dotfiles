@@ -42,5 +42,8 @@ bindkey -v '^?' backward-delete-char
 # cd is not requried
 setopt autocd
 
-# FZF includes hidden files
-export FZF_DEFAULT_COMMAND='rg --files --hidden'
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+source $ZDOTDIR/plug-config/fzf.zsh
