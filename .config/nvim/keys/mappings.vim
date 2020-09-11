@@ -19,10 +19,10 @@ nnoremap <silent><leader>k :wincmd k<CR>
 nnoremap <silent><leader>l :wincmd l<CR>
 
 " Move current window
-nnoremap <silent> <leader>H <C-w>H
-nnoremap <silent> <leader>J <C-w>J
-nnoremap <silent> <leader>K <C-w>K
-nnoremap <silent> <leader>L <C-w>L
+nnoremap <silent> <leader>H :wincmd H<CR>
+nnoremap <silent> <leader>J :wincmd J<CR>
+nnoremap <silent> <leader>K :wincmd K<CR>
+nnoremap <silent> <leader>L :wincmd L<CR>
 
 " Save file
 nnoremap <C-s> :w<CR>
@@ -46,3 +46,6 @@ nmap <Leader>i :source /home/shivanshukmr/.config/nvim/init.vim<CR>
 
 " Close all buffers except the current one
 nnoremap <Leader>wo :only<CR>
+
+" 
+nnoremap <Leader>w= <C-w>=
