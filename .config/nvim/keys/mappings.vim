@@ -34,7 +34,7 @@ nnoremap <silent> <leader>q :q<CR>
 " Close current buffer (not nvim)
 nnoremap <silent> <leader>x :bdelete<CR>
 
-" Splits
+" Splits (requires FZF)
 nnoremap <leader>v :vsplit<CR> :FZF<CR>
 nnoremap <leader>s :split<CR> :FZF<CR>
 
@@ -47,5 +47,5 @@ nmap <Leader>i :source /home/shivanshukmr/.config/nvim/init.vim<CR>
 " Close all buffers except the current one
 nnoremap <Leader>wo :only<CR>
 
-" 
+" All windows equal sizes 
 nnoremap <Leader>w= <C-w>=
