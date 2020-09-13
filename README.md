@@ -1,6 +1,6 @@
 # dotfiles
 
-Do a ```--bare --recurse-submodules``` clone
+Do a ```--bare``` clone
 ```bash
 $ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 ```
