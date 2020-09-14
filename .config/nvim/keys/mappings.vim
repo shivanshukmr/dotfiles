@@ -42,7 +42,7 @@ nnoremap <leader>s :split<CR> :FZF<CR>
 nnoremap <silent> <leader>u :noh<CR>
 
 " Source init.vim
-nmap <Leader>i :source /home/shivanshukmr/.config/nvim/init.vim<CR>
+nmap <Leader>i :source $HOME/.config/nvim/init.vim<CR>
 
 " Close all buffers except the current one
 nnoremap <Leader>wo :only<CR>
