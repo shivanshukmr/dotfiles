@@ -1,6 +1,7 @@
 # bind prefix key to Ctrl-Space
 unbind C-b
 set -g prefix `
+bind ` send-prefix
 
 # Vi key bindings
 unbind h

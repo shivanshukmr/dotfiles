@@ -5,8 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source /home/shivanshukmr/.config/zsh/general/settings.zsh
-source /home/shivanshukmr/.config/zsh/general/aliases.zsh
-source /home/shivanshukmr/.config/zsh/keys/keybindings.zsh
-source /home/shivanshukmr/.config/zsh/zplug/plugins.zsh
-source /home/shivanshukmr/.config/zsh/.p10k.zsh
+source $HOME/.config/zsh/general/settings.zsh
+source $HOME/.config/zsh/general/aliases.zsh
+source $HOME/.config/zsh/keys/keybindings.zsh
+source $HOME/.config/zsh/zplug/plugins.zsh
+source $HOME/.config/zsh/.p10k.zsh
