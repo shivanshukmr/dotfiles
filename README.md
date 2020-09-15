@@ -9,4 +9,4 @@ $ zplug install
 ```
 :PlugInstall
 
-:CocInstall coc-marketplace coc-python coc-yank
+:CocInstall coc-marketplace coc-python coc-pairs coc-yank coc-vimlsp
