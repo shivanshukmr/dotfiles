@@ -4,7 +4,7 @@ let g:fzf_layout = {'down':'~30%'}
 augroup FZF
   autocmd!
   autocmd FileType fzf set laststatus=0 noshowmode noruler
-        \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+        \| autocmd BufLeave <buffer> set laststatus=0 showmode ruler
 augroup END
 
 "GFiles or Files

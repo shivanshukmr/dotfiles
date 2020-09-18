@@ -44,7 +44,7 @@ set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set cindent
 "set cursorline
-set laststatus=2                        " Show Statusline
+set laststatus=0                        " Show Statusline
 set number                              " Line numbers
 set relativenumber                      " Set relative numbering
 set background=dark                     " tell vim what the background color looks like
@@ -56,25 +56,25 @@ set clipboard=unnamed                   " Copy paste between vim and everything 
 set incsearch                           " Incremental search is good
 
 " Get gitbranch
-function! GitBranch() abort
-    if fugitive#head()==''
-        return ''
-    else
-        return '['.fugitive#head().']'
-    endif
-endfunction
-
-" Set Statusline
-set statusline=
-set statusline+=\ 
-set statusline+=%#PmenuSel#
-set statusline+=%{GitBranch()}
-set statusline+=%#StatusLine#
-set statusline+=\ 
-set statusline+=%=
-set statusline+=\ %y
-set statusline+=\ %l:%c
-set statusline+=\ 
+" function! GitBranch() abort
+"     if fugitive#head()==''
+"         return ''
+"     else
+"         return '['.fugitive#head().']'
+"     endif
+" endfunction
+" 
+" " Set Statusline
+" set statusline=
+" set statusline+=\ 
+" set statusline+=%#PmenuSel#
+" set statusline+=%{GitBranch()}
+" set statusline+=%#StatusLine#
+" set statusline+=\ 
+" set statusline+=%=
+" set statusline+=\ %y
+" set statusline+=\ %l:%c
+" set statusline+=\ 
 
 " MAPPINGS
 " Use ctrl + hjkl to resize windows

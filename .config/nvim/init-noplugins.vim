@@ -17,7 +17,7 @@ set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set cindent
 "set cursorline
-set laststatus=2                        " Show Statusline
+set laststatus=0                        " Show Statusline
 set number                              " Line numbers
 set relativenumber                      " Set relative numbering
 set background=dark                     " tell vim what the background color looks like
@@ -29,15 +29,15 @@ set clipboard=unnamed                   " Copy paste between vim and everything 
 set incsearch                           " Incremental search is good
 
 " Set Statusline
-set statusline=
-set statusline+=\ 
-set statusline+=%#StatusLine#
-set statusline+=\f
-set statusline+=\ 
-set statusline+=%=
-set statusline+=\ %y
-set statusline+=\ %l:%c
-set statusline+=\ 
+" set statusline=
+" set statusline+=\ 
+" set statusline+=%#StatusLine#
+" set statusline+=\f
+" set statusline+=\ 
+" set statusline+=%=
+" set statusline+=\ %y
+" set statusline+=\ %l:%c
+" set statusline+=\ 
 
 
 " MAPPINGS
