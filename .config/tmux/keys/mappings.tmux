@@ -30,3 +30,13 @@ bind i source-file ~/.config/tmux/tmux.conf \; display ​"Reloaded!"
 # Move current pane
 bind K swap-pane -D
 bind J swap-pane -U
+
+# Resize panes
+bind -n M-j resize-pane -D 3 # down
+bind -n M-k resize-pane -U 3 # up 
+bind -n M-h resize-pane -L 3 # left
+bind -n M-l resize-pane -R 3 # right
+
+# Vi like copying and selection 
+bind-key -Tcopy-mode-vi 'v' send -X begin-selection
+bind-key -Tcopy-mode-vi 'y' send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
