@@ -14,18 +14,21 @@ unbind l
 bind l select-pane -R
 
 # Window splitting
+unbind %
 unbind v
 bind v split-window -h -c "#{pane_current_path}"
+unbind \"
 unbind s
 bind s split-window -v -c "#{pane_current_path}"
 
 # Fast toggle
+unbind n
 unbind space
-bind space last-window
+bind space next-window
 
 # i to reload configuration file
 unbind i
-bind i source-file ~/.config/tmux/tmux.conf \; display ​"Reloaded!"
+bind i source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
 
 # Move current pane
 bind K swap-pane -D
