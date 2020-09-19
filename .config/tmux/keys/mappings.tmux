@@ -22,9 +22,8 @@ unbind s
 bind s split-window -v -c "#{pane_current_path}"
 
 # Fast toggle
-unbind n
 unbind space
-bind space next-window
+bind space last-window
 
 # i to reload configuration file
 unbind i

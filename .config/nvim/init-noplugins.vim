@@ -16,7 +16,7 @@ set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set cindent
-"set cursorline
+set cursorline
 set laststatus=0                        " Show Statusline
 set number                              " Line numbers
 set relativenumber                      " Set relative numbering
