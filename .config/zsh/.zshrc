@@ -10,3 +10,5 @@ source $HOME/.config/zsh/general/aliases.zsh
 source $HOME/.config/zsh/keys/keybindings.zsh
 source $HOME/.config/zsh/zplug/plugins.zsh
 source $HOME/.config/zsh/.p10k.zsh
+
+export PATH=/home/me/.local/bin:$PATH

@@ -3,6 +3,9 @@ unbind C-b
 set -g prefix `
 bind ` send-prefix
 
+# Vi mode
+set-window-option -g mode-keys vi
+
 # Vi key bindings
 unbind h
 bind h select-pane -L
