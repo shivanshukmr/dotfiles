@@ -100,7 +100,6 @@
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
 
   # Orange current directory.
-  #typeset -g POWERLEVEL9K_DIR_FOREGROUND=001
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=174
   # Shorten directory
   typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
@@ -119,7 +118,7 @@
   # Duration format: 1d 2h 3m 4s.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FORMAT='d h m s'
   # Yellow previous command duration.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$yellow
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=174
 
   # Grey Git prompt. This makes stale prompts indistinguishable from up-to-date ones.
   typeset -g POWERLEVEL9K_VCS_FOREGROUND=$grey
@@ -133,7 +132,7 @@
   typeset -g POWERLEVEL9K_VCS_MAX_SYNC_LATENCY_SECONDS=0
 
   # Cyan ahead/behind arrows.
-  typeset -g POWERLEVEL9K_VCS_{INCOMING,OUTGOING}_CHANGESFORMAT_FOREGROUND=$cyan
+  typeset -g POWERLEVEL9K_VCS_{INCOMING,OUTGOING}_CHANGESFORMAT_FOREGROUND=$grey
   # Don't show remote branch, current tag or stashes.
   typeset -g POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind)
   # Don't show the branch icon.
@@ -145,13 +144,13 @@
   # Show '*' when there are staged, unstaged or untracked files.
   typeset -g POWERLEVEL9K_VCS_DIRTY_ICON='*'
   # Show '⇣' if local branch is behind remote.
-  typeset -g POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=':⇣'
+  typeset -g POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=':'
   # Show '⇡' if local branch is ahead of remote.
-  typeset -g POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=':⇡'
+  typeset -g POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=':'
   # Don't show the number of commits next to the ahead/behind arrows.
   typeset -g POWERLEVEL9K_VCS_{COMMITS_AHEAD,COMMITS_BEHIND}_MAX_NUM=1
   # Remove space between '⇣' and '⇡' and all trailing spaces.
-  typeset -g POWERLEVEL9K_VCS_CONTENT_EXPANSION='${${${P9K_CONTENT/⇣* :⇡/⇣⇡}// }//:/ }'
+  typeset -g POWERLEVEL9K_VCS_CONTENT_EXPANSION='${${${P9K_CONTENT/* :/}// }//:/ }'
 
   # Grey current time.
   typeset -g POWERLEVEL9K_TIME_FOREGROUND=$grey

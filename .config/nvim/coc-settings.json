@@ -15,7 +15,8 @@
   "python.linting.flake8Path": "/home/me/.local/bin/flake8",
   "python.linting.flake8Args": ["--ignore=E501,W391,E265,E241,E114,E117"],
     // formatting
-  "python.formatting.autopep8Path": "/home/me/.local/bin/autopep8",
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/home/me/.local/bin/black",
   "python.sortImports.path": "/home/me/.local/bin/isort",
 
   //highlightedyank
