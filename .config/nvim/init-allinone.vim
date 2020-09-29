@@ -54,6 +54,7 @@ set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set clipboard=unnamed                   " Copy paste between vim and everything else
 set incsearch                           " Incremental search is good
+set nowrap
 
 " Get gitbranch
 " function! GitBranch() abort
