@@ -29,18 +29,6 @@ set clipboard=unnamed                   " Copy paste between vim and everything 
 set incsearch                           " Incremental search is good
 set nowrap
 
-" Set Statusline
-" set statusline=
-" set statusline+=\ 
-" set statusline+=%#StatusLine#
-" set statusline+=\f
-" set statusline+=\ 
-" set statusline+=%=
-" set statusline+=\ %y
-" set statusline+=\ %l:%c
-" set statusline+=\ 
-
-
 " MAPPINGS
 " Use ctrl + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
@@ -78,9 +66,9 @@ nnoremap <silent> <leader>q :q<CR>
 " Close current buffer (not nvim)
 nnoremap <silent> <leader>x :bdelete<CR>
 
-" Splits (requires FZF)
-nnoremap <leader>v :vsplit<CR> :FZF<CR>
-nnoremap <leader>s :split<CR> :FZF<CR>
+" Splits
+nnoremap <leader>v :vsplit 
+nnoremap <leader>s :split 
 
 " Unmark
 nnoremap <silent> <leader>u :noh<CR>
@@ -94,21 +82,34 @@ nnoremap <Leader>wo :only<CR>
 " All windows equal sizes 
 nnoremap <Leader>w= <C-w>=
 
+" Stuff with indentation block
+onoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR>
+onoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR>
+vnoremap <silent>ai :<C-U>cal <SID>IndTxtObj(1)<CR><Esc>gv
+vnoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR><Esc>gv
 
-" SIGNIFY
-" Change these if you want
-let g:signify_sign_add               = '+'
-let g:signify_sign_delete            = '_'
-let g:signify_sign_delete_first_line = '‾'
-let g:signify_sign_change            = '~'
-
-" I find the numbers disctracting
-let g:signify_sign_show_count = 0
-let g:signify_sign_show_text = 1
-
-
-" Jump though hunks
-nmap <leader>gj <plug>(signify-next-hunk)
-nmap <leader>gk <plug>(signify-prev-hunk)
-nmap <leader>gJ 9999<leader>gJ
-nmap <leader>gK 9999<leader>gk
+function! s:IndTxtObj(inner)
+    let curline = line(".")
+    let lastline = line("$")
+    let i = indent(line(".")) - &shiftwidth * (v:count1 - 1)
+    let i = i < 0 ? 0 : i
+    if getline(".") !~ "^\\s*$"
+        let p = line(".") - 1
+        let nextblank = getline(p) =~ "^\\s*$"
+        while p > 0 && ((i == 0 && !nextblank) || (i > 0 && ((indent(p) >= i && !(nextblank && a:inner)) || nextblank && !a:inner)))
+            -
+            let p = line(".") - 1
+            let nextblank = getline(p) =~ "^\\s*$"
+        endwhile
+        normal! 0v
+        call cursor(curline, 0)
+        let p = line(".") + 1
+        let nextblank = getline(p) =~ "^\\s*$"
+        while p <= lastline && ((i == 0 && !nextblank) || (i > 0 && ((indent(p) >= i && !(nextblank && a:inner)) || (nextblank && !a:inner))))
+            +
+            let p = line(".") + 1
+            let nextblank = getline(p) =~ "^\\s*$"
+        endwhile
+        normal! $
+    endif
+endfunction
