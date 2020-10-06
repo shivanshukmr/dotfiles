@@ -105,8 +105,7 @@ nnoremap <silent> <leader>K :wincmd K<CR>
 nnoremap <silent> <leader>L :wincmd L<CR>
 
 " Save file
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <Esc>:w<CR>a
+nnoremap <leader>e :w<CR>
 
 " Quit
 nnoremap <silent> <leader>q :q<CR>
@@ -300,8 +299,8 @@ omap ac <Plug>(coc-classobj-a)
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
-" nmap <silent> <C-s> <Plug>(coc-range-select)
-" xmap <silent> <C-s> <Plug>(coc-range-select)
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')

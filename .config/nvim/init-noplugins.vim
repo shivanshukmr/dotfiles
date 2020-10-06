@@ -57,8 +57,7 @@ nnoremap <silent> <leader>K :wincmd K<CR>
 nnoremap <silent> <leader>L :wincmd L<CR>
 
 " Save file
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <Esc>:w<CR>a
+nnoremap <leader>e :w<CR>
 
 " Quit
 nnoremap <silent> <leader>q :q<CR>
