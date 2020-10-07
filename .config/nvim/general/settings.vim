@@ -27,7 +27,6 @@ set nowritebackup                       " This is recommended by coc
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set incsearch                           " Incremental search is good
 set scrolloff=7
-set nowrap
 
 "  Get gitbranch
 "function! GitBranch() abort
