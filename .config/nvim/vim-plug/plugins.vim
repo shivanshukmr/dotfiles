@@ -9,8 +9,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
    Plug 'mhinz/vim-signify'
    " Sneak
    Plug 'justinmk/vim-sneak'
-   " Intellisense
-   Plug 'neoclide/coc.nvim', {'branch': 'release'}
    " NERDTree
    Plug 'preservim/nerdtree'
    " FZF
@@ -22,7 +20,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
    " Bufferline
    Plug 'bling/vim-bufferline'
    " NeovimLSP
-   " Plug 'neovim/nvim-lspconfig'
-   " Plug 'nvim-lua/completion-nvim'
+   Plug 'neovim/nvim-lspconfig'
+   Plug 'nvim-lua/completion-nvim'
 
 call plug#end()

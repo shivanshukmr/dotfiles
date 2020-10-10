@@ -10,11 +10,6 @@ if (has("autocmd") && !has("gui_running"))
   augroup END
 endif
 
-let g:onedark_color_overrides = {
-\ "Pmenu": {"gui": "#21222C", "cterm": "235", "cterm16": "0" },
-\ "PmenuSbar": {"gui": "#21222C", "cterm": "235", "cterm16": "0" },
-\}
-
 let g:onedark_terminal_italics=1
 let g:onedark_termcolors=256
 let g:onedark_hide_endofbuffer=0

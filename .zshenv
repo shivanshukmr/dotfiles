@@ -1,7 +1,21 @@
-export ZDOTDIR=$HOME/.config/zsh
-export ZPLUG_HOME=$HOME/.config/zsh/zplug/.zplug
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export ZPLUG_HOME="$XDG_CONFIG_HOME/zsh/zplug/.zplug"
 export LESSHISTFILE="-"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
+export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export STACK_ROOT="$XDG_DATA_HOME/stack"
+export XMONAD_CONFIG_HOME="$XDG_CONFIG_HOME/xmonad"
+export XMONAD_DATA_HOME="$XDG_DATA_HOME/xmonad"
+export XMONAD_CACHE_HOME="$XDG_CACHE_HOME/xmonad"
+export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
+
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
