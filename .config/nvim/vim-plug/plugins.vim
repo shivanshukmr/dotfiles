@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim/autoload/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
     
    " Better Syntax Support
    Plug 'sheerun/vim-polyglot'
@@ -11,10 +11,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
    Plug 'justinmk/vim-sneak'
    " NERDTree
    Plug 'preservim/nerdtree'
-   " FZF
-   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-   Plug 'junegunn/fzf.vim'
-   Plug 'airblade/vim-rooter'
+   " Telescope
+   Plug 'nvim-lua/popup.nvim'
+   Plug 'nvim-lua/plenary.nvim'
+   Plug 'nvim-lua/telescope.nvim'
    " Vim Fugitive
    Plug 'tpope/vim-fugitive'
    " Bufferline

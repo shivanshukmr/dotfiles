@@ -16,8 +16,8 @@ set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set cindent
-" set cursorline
-set laststatus=0                        " Show Statusline
+" set cursorline                          " Hightlight current line
+set laststatus=0                        " Don't show Statusline
 set number                              " Line numbers
 set relativenumber                      " Set relative numbering
 set background=dark                     " tell vim what the background color looks like
@@ -25,8 +25,9 @@ set showtabline=0                       " Don't show tabs
 set noswapfile                          " No Swap files
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
-set clipboard=unnamed                   " Copy paste between vim and everything else
+set clipboard=unnamedplus               " Copy paste between vim and everything else
 set incsearch                           " Incremental search is good
+set scrolloff=7
 
 " MAPPINGS
 " Use ctrl + hjkl to resize windows
@@ -42,6 +43,9 @@ inoremap kj <Esc>
 " TAB & SHIFT-TAB in general mode will move text buffer
 nnoremap <silent><TAB> :bnext<CR>
 nnoremap <silent><S-TAB> :bprevious<CR>
+
+" Move between last 2 buffers
+nnoremap <silent><leader><space> :e #<CR>
 
 " Better window navigation
 nnoremap <silent><leader>h :wincmd h<CR>
@@ -65,14 +69,14 @@ nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>x :bdelete<CR>
 
 " Splits
-nnoremap <leader>v :vsplit 
-nnoremap <leader>s :split 
+nnoremap <leader>v :vsplit<CR> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
+nnoremap <leader>s :split<CR> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
 
 " Unmark
 nnoremap <silent> <leader>u :noh<CR>
 
 " Source init.vim
-nmap <Leader>i :source /home/shivanshukmr/.config/nvim/init.vim<CR>
+nmap <Leader>i :source $HOME/.config/nvim/init.vim<CR>
 
 " Close all buffers except the current one
 nnoremap <Leader>wo :only<CR>
@@ -83,7 +87,7 @@ nnoremap <Leader>w= <C-w>=
 " Stuff with indentation block
 onoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR>
 onoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR>
-vnoremap <silent>ai :<C-U>cal <SID>IndTxtObj(1)<CR><Esc>gv
+vnoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR><Esc>gv
 vnoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR><Esc>gv
 
 function! s:IndTxtObj(inner)

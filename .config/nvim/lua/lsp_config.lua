@@ -16,15 +16,16 @@ local custom_attach = function(client)
 end
 
 require'nvim_lsp'.pyls.setup{
-    on_attach=custom_attach,
+    on_attach = custom_attach,
     settings = {
         pyls = {
             configurationSources = { "flake8" };
             plugins = { 
                 jedi_completion = { fuzzy = true };
-                pyls_black = {
-                    enabled = true
-                };
+                pyls_black = { enabled = true };
+                yapf = { enabled = false };
+                pylint = { enabled = false };
+                pydocstyle = { enabled = false };
             };
         };
     };

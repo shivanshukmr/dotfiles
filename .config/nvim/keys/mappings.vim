@@ -36,9 +36,9 @@ nnoremap <silent> <leader>q :q<CR>
 " Close current buffer (not nvim)
 nnoremap <silent> <leader>x :bdelete<CR>
 
-" Splits (requires FZF)
-nnoremap <leader>v :vsplit<CR> :FZF<CR>
-nnoremap <leader>s :split<CR> :FZF<CR>
+" Splits
+nnoremap <leader>v :vsplit<CR> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
+nnoremap <leader>s :split<CR> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
 
 " Unmark
 nnoremap <silent> <leader>u :noh<CR>
@@ -55,7 +55,7 @@ nnoremap <Leader>w= <C-w>=
 " Stuff with indentation block
 onoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR>
 onoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR>
-vnoremap <silent>ai :<C-U>cal <SID>IndTxtObj(1)<CR><Esc>gv
+vnoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR><Esc>gv
 vnoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR><Esc>gv
 
 function! s:IndTxtObj(inner)

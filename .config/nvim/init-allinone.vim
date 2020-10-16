@@ -1,5 +1,5 @@
 " PLUGINS
-call plug#begin('~/.config/nvim/autoload/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
     
    " Better Syntax Support
    Plug 'sheerun/vim-polyglot'
@@ -12,10 +12,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
    Plug 'justinmk/vim-sneak'
    " NERDTree
    Plug 'preservim/nerdtree'
-   " FZF
-   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-   Plug 'junegunn/fzf.vim'
-   Plug 'airblade/vim-rooter'
+   " Telescope
+   Plug 'nvim-lua/popup.nvim'
+   Plug 'nvim-lua/plenary.nvim'
+   Plug 'nvim-lua/telescope.nvim'
    " Vim Fugitive
    Plug 'tpope/vim-fugitive'
    " Bufferline
@@ -96,9 +96,9 @@ nnoremap <silent> <leader>q :q<CR>
 " Close current buffer (not nvim)
 nnoremap <silent> <leader>x :bdelete<CR>
 
-" Splits (requires FZF)
-nnoremap <leader>v :vsplit<CR> :FZF<CR>
-nnoremap <leader>s :split<CR> :FZF<CR>
+" Splits
+nnoremap <leader>v :vsplit<CR> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
+nnoremap <leader>s :split<CR> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
 
 " Unmark
 nnoremap <silent> <leader>u :noh<CR>
@@ -115,7 +115,7 @@ nnoremap <Leader>w= <C-w>=
 " Stuff with indentation block
 onoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR>
 onoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR>
-vnoremap <silent>ai :<C-U>cal <SID>IndTxtObj(1)<CR><Esc>gv
+vnoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR><Esc>gv
 vnoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR><Esc>gv
 
 function! s:IndTxtObj(inner)
@@ -161,36 +161,6 @@ nmap <leader>gj <plug>(signify-next-hunk)
 nmap <leader>gk <plug>(signify-prev-hunk)
 nmap <leader>gJ 9999<leader>gJ
 nmap <leader>gK 9999<leader>gk
-
-" FZF
-let g:fzf_layout = {'down':'~30%'}
-
-" Remove FZF statusline
-augroup FZF
-  autocmd!
-  autocmd FileType fzf set laststatus=0 noshowmode noruler
-        \| autocmd BufLeave <buffer> set laststatus=0 showmode ruler
-augroup END
-
-"GFiles or Files
-nnoremap <silent> <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles')."\<cr>"
-
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
-
-let g:fzf_colors =
-      \ { 'fg':      ['fg', 'Comment'],
-      \ 'bg':      ['bg', 'Normal'],
-      \ 'hl':      ['fg', 'Normal'],
-      \ 'fg+':     ['fg', 'Normal'],
-      \ 'bg+':     ['bg', 'Normal'],
-      \ 'hl+':     ['fg', 'Type'],
-      \ 'info':    ['fg', 'PreProc'],
-      \ 'border':  ['fg', 'Ignore'],
-      \ 'prompt':  ['fg', 'Conditional'],
-      \ 'pointer': ['fg', 'Exception'],
-      \ 'marker':  ['fg', 'WildMenu'],
-      \ 'spinner': ['fg', 'Label'],
-      \ 'header':  ['fg', 'Comment'] }
 
 " NERDTREE
 " Shortcut
@@ -279,3 +249,9 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Auto-format *.py files on save
 autocmd BufWrite *.py lua vim.lsp.buf.formatting()
+
+"map <c-space> to manually trigger completion
+imap <silent> <c-space> <Plug>(completion_trigger)
+
+" TELESCOPE
+nnoremap <C-p> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
