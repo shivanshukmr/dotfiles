@@ -8,5 +8,3 @@ $ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/inst
 $ zplug install
 ```
 :PlugInstall
-
-:CocInstall coc-marketplace coc-python coc-pairs coc-yank coc-vimlsp
