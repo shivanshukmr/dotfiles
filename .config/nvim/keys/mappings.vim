@@ -37,8 +37,8 @@ nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>x :bdelete<CR>
 
 " Splits
-nnoremap <leader>v :vsplit<CR> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
-nnoremap <leader>s :split<CR> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
+nnoremap <leader>v :vsplit<CR> :FZF<CR>
+nnoremap <leader>s :split<CR> :FZF<CR>
 
 " Unmark
 nnoremap <silent> <leader>u :noh<CR>
