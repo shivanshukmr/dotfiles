@@ -25,7 +25,7 @@ set showtabline=0                       " Don't show tabs
 set noswapfile                          " No Swap files
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
-set clipboard=unnamedplus               " Copy paste between vim and everything else
+set clipboard=unnamed,unnamedplus       " Copy paste between vim and everything else
 set incsearch                           " Incremental search is good
 set scrolloff=7
 
@@ -115,3 +115,7 @@ function! s:IndTxtObj(inner)
         normal! $
     endif
 endfunction
+
+vmap < <gv
+vmap > >gv
+

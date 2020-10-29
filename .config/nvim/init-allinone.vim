@@ -53,7 +53,7 @@ set showtabline=0                       " Don't show tabs
 set noswapfile                          " No Swap files
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
-set clipboard=unnamedplus               " Copy paste between vim and everything else
+set clipboard=unnamed,unnamedplus       " Copy paste between vim and everything else
 set incsearch                           " Incremental search is good
 set scrolloff=7
 
@@ -144,6 +144,9 @@ function! s:IndTxtObj(inner)
     endif
 endfunction
 
+vmap < <gv
+vmap > >gv
+
 " SIGNIFY
 " Change these if you want
 let g:signify_sign_add               = '+'
@@ -231,7 +234,7 @@ highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 " map T <Plug>Sneak_T
 
 
-"LSP
+" LSP
 lua require("lsp_config")
 
 " Autocompletion settings

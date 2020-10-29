@@ -83,3 +83,6 @@ function! s:IndTxtObj(inner)
         normal! $
     endif
 endfunction
+
+vmap < <gv
+vmap > >gv
