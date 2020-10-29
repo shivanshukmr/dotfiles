@@ -17,5 +17,5 @@ export XMONAD_CACHE_HOME="$XDG_CACHE_HOME/xmonad"
 export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
 
 export EDITOR="nvim"
-export TERMINAL="alacritty"
+export TERMINAL="st"
 export BROWSER="brave"

@@ -8,3 +8,5 @@ $ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/inst
 $ zplug install
 ```
 :PlugInstall
+
+[Method](atlassian.com/git/tutorials/dotfiles)
