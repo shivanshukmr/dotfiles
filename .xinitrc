@@ -1,3 +1,4 @@
-feh --bg-fill /home/me/Others/Pictures/blue.jpg
+xmodmap ~/.Xmodmap
+feh --bg-fill ~/Others/Pictures/4k.jpg
 #picom &
 exec dwm
