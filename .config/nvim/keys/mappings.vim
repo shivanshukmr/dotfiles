@@ -16,16 +16,16 @@ nnoremap <silent><S-TAB> :bprevious<CR>
 nnoremap <silent><leader><space> :e #<CR>
 
 " Better window navigation
-nnoremap <silent><leader>h :wincmd h<CR>
-nnoremap <silent><leader>j :wincmd j<CR>
-nnoremap <silent><leader>k :wincmd k<CR>
-nnoremap <silent><leader>l :wincmd l<CR>
+nnoremap <silent><leader>wh :wincmd h<CR>
+nnoremap <silent><leader>wj :wincmd j<CR>
+nnoremap <silent><leader>wk :wincmd k<CR>
+nnoremap <silent><leader>wl :wincmd l<CR>
 
 " Move current window
-nnoremap <silent> <leader>H :wincmd H<CR>
-nnoremap <silent> <leader>J :wincmd J<CR>
-nnoremap <silent> <leader>K :wincmd K<CR>
-nnoremap <silent> <leader>L :wincmd L<CR>
+nnoremap <silent> <leader>wH :wincmd H<CR>
+nnoremap <silent> <leader>wJ :wincmd J<CR>
+nnoremap <silent> <leader>wK :wincmd K<CR>
+nnoremap <silent> <leader>wL :wincmd L<CR>
 
 " Save file
 nnoremap <leader>e :w<CR>
@@ -86,3 +86,5 @@ endfunction
 
 vmap < <gv
 vmap > >gv
+
+nnoremap Y y$

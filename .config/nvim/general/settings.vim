@@ -2,6 +2,7 @@
 let mapleader = " "
 
 syntax on                               " Enables syntax highlighing
+set guicursor=
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set nowrap                              " Display long lines as just one line
 set ruler              			        " Show the cursor position all the time
