@@ -16,7 +16,6 @@ set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set cindent
-" set cursorline                          " Hightlight current line
 set laststatus=0                        " Don't show Statusline
 set number                              " Line numbers
 set relativenumber                      " Set relative numbering
@@ -30,5 +29,10 @@ set incsearch                           " Incremental search is good
 set scrolloff=7
 set backspace=indent,eol,start
 if has("termguicolors")
-set termguicolors
+  set termguicolors
 endif
+
+if exists('##TextYankPost')
+  autocmd TextYankPost * silent : lua require'vim.highlight'.on_yank({"IncSearch", 50})
+endif
+

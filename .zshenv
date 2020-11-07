@@ -13,6 +13,8 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export STACK_ROOT="$XDG_DATA_HOME/stack"
 export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export GEM_HOME="$XDG_DATA_HOME"/gem
+export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 
 export EDITOR="nvim"
 export TERMINAL="st"

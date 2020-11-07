@@ -1,28 +1,26 @@
 " PLUGINS
 call plug#begin('~/.local/share/nvim/plugged')
     
-   " Better Syntax Support
-   Plug 'sheerun/vim-polyglot'
-   " Theme
-   " OneDark
-   Plug 'joshdick/onedark.vim'
-   " Git Integration
-   Plug 'mhinz/vim-signify'
-   " Sneak
-   Plug 'justinmk/vim-sneak'
-   " NERDTree
-   Plug 'preservim/nerdtree'
-   " Telescope
-   Plug 'nvim-lua/popup.nvim'
-   Plug 'nvim-lua/plenary.nvim'
-   Plug 'nvim-lua/telescope.nvim'
-   " Vim Fugitive
-   Plug 'tpope/vim-fugitive'
-   " Bufferline
-   Plug 'bling/vim-bufferline'
-   " NeovimLSP
-   Plug 'neovim/nvim-lspconfig'
-   Plug 'nvim-lua/completion-nvim'
+    " Better Syntax Support
+    Plug 'sheerun/vim-polyglot'
+    " Theme
+    " OneDark
+    Plug 'joshdick/onedark.vim'
+    " Git Integration
+    Plug 'mhinz/vim-signify'
+    " Vim Fugitive
+    Plug 'tpope/vim-fugitive'
+    " Sneak
+    Plug 'justinmk/vim-sneak'
+    " Auto Pairs
+    Plug 'jiangmiao/auto-pairs'
+    " NeovimLSP
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-lua/completion-nvim'
+    " Command-T
+    Plug 'wincent/command-t', {
+        \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+        \ }
 
 call plug#end()
 
@@ -31,6 +29,7 @@ call plug#end()
 let mapleader = " "
 
 syntax on                               " Enables syntax highlighing
+set guicursor=
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set nowrap                              " Display long lines as just one line
 set ruler              			        " Show the cursor position all the time
@@ -44,7 +43,6 @@ set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set cindent
-" set cursorline                          " Hightlight current line
 set laststatus=0                        " Don't show Statusline
 set number                              " Line numbers
 set relativenumber                      " Set relative numbering
@@ -53,27 +51,53 @@ set showtabline=0                       " Don't show tabs
 set noswapfile                          " No Swap files
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
-set clipboard=unnamed,unnamedplus       " Copy paste between vim and everything else
+set clipboard=unnamedplus               " Copy paste between vim and everything else
 set incsearch                           " Incremental search is good
 set scrolloff=7
+set backspace=indent,eol,start
+if has("termguicolors")
+  set termguicolors
+endif
+
+if exists('##TextYankPost')
+  autocmd TextYankPost * silent : lua require'vim.highlight'.on_yank({"IncSearch", 50})
+endif
+
+
+" NETRW
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 15
+
+nnoremap <silent><C-n> :Vex<CR>
 
 " MAPPINGS
-" Use ctrl + hjkl to resize windows
-nnoremap <M-j>    :resize -2<CR>
-nnoremap <M-k>    :resize +2<CR>
-nnoremap <M-h>    :vertical resize -2<CR>
-nnoremap <M-l>    :vertical resize +2<CR>
+" ======GENERAL======
 
-" I hate escape more than anything else
 inoremap jk <Esc>
 inoremap kj <Esc>
 
-" TAB & SHIFT-TAB in general mode will move text buffer
-nnoremap <silent><TAB> :bnext<CR>
-nnoremap <silent><S-TAB> :bprevious<CR>
+" C-j and C-k in normal mode will move text buffer
+nnoremap <silent><C-k> :bnext<CR>
+nnoremap <silent><C-j> :bprevious<CR>
 
-" Move between last 2 buffers
-nnoremap <silent><leader><space> :e #<CR>
+" Quit
+nnoremap <silent> <leader>q :q<CR>
+nnoremap <silent> <leader>Q :q!<CR>
+
+vmap < <gv
+vmap > >gv
+
+nnoremap Y y$
+
+" ======WINDOWS======
+
+" Use alt + hjkl to resize windows
+nnoremap <M-j> :resize -2<CR>
+nnoremap <M-k> :resize +2<CR>
+nnoremap <M-h> :vertical resize -2<CR>
+nnoremap <M-l> :vertical resize +2<CR>
 
 " Better window navigation
 nnoremap <silent><leader>h :wincmd h<CR>
@@ -87,65 +111,32 @@ nnoremap <silent> <leader>J :wincmd J<CR>
 nnoremap <silent> <leader>K :wincmd K<CR>
 nnoremap <silent> <leader>L :wincmd L<CR>
 
-" Save file
-nnoremap <leader>e :w<CR>
-
-" Quit
-nnoremap <silent> <leader>q :q<CR>
-
-" Close current buffer (not nvim)
-nnoremap <silent> <leader>x :bdelete<CR>
-
 " Splits
-nnoremap <leader>v :vsplit<CR> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
-nnoremap <leader>s :split<CR> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>s :split<CR>
 
-" Unmark
-nnoremap <silent> <leader>u :noh<CR>
+" Close all windows except the current one
+nnoremap <Leader>o :only<CR>
+
+" All windows equal sizes 
+nnoremap <Leader>= <C-w>=
+
+" ======FILES/BUFFERS======
+
+" Save file
+nnoremap <leader>w :w<CR>
 
 " Source init.vim
 nmap <Leader>i :source $HOME/.config/nvim/init.vim<CR>
 
-" Close all buffers except the current one
-nnoremap <Leader>wo :only<CR>
+" Nohighlight
+nnoremap <silent><leader>n :nohlsearch<CR>
 
-" All windows equal sizes 
-nnoremap <Leader>w= <C-w>=
+" Buffer delete
+nnoremap <silent> <leader>x :bdelete<CR>
 
-" Stuff with indentation block
-onoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR>
-onoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR>
-vnoremap <silent>ai :<C-U>cal <SID>IndTxtObj(0)<CR><Esc>gv
-vnoremap <silent>ii :<C-U>cal <SID>IndTxtObj(1)<CR><Esc>gv
-
-function! s:IndTxtObj(inner)
-    let curline = line(".")
-    let lastline = line("$")
-    let i = indent(line(".")) - &shiftwidth * (v:count1 - 1)
-    let i = i < 0 ? 0 : i
-    if getline(".") !~ "^\\s*$"
-        let p = line(".") - 1
-        let nextblank = getline(p) =~ "^\\s*$"
-        while p > 0 && ((i == 0 && !nextblank) || (i > 0 && ((indent(p) >= i && !(nextblank && a:inner)) || nextblank && !a:inner)))
-            -
-            let p = line(".") - 1
-            let nextblank = getline(p) =~ "^\\s*$"
-        endwhile
-        normal! 0v
-        call cursor(curline, 0)
-        let p = line(".") + 1
-        let nextblank = getline(p) =~ "^\\s*$"
-        while p <= lastline && ((i == 0 && !nextblank) || (i > 0 && ((indent(p) >= i && !(nextblank && a:inner)) || (nextblank && !a:inner))))
-            +
-            let p = line(".") + 1
-            let nextblank = getline(p) =~ "^\\s*$"
-        endwhile
-        normal! $
-    endif
-endfunction
-
-vmap < <gv
-vmap > >gv
+" Move between last 2 buffers
+nnoremap <silent><leader><space> :e #<CR>
 
 " SIGNIFY
 " Change these if you want
@@ -165,31 +156,10 @@ nmap <leader>gk <plug>(signify-prev-hunk)
 nmap <leader>gJ 9999<leader>gJ
 nmap <leader>gK 9999<leader>gk
 
-" NERDTREE
-" Shortcut
-nmap <silent> <C-n> :NERDTreeToggle<CR>
-
-" Close neovim when only NERDTree is left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Changing ugly arrows
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
-let NERDTreeMinimalUI = 1
-let g:NERDTreeWinSize=20
-
 " FUGITIVE
 nnoremap <silent> <leader>gs :G<CR>
 nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gP :Gpull<CR>
-
-" BUFFERLINE
-" Don't show buffer number
-let g:bufferline_show_bufnr = 0
-" Format of filename
-let g:bufferline_fname_mod = ':.'
-" Shorter path for name
-let g:bufferline_pathshorten = 1
 
 " ONEDARK
 " onedark.vim override: Don't set a background color when running in a terminal;
@@ -233,8 +203,7 @@ highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 " map t <Plug>Sneak_t
 " map T <Plug>Sneak_T
 
-
-" LSP
+" "LSP
 lua require("lsp_config")
 
 " Autocompletion settings
@@ -256,5 +225,9 @@ autocmd BufWrite *.py lua vim.lsp.buf.formatting()
 "map <c-space> to manually trigger completion
 imap <silent> <c-space> <Plug>(completion_trigger)
 
-" TELESCOPE
-nnoremap <C-p> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
+" COMMAND-T
+let g:CommandTMaxHeight = 10
+let g:CommandTHighlightColor = 'Title'
+
+nnoremap <silent><leader>ff :CommandT<CR>
+nnoremap <leader>fr :CommandTFlush<CR>
