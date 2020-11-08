@@ -31,10 +31,10 @@ nnoremap <silent><leader>k :wincmd k<CR>
 nnoremap <silent><leader>l :wincmd l<CR>
 
 " Move current window
-nnoremap <silent> <leader>H :wincmd H<CR>
-nnoremap <silent> <leader>J :wincmd J<CR>
-nnoremap <silent> <leader>K :wincmd K<CR>
-nnoremap <silent> <leader>L :wincmd L<CR>
+nnoremap <silent><leader>H :wincmd H<CR>
+nnoremap <silent><leader>J :wincmd J<CR>
+nnoremap <silent><leader>K :wincmd K<CR>
+nnoremap <silent><leader>L :wincmd L<CR>
 
 " Splits
 nnoremap <leader>v :vsplit<CR>
@@ -58,7 +58,7 @@ nmap <Leader>i :source $HOME/.config/nvim/init.vim<CR>
 nnoremap <silent><leader>n :nohlsearch<CR>
 
 " Buffer delete
-nnoremap <silent> <leader>x :bdelete<CR>
+nnoremap <silent><leader>x :bdelete<CR>
 
 " Move between last 2 buffers
 nnoremap <silent><leader><space> :e #<CR>

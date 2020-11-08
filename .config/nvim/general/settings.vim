@@ -1,8 +1,9 @@
 " set leader key
 let mapleader = " "
 
-syntax on                               " Enables syntax highlighing
+syntax on
 set guicursor=
+filetype plugin on
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set nowrap                              " Display long lines as just one line
 set ruler              			        " Show the cursor position all the time
@@ -16,7 +17,7 @@ set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set cindent
-set laststatus=0                        " Don't show Statusline
+set laststatus=2                        " Don't show Statusline
 set number                              " Line numbers
 set relativenumber                      " Set relative numbering
 set background=dark                     " tell vim what the background color looks like
@@ -24,15 +25,47 @@ set showtabline=0                       " Don't show tabs
 set noswapfile                          " No Swap files
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
-set clipboard=unnamedplus               " Copy paste between vim and everything else
-set incsearch                           " Incremental search is good
+set clipboard=unnamedplus
+set incsearch
 set scrolloff=7
 set backspace=indent,eol,start
-if has("termguicolors")
-  set termguicolors
-endif
+set noshowmode
+
+let g:currentmode={
+       \ 'n'  : '<N> ',
+       \ 'v'  : '<V> ',
+       \ 'V'  : '<Vl> ',
+       \ '' : '<Vb> ',
+       \ 'i'  : '<I> ',
+       \ 't'  : '<I> ',
+       \ 'R'  : '<R> ',
+       \ 'Rv' : '<VR> ',
+       \ 'c'  : '<C> ',
+       \}
+function! Filetypename()
+    return toupper(&filetype[0]) . &filetype[1:]
+endfunction
+
+set statusline=
+set statusline=\ %{g:currentmode[mode()]}
+set statusline+=\ 
+set statusline+=%{&modified?'*\ ':''}
+set statusline+=%t
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=%l:%c
+set statusline+=\ 
+set statusline+=%P
+set statusline+=%=
+set statusline+=%{(fugitive#head()==''?'':'@').fugitive#head()}
+set statusline+=\ 
+set statusline+=%{Filetypename()}
+set statusline+=\ 
 
 if exists('##TextYankPost')
   autocmd TextYankPost * silent : lua require'vim.highlight'.on_yank({"IncSearch", 50})
+endif
+if has("termguicolors")
+  set termguicolors
 endif
 
