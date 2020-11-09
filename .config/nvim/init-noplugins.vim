@@ -28,8 +28,12 @@ call plug#end()
 " set leader key
 let mapleader = " "
 
-syntax on                               " Enables syntax highlighing
+syntax on
+filetype plugin on
+set nocompatible
 set guicursor=
+set path+=**                            " Recursively search inside files
+set wildmenu
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set nowrap                              " Display long lines as just one line
 set ruler              			        " Show the cursor position all the time
@@ -43,7 +47,7 @@ set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set cindent
-set laststatus=0                        " Don't show Statusline
+set laststatus=2                        " Don't show Statusline
 set number                              " Line numbers
 set relativenumber                      " Set relative numbering
 set background=dark                     " tell vim what the background color looks like
@@ -51,18 +55,51 @@ set showtabline=0                       " Don't show tabs
 set noswapfile                          " No Swap files
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
-set clipboard=unnamedplus               " Copy paste between vim and everything else
-set incsearch                           " Incremental search is good
+set clipboard=unnamedplus
+set incsearch
 set scrolloff=7
 set backspace=indent,eol,start
+set noshowmode
+
+let g:currentmode={
+       \ 'n'  : '<N> ',
+       \ 'v'  : '<V> ',
+       \ 'V'  : '<Vl> ',
+       \ '' : '<Vb> ',
+       \ 'i'  : '<I> ',
+       \ 't'  : '<I> ',
+       \ 'R'  : '<R> ',
+       \ 'Rv' : '<VR> ',
+       \ 'c'  : '<C> ',
+       \}
+function! Filetypename()
+    return toupper(&filetype[0]) . &filetype[1:]
+endfunction
+
+set statusline=
+set statusline=\ %{g:currentmode[mode()]}
+set statusline+=\ 
+set statusline+=%{&modified?'*\ ':''}
+set statusline+=%t
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=%l:%c
+set statusline+=\ 
+set statusline+=%P
+set statusline+=%=
+set statusline+=%{(fugitive#head()==''?'':'@').fugitive#head()}
+set statusline+=\ 
+set statusline+=%{Filetypename()}
+set statusline+=\ 
+
 if has("termguicolors")
   set termguicolors
 endif
 
+
 if exists('##TextYankPost')
   autocmd TextYankPost * silent : lua require'vim.highlight'.on_yank({"IncSearch", 50})
 endif
-
 
 " NETRW
 let g:netrw_banner = 0
@@ -78,6 +115,9 @@ nnoremap <silent><C-n> :Vex<CR>
 inoremap jk <Esc>
 inoremap kj <Esc>
 
+cnoremap jk <Esc>
+cnoremap kj <Esc>
+
 " C-j and C-k in normal mode will move text buffer
 nnoremap <silent><C-k> :bnext<CR>
 nnoremap <silent><C-j> :bprevious<CR>
@@ -86,10 +126,10 @@ nnoremap <silent><C-j> :bprevious<CR>
 nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>Q :q!<CR>
 
-vmap < <gv
-vmap > >gv
-
 nnoremap Y y$
+
+noremap ; :
+noremap : ;
 
 " ======WINDOWS======
 
@@ -106,10 +146,10 @@ nnoremap <silent><leader>k :wincmd k<CR>
 nnoremap <silent><leader>l :wincmd l<CR>
 
 " Move current window
-nnoremap <silent> <leader>H :wincmd H<CR>
-nnoremap <silent> <leader>J :wincmd J<CR>
-nnoremap <silent> <leader>K :wincmd K<CR>
-nnoremap <silent> <leader>L :wincmd L<CR>
+nnoremap <silent><leader>H :wincmd H<CR>
+nnoremap <silent><leader>J :wincmd J<CR>
+nnoremap <silent><leader>K :wincmd K<CR>
+nnoremap <silent><leader>L :wincmd L<CR>
 
 " Splits
 nnoremap <leader>v :vsplit<CR>
@@ -127,13 +167,13 @@ nnoremap <Leader>= <C-w>=
 nnoremap <leader>w :w<CR>
 
 " Source init.vim
-nmap <Leader>i :source $HOME/.config/nvim/init.vim<CR>
+nnoremap <leader>i :source $HOME/.config/nvim/init.vim<CR>
 
 " Nohighlight
 nnoremap <silent><leader>n :nohlsearch<CR>
 
 " Buffer delete
-nnoremap <silent> <leader>x :bdelete<CR>
+nnoremap <silent><leader>x :bdelete<CR>
 
 " Move between last 2 buffers
 nnoremap <silent><leader><space> :e #<CR>

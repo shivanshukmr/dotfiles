@@ -2,8 +2,11 @@
 let mapleader = " "
 
 syntax on
-set guicursor=
 filetype plugin on
+set nocompatible
+set guicursor=
+set path+=**                            " Recursively search inside files
+set wildmenu
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set nowrap                              " Display long lines as just one line
 set ruler              			        " Show the cursor position all the time
@@ -62,10 +65,11 @@ set statusline+=\
 set statusline+=%{Filetypename()}
 set statusline+=\ 
 
-if exists('##TextYankPost')
-  autocmd TextYankPost * silent : lua require'vim.highlight'.on_yank({"IncSearch", 50})
-endif
 if has("termguicolors")
   set termguicolors
 endif
 
+
+if exists('##TextYankPost')
+  autocmd TextYankPost * silent : lua require'vim.highlight'.on_yank({"IncSearch", 50})
+endif

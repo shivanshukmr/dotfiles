@@ -3,6 +3,9 @@
 inoremap jk <Esc>
 inoremap kj <Esc>
 
+cnoremap jk <Esc>
+cnoremap kj <Esc>
+
 " C-j and C-k in normal mode will move text buffer
 nnoremap <silent><C-k> :bnext<CR>
 nnoremap <silent><C-j> :bprevious<CR>
@@ -11,10 +14,10 @@ nnoremap <silent><C-j> :bprevious<CR>
 nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>Q :q!<CR>
 
-vmap < <gv
-vmap > >gv
-
 nnoremap Y y$
+
+noremap ; :
+noremap : ;
 
 " ======WINDOWS======
 
@@ -52,7 +55,7 @@ nnoremap <Leader>= <C-w>=
 nnoremap <leader>w :w<CR>
 
 " Source init.vim
-nmap <Leader>i :source $HOME/.config/nvim/init.vim<CR>
+nnoremap <leader>i :source $HOME/.config/nvim/init.vim<CR>
 
 " Nohighlight
 nnoremap <silent><leader>n :nohlsearch<CR>
