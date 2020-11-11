@@ -165,6 +165,7 @@ nnoremap <Leader>= <C-w>=
 
 " Save file
 nnoremap <leader>w :w<CR>
+nnoremap <leader>W :w!<CR>
 
 " Source init.vim
 nnoremap <leader>i :source $HOME/.config/nvim/init.vim<CR>

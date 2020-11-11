@@ -14,7 +14,7 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Auto-format *.py files on save
-autocmd BufWrite *.py lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.py lua vim.lsp.buf.formatting()
 
 "map <c-space> to manually trigger completion
 imap <silent> <c-space> <Plug>(completion_trigger)
