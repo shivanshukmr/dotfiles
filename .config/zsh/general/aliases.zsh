@@ -1,5 +1,5 @@
 alias x="exit"
-alias dgit="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+alias dg="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias la="ls -a"
 alias ll="ls -al"
 alias wget="wget --hsts-file=\"$XDG_CACHE_HOME/wget-hsts\""
