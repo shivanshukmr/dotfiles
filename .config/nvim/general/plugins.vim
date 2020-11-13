@@ -2,7 +2,6 @@ call plug#begin('~/.local/share/nvim/plugged')
     
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
-    " Theme
     " OneDark
     Plug 'joshdick/onedark.vim'
     " Git Integration
@@ -20,5 +19,9 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'wincent/command-t', {
         \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
         \ }
+    " Commentary
+    Plug 'tpope/vim-commentary'
+    " Surround
+    Plug 'tpope/vim-surround'
 
 call plug#end()

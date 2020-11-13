@@ -1,5 +1,8 @@
 " ======GENERAL======
 
+" set leader key
+let mapleader = " "
+
 inoremap jk <Esc>
 inoremap kj <Esc>
 
@@ -66,3 +69,8 @@ nnoremap <silent><leader>x :bdelete<CR>
 
 " Move between last 2 buffers
 nnoremap <silent><leader><space> :e #<CR>
+
+" ======TERMINAL======
+
+" easy esc
+tnoremap fj <C-\><C-n>

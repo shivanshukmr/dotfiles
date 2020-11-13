@@ -1,6 +1,3 @@
-" set leader key
-let mapleader = " "
-
 syntax on
 filetype plugin on
 set nocompatible
@@ -30,7 +27,7 @@ set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set clipboard=unnamedplus
 set incsearch
-set scrolloff=7
+"set scrolloff=7
 set backspace=indent,eol,start
 set noshowmode
 
