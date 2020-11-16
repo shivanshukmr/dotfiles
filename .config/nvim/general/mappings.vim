@@ -73,4 +73,5 @@ nnoremap <silent><leader><space> :e #<CR>
 " ======TERMINAL======
 
 " easy esc
-tnoremap fj <C-\><C-n>
+tnoremap fd <C-\><C-n>
+tnoremap df <C-\><C-n>

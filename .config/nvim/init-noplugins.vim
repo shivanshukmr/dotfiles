@@ -3,7 +3,6 @@ call plug#begin('~/.local/share/nvim/plugged')
     
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
-    " Theme
     " OneDark
     Plug 'joshdick/onedark.vim'
     " Git Integration
@@ -21,13 +20,14 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'wincent/command-t', {
         \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
         \ }
+    " Commentary
+    Plug 'tpope/vim-commentary'
+    " Surround
+    Plug 'tpope/vim-surround'
 
 call plug#end()
 
 " SETTINGS
-" set leader key
-let mapleader = " "
-
 syntax on
 filetype plugin on
 set nocompatible
@@ -57,7 +57,7 @@ set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set clipboard=unnamedplus
 set incsearch
-set scrolloff=7
+"set scrolloff=7
 set backspace=indent,eol,start
 set noshowmode
 
@@ -111,6 +111,9 @@ nnoremap <silent><C-n> :Vex<CR>
 
 " MAPPINGS
 " ======GENERAL======
+
+" set leader key
+let mapleader = " "
 
 inoremap jk <Esc>
 inoremap kj <Esc>
@@ -178,3 +181,9 @@ nnoremap <silent><leader>x :bdelete<CR>
 
 " Move between last 2 buffers
 nnoremap <silent><leader><space> :e #<CR>
+
+" ======TERMINAL======
+
+" easy esc
+tnoremap fd <C-\><C-n>
+tnoremap df <C-\><C-n>
