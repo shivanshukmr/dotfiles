@@ -23,5 +23,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'tpope/vim-commentary'
     " Surround
     Plug 'tpope/vim-surround'
+    " Buftabs
+    Plug 'vim-scripts/buftabs'
 
 call plug#end()

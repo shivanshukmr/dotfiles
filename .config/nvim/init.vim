@@ -8,3 +8,4 @@ source $HOME/.config/nvim/general/onedark.vim
 source $HOME/.config/nvim/plug-config/sneak.vim
 source $HOME/.config/nvim/plug-config/lsp.vim
 source $HOME/.config/nvim/plug-config/command-t.vim
+source $HOME/.config/nvim/plug-config/buftabs.vim
