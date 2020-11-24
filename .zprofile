@@ -18,3 +18,6 @@ export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="qutebrowser"
+
+
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx
