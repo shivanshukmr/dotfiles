@@ -1,5 +1,0 @@
-// init-allinone.vim macro
-$F/lyt.;e init-allinone.vimGopI" VUgfggyG;bd;e intiit-allineoone.vimGpjj
-
-// init-noplugins.vim macro
-$F/lyt.;e init-noplugins.vimGopI" VUgfggyG;bd;e init-noplugins.vimGpj

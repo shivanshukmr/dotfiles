@@ -13,8 +13,8 @@ call plug#begin('~/.local/share/nvim/plugged')
     " Auto Pairs
     Plug 'jiangmiao/auto-pairs'
     " NeovimLSP
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'nvim-lua/completion-nvim'
+    " Plug 'neovim/nvim-lspconfig'
+    " Plug 'nvim-lua/completion-nvim'
     " Command-T
     Plug 'wincent/command-t', {
         \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
@@ -23,7 +23,9 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'tpope/vim-commentary'
     " Surround
     Plug 'tpope/vim-surround'
-    " Buftabs
-    Plug 'vim-scripts/buftabs'
+    " Bufferline
+    Plug 'bling/vim-bufferline'
+    " Ctags-manager
+    Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()

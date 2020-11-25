@@ -30,6 +30,9 @@ set incsearch
 "set scrolloff=7
 set backspace=indent,eol,start
 set noshowmode
+set mouse=a
+set completeopt=menuone,noinsert,noselect
+
 
 let g:currentmode={
        \ 'n'  : '<N> ',
