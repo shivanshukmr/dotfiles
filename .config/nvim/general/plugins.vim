@@ -10,8 +10,6 @@ call plug#begin($XDG_DATA_HOME . '/nvim/plugged')
     Plug 'tpope/vim-fugitive'
     " Sneak
     Plug 'justinmk/vim-sneak'
-    " Auto Pairs
-    Plug 'jiangmiao/auto-pairs'
     " Command-T
     Plug 'wincent/command-t', {
         \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'

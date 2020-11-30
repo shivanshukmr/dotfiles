@@ -89,5 +89,17 @@ inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "<S-TAB>"
 inoremap <C-space> <C-x><C-o>
 inoremap <C-]> <C-x><C-]>
 
-" ======PYTHON======
-nnoremap <silent><leader>f :!black %<CR><CR>
+" ======Custom auto-pairs======
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+
+inoremap <expr> ) matchstr(getline('.'), '\%' . col('.') . 'c.') == ')' ? '<Right>' : ')'
+inoremap <expr> ] matchstr(getline('.'), '\%' . col('.') . 'c.') == ']' ? '<Right>' : ']'
+inoremap <expr> } matchstr(getline('.'), '\%' . col('.') . 'c.') == '}' ? '<Right>' : '}'
+inoremap <expr> " matchstr(getline('.'), '\%' . col('.') . 'c.') == '"' ? '<Right>' : '""<Left>'
+inoremap <expr> ' matchstr(getline('.'), '\%' . col('.') . 'c.') == "'" ? '<Right>' : "''<Left>"
+inoremap <expr> <CR> matchstr(getline('.'), '\%' . col('.') . 'c.') == '}' ? '<Space><BS><CR><Space><BS><CR><Esc>ka<Tab>' : '<Space><BS><CR>'
+
+" Tabout
+inoremap <expr> <Tab> getline('.')[col('.')-1] =~? '[]>)}''"`]' ? '<Right>' : '<Tab>'
