@@ -1,4 +1,4 @@
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin($XDG_DATA_HOME . '/nvim/plugged')
     
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
@@ -12,19 +12,14 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'justinmk/vim-sneak'
     " Auto Pairs
     Plug 'jiangmiao/auto-pairs'
-    " NeovimLSP
-    " Plug 'neovim/nvim-lspconfig'
-    " Plug 'nvim-lua/completion-nvim'
     " Command-T
     Plug 'wincent/command-t', {
         \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
         \ }
-    " Commentary
     Plug 'tpope/vim-commentary'
-    " Surround
     Plug 'tpope/vim-surround'
     " Bufferline
-    Plug 'bling/vim-bufferline'
+    Plug 'ap/vim-buftabline'
     " Ctags-manager
     Plug 'ludovicchabant/vim-gutentags'
 

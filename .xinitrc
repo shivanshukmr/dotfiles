@@ -1,6 +1,6 @@
 xmodmap ~/.Xmodmap
 xcape -e 'Control_L=Escape'
-feh --bg-fill ~/Others/Pictures/4k.jpg
+nitrogen --restore
 picom &
 dwmblocks &
 exec dwm

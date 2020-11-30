@@ -134,5 +134,9 @@ config.set("content.javascript.enabled", True, "qute://*/*")
 # Dark Mode
 config.set("colors.webpage.darkmode.enabled", True)
 
+# Fonts
+config.set("fonts.default_family", "JetBrains Mono")
+
+# Key binding
 config.bind("J", "tab-prev")
 config.bind("K", "tab-next")

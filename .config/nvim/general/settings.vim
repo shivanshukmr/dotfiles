@@ -1,5 +1,4 @@
 syntax on
-filetype plugin on
 set nocompatible
 set guicursor=
 set path+=**                            " Recursively search inside files
@@ -31,7 +30,9 @@ set incsearch
 set backspace=indent,eol,start
 set noshowmode
 set mouse=a
-set completeopt=menuone,noinsert,noselect
+filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
+set completeopt=menuone,noinsert,noselect,preview
 
 
 let g:currentmode={
@@ -73,3 +74,6 @@ endif
 if exists('##TextYankPost')
   autocmd TextYankPost * silent : lua require'vim.highlight'.on_yank({"IncSearch", 50})
 endif
+
+" Python
+let g:python3_host_prog = "/bin/python3"

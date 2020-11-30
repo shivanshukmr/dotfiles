@@ -1,7 +1,8 @@
 let g:CommandTMaxHeight = 10
-"let g:CommandTHighlightColor = 'StatusLine'
+let g:CommandTCancelMap=['<C-x>', '<C-c>', '<Esc>']
+let g:CommandTBackspaceMap=['<C-h>', '<BS>']
+let g:CommandTCursorLeftMap = ['<Left>']
 
-autocmd! FileType command-t set laststatus=0
-  \| autocmd BufLeave <buffer> set laststatus=2
+autocmd! FileType command-t setlocal laststatus=0
 
 nnoremap <silent><C-p> :CommandT<CR>

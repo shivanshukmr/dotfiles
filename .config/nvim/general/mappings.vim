@@ -72,6 +72,22 @@ nnoremap <silent><leader><space> :e #<CR>
 
 " ======TERMINAL======
 
-" easy esc
-tnoremap fd <C-\><C-n>
-tnoremap df <C-\><C-n>
+" Easy esc
+tnoremap <C-\><C-j> <C-\><C-n>
+
+nnoremap <silent><leader>ts :split<CR>:terminal<CR>:setlocal nonumber norelativenumber<CR>i
+nnoremap <silent><leader>tv :vsplit<CR>:terminal<CR>:setlocal nonumber norelativenumber<CR>i
+nnoremap <silent><leader>tt :terminal<CR>:setlocal nonumber norelativenumber<CR>i
+
+" ======COMPLETION======
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "<C-k>"
+
+inoremap <expr> <TAB>   pumvisible() ? "\<C-n>" : "<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "<S-TAB>"
+
+inoremap <C-space> <C-x><C-o>
+inoremap <C-]> <C-x><C-]>
+
+" ======PYTHON======
+nnoremap <silent><leader>f :!black %<CR><CR>
