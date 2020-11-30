@@ -9,4 +9,4 @@ $ zplug install
 ```
 :PlugInstall
 
-[Method Used](https://www.atlassian.com/git/tutorials/dotfiles)
+[Method](https://www.atlassian.com/git/tutorials/dotfiles)
