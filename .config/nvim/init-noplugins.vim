@@ -1,35 +1,7 @@
-" PLUGINS
-call plug#begin('~/.local/share/nvim/plugged')
-    
-    " Better Syntax Support
-    Plug 'sheerun/vim-polyglot'
-    " OneDark
-    Plug 'joshdick/onedark.vim'
-    " Git Integration
-    Plug 'mhinz/vim-signify'
-    " Vim Fugitive
-    Plug 'tpope/vim-fugitive'
-    " Sneak
-    Plug 'justinmk/vim-sneak'
-    " Auto Pairs
-    Plug 'jiangmiao/auto-pairs'
-    " NeovimLSP
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'nvim-lua/completion-nvim'
-    " Command-T
-    Plug 'wincent/command-t', {
-        \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
-        \ }
-    " Commentary
-    Plug 'tpope/vim-commentary'
-    " Surround
-    Plug 'tpope/vim-surround'
 
-call plug#end()
 
 " SETTINGS
 syntax on
-filetype plugin on
 set nocompatible
 set guicursor=
 set path+=**                            " Recursively search inside files
@@ -60,6 +32,11 @@ set incsearch
 "set scrolloff=7
 set backspace=indent,eol,start
 set noshowmode
+set mouse=a
+filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
+set completeopt=menuone,noinsert,noselect,preview
+
 
 let g:currentmode={
        \ 'n'  : '<N> ',
@@ -100,6 +77,9 @@ endif
 if exists('##TextYankPost')
   autocmd TextYankPost * silent : lua require'vim.highlight'.on_yank({"IncSearch", 50})
 endif
+
+" Python
+let g:python3_host_prog = "/bin/python3"
 
 " NETRW
 let g:netrw_banner = 0
@@ -184,6 +164,34 @@ nnoremap <silent><leader><space> :e #<CR>
 
 " ======TERMINAL======
 
-" easy esc
-tnoremap fd <C-\><C-n>
-tnoremap df <C-\><C-n>
+" Easy esc
+tnoremap <C-\><C-j> <C-\><C-n>
+
+nnoremap <silent><leader>ts :split<CR>:terminal<CR>:setlocal nonumber norelativenumber<CR>i
+nnoremap <silent><leader>tv :vsplit<CR>:terminal<CR>:setlocal nonumber norelativenumber<CR>i
+nnoremap <silent><leader>tt :terminal<CR>:setlocal nonumber norelativenumber<CR>i
+
+" ======COMPLETION======
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "<C-k>"
+
+inoremap <expr> <TAB>   pumvisible() ? "\<C-n>" : "<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "<S-TAB>"
+
+inoremap <C-space> <C-x><C-o>
+inoremap <C-]> <C-x><C-]>
+
+" ======Custom auto-pairs======
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+
+inoremap <expr> ) matchstr(getline('.'), '\%' . col('.') . 'c.') == ')' ? '<Right>' : ')'
+inoremap <expr> ] matchstr(getline('.'), '\%' . col('.') . 'c.') == ']' ? '<Right>' : ']'
+inoremap <expr> } matchstr(getline('.'), '\%' . col('.') . 'c.') == '}' ? '<Right>' : '}'
+inoremap <expr> " matchstr(getline('.'), '\%' . col('.') . 'c.') == '"' ? '<Right>' : '""<Left>'
+inoremap <expr> ' matchstr(getline('.'), '\%' . col('.') . 'c.') == "'" ? '<Right>' : "''<Left>"
+inoremap <expr> <CR> matchstr(getline('.'), '\%' . col('.') . 'c.') == '}' ? '<Space><BS><CR><Space><BS><CR><Esc>ka<Tab>' : '<Space><BS><CR>'
+
+" Tabout
+inoremap <expr> <Tab> getline('.')[col('.')-1] =~? '[]>)}''"`]' ? '<Right>' : '<Tab>'

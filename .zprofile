@@ -36,4 +36,4 @@ export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="qutebrowser"
 
-[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XDG_CONFIG_HOME/X11/xinitrc"

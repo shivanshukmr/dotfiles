@@ -8,3 +8,4 @@ source $XDG_CONFIG_HOME/nvim/general/onedark.vim
 source $XDG_CONFIG_HOME/nvim/plug-config/sneak.vim
 source $XDG_CONFIG_HOME/nvim/plug-config/command-t.vim
 source $XDG_CONFIG_HOME/nvim/plug-config/buftabline.vim
+source $XDG_CONFIG_HOME/nvim/plug-config/ale.vim

@@ -21,18 +21,5 @@ SAVEHIST=10000
 # Don't repeat commands in history
 setopt HIST_IGNORE_ALL_DUPS
 
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
-
 # cd is not requried
 setopt autocd
-
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
-
-bindkey 'jk' vi-cmd-mode
-bindkey 'kj' vi-cmd-mode
-
-source $ZDOTDIR/plug-config/fzf.zsh

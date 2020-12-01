@@ -13,7 +13,11 @@ keycode  19 = 0 parenright 0 parenright
 keycode  20 = minus underscore minus underscore
 keycode  21 = equal plus equal plus
 keycode  22 = BackSpace BackSpace BackSpace BackSpace
-keycode  23 = Tab ISO_Left_Tab Tab ISO_Left_Tab
+! keycode  23 = Tab ISO_Left_Tab Tab ISO_Left_Tab
+clear lock
+clear mod4
+add mod4 = Super_R Super_L Hyper_L
+keycode  23 = Hyper_L NoSymbol Hyper_L
 keycode  24 = q Q q Q
 keycode  25 = w W w W
 keycode  26 = e E e E
@@ -104,7 +108,7 @@ keycode 107 = Print Sys_Req Print Sys_Req
 remove mod1 = Alt_R
 clear mod4
 keycode 108 = Super_R
-add mod4 = Super_R
+add mod4 = Super_L Super_R
 keycode 109 = Linefeed NoSymbol Linefeed
 keycode 110 = Home NoSymbol Home
 keycode 111 = Up NoSymbol Up
@@ -251,4 +255,5 @@ keycode 251 = XF86MonBrightnessCycle NoSymbol XF86MonBrightnessCycle
 keycode 252 =
 keycode 253 =
 keycode 254 = XF86WWAN NoSymbol XF86WWAN
-keycode 255 = XF86RFKill NoSymbol XF86RFKill
+! keycode 255 = XF86RFKill NoSymbol XF86RFKill
+keycode 255 = Tab ISO_Left_Tab Tab ISO_Left_Tab
