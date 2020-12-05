@@ -34,7 +34,6 @@ filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 set completeopt=menuone,noinsert,noselect,preview
 
-
 let g:currentmode={
        \ 'n'  : '<N> ',
        \ 'v'  : '<V> ',
@@ -70,10 +69,10 @@ if has("termguicolors")
   set termguicolors
 endif
 
-
 if exists('##TextYankPost')
   autocmd TextYankPost * silent : lua require'vim.highlight'.on_yank({"IncSearch", 50})
 endif
 
+" Providers
 " Python
 let g:python3_host_prog = "/bin/python3"

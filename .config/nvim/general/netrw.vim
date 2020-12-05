@@ -3,4 +3,4 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 15
 
-nnoremap <silent><C-n> :Vex<CR>
+nnoremap <leader>e :Vex<CR>

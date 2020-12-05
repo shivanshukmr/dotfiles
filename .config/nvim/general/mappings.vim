@@ -86,6 +86,9 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "<C-k>"
 inoremap <expr> <TAB>   pumvisible() ? "\<C-n>" : "<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "<S-TAB>"
 
+cnoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "<C-j>"
+cnoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "<C-k>"
+
 inoremap <C-space> <C-x><C-o>
 inoremap <C-]> <C-x><C-]>
 

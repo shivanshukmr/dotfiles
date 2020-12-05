@@ -138,5 +138,7 @@ config.set("colors.webpage.darkmode.enabled", True)
 config.set("fonts.default_family", "JetBrains Mono")
 
 # Key binding
+config.bind("<Ctrl-j>", "tab-prev")
+config.bind("<Ctrl-k>", "tab-next")
 config.bind("J", "tab-prev")
 config.bind("K", "tab-next")
