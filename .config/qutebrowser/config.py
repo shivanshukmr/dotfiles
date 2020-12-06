@@ -133,6 +133,7 @@ config.set("content.javascript.enabled", True, "qute://*/*")
 
 # Dark Mode
 config.set("colors.webpage.darkmode.enabled", True)
+config.set("colors.webpage.darkmode.policy.images", "never")
 
 # Fonts
 config.set("fonts.default_family", "JetBrains Mono")

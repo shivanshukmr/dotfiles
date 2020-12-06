@@ -8,7 +8,6 @@ set nowrap                              " Display long lines as just one line
 set ruler              			        " Show the cursor position all the time
 set splitbelow                          " Horizontal splits will automatically be below
 set splitright                          " Vertical splits will automatically be to the right
-set t_Co=256                            " Support 256 colors
 set tabstop=4                           " Insert 4 spaces for a tab
 set shiftwidth=4                        " Change the number of space characters inserted for indentation
 set smarttab                            " Makes tabbing smarter will realize you have 4
@@ -26,7 +25,6 @@ set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set clipboard=unnamedplus
 set incsearch
-"set scrolloff=7
 set backspace=indent,eol,start
 set noshowmode
 set mouse=a
@@ -67,10 +65,6 @@ set statusline+=\
 
 if has("termguicolors")
   set termguicolors
-endif
-
-if exists('##TextYankPost')
-  autocmd TextYankPost * silent : lua require'vim.highlight'.on_yank({"IncSearch", 50})
 endif
 
 " Providers

@@ -73,18 +73,16 @@ nnoremap <silent><leader><space> :e #<CR>
 " ======TERMINAL======
 
 " Easy esc
-tnoremap <C-\><C-j> <C-\><C-n>
+tnoremap <C-f><C-j> <C-\><C-n>
+tnoremap <C-j><C-f> <C-\><C-n>
 
-nnoremap <silent><leader>ts :split<CR>:terminal<CR>:setlocal nonumber norelativenumber<CR>i
-nnoremap <silent><leader>tv :vsplit<CR>:terminal<CR>:setlocal nonumber norelativenumber<CR>i
-nnoremap <silent><leader>tt :terminal<CR>:setlocal nonumber norelativenumber<CR>i
+nnoremap <silent><leader>ts :split<CR>:terminal<CR>i
+nnoremap <silent><leader>tv :vsplit<CR>:terminal<CR>i
+nnoremap <silent><leader>tt :terminal<CR>i
 
 " ======COMPLETION======
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "<C-k>"
-
-inoremap <expr> <TAB>   pumvisible() ? "\<C-n>" : "<TAB>"
-inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "<S-TAB>"
 
 cnoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "<C-j>"
 cnoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "<C-k>"
@@ -104,5 +102,14 @@ inoremap <expr> " matchstr(getline('.'), '\%' . col('.') . 'c.') == '"' ? '<Righ
 inoremap <expr> ' matchstr(getline('.'), '\%' . col('.') . 'c.') == "'" ? '<Right>' : "''<Left>"
 inoremap <expr> <CR> matchstr(getline('.'), '\%' . col('.') . 'c.') == '}' ? '<Space><BS><CR><Space><BS><CR><Esc>ka<Tab>' : '<Space><BS><CR>'
 
-" Tabout
-inoremap <expr> <Tab> getline('.')[col('.')-1] =~? '[]>)}''"`]' ? '<Right>' : '<Tab>'
+function! TabMapping()
+    if pumvisible()
+        return "\<C-n>"
+    elseif getline('.')[col('.')-1] =~? '[]>)}''"`]'
+        return "\<Right>"
+    else
+        return "<TAB>"
+    endif
+endfunction
+
+inoremap <expr> <Tab> TabMapping()

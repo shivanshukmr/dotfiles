@@ -1,12 +1,12 @@
 source $XDG_CONFIG_HOME/nvim/general/plugins.vim
 source $XDG_CONFIG_HOME/nvim/general/settings.vim
+source $XDG_CONFIG_HOME/nvim/general/autocmds.vim
 source $XDG_CONFIG_HOME/nvim/general/mappings.vim
 source $XDG_CONFIG_HOME/nvim/general/netrw.vim
 source $XDG_CONFIG_HOME/nvim/plug-config/signify.vim
 source $XDG_CONFIG_HOME/nvim/plug-config/fugitive.vim
-source $XDG_CONFIG_HOME/nvim/general/onedark.vim
+source $XDG_CONFIG_HOME/nvim/plug-config/onedark.vim
 source $XDG_CONFIG_HOME/nvim/plug-config/sneak.vim
 source $XDG_CONFIG_HOME/nvim/plug-config/command-t.vim
 source $XDG_CONFIG_HOME/nvim/plug-config/buftabline.vim
 source $XDG_CONFIG_HOME/nvim/plug-config/ale.vim
-source $XDG_CONFIG_HOME/nvim/general/project.vim
