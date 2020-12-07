@@ -1,5 +1,5 @@
 xmodmap ~/.Xmodmap
-xcape -e 'Control_L=Escape;Hyper_L=Tab'
+xcape -e 'Hyper_L=Tab'
 nitrogen --restore
 picom &
 dwmblocks &

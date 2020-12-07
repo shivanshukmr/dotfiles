@@ -22,6 +22,10 @@ nnoremap Y y$
 noremap ; :
 noremap : ;
 
+" Readline(idk what this is)
+inoremap <C-a> <Esc>I
+inoremap <C-e> <Esc>A
+
 " ======WINDOWS======
 
 " Use alt + hjkl to resize windows
@@ -73,8 +77,7 @@ nnoremap <silent><leader><space> :e #<CR>
 " ======TERMINAL======
 
 " Easy esc
-tnoremap <C-f><C-j> <C-\><C-n>
-tnoremap <C-j><C-f> <C-\><C-n>
+tnoremap <C-o><C-j> <C-\><C-n>
 
 nnoremap <silent><leader>ts :split<CR>:terminal<CR>i
 nnoremap <silent><leader>tv :vsplit<CR>:terminal<CR>i
@@ -108,7 +111,7 @@ function! TabMapping()
     elseif getline('.')[col('.')-1] =~? '[]>)}''"`]'
         return "\<Right>"
     else
-        return "<TAB>"
+        return "\<TAB>"
     endif
 endfunction
 
