@@ -7,7 +7,7 @@ fi
 
 source $HOME/.config/zsh/general/settings.zsh
 source $HOME/.config/zsh/general/aliases.zsh
-source $HOME/.config/zsh/keys/keybindings.zsh
+source $HOME/.config/zsh/general/keybindings.zsh
 source $HOME/.config/zsh/zplug/plugins.zsh
 source $HOME/.config/zsh/.p10k.zsh
 
