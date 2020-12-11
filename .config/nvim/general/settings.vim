@@ -1,4 +1,7 @@
 syntax on
+filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
+set completeopt=menuone,noinsert,noselect,preview
 set nocompatible
 set guicursor=
 set path+=**                            " Recursively search inside files
@@ -28,9 +31,7 @@ set incsearch
 set backspace=indent,eol,start
 set noshowmode
 set mouse=a
-filetype plugin indent on
-set omnifunc=syntaxcomplete#Complete
-set completeopt=menuone,noinsert,noselect,preview
+set wildignore+=*/.git,*/__pycache__
 
 let g:currentmode={
        \ 'n'  : '<N> ',
