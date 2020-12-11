@@ -141,5 +141,14 @@ config.set("fonts.default_family", "JetBrains Mono")
 # Key binding
 config.bind("<Ctrl-j>", "tab-prev")
 config.bind("<Ctrl-k>", "tab-next")
+config.bind("<Ctrl-h>", "back")
+config.bind("<Ctrl-l>", "forward")
 config.bind("J", "tab-prev")
 config.bind("K", "tab-next")
+
+# Insert mode
+config.bind("<Ctrl-u>", "fake-key <Shift-Home><Backspace>", "insert")
+config.unbind("<Ctrl-w>")
+config.bind("<Ctrl-w>", "fake-key <Ctrl-backspace>", "insert")
+config.bind("<Ctrl-a>", "fake-key <Home>", "insert")
+config.bind("<Ctrl-e>", "fake-key <End>", "insert")
