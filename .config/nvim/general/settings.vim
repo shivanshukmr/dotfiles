@@ -30,7 +30,6 @@ set clipboard=unnamedplus
 set incsearch
 set backspace=indent,eol,start
 set noshowmode
-set mouse=a
 set wildignore+=*/.git,*/__pycache__
 
 let g:currentmode={
