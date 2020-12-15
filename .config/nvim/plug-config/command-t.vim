@@ -4,8 +4,8 @@ let g:CommandTBackspaceMap=['<C-h>', '<BS>']
 let g:CommandTCursorLeftMap = ['<Left>']
 
 autocmd! User CommandTWillShowMatchListing
-autocmd User CommandTWillShowMatchListing set laststatus=0
+autocmd User CommandTWillShowMatchListing set noruler laststatus=0
 autocmd! User CommandTDidHideMatchListing
-autocmd User CommandTDidHideMatchListing set laststatus=2
+autocmd User CommandTDidHideMatchListing set ruler laststatus=2
 
 nnoremap <silent><C-p> :CommandT<CR>
