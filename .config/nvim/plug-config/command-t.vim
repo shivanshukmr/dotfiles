@@ -3,6 +3,9 @@ let g:CommandTCancelMap=['<C-x>', '<C-c>', '<Esc>']
 let g:CommandTBackspaceMap=['<C-h>', '<BS>']
 let g:CommandTCursorLeftMap = ['<Left>']
 
-autocmd! FileType command-t setlocal laststatus=0
+autocmd! User CommandTWillShowMatchListing
+autocmd User CommandTWillShowMatchListing set laststatus=0
+autocmd! User CommandTDidHideMatchListing
+autocmd User CommandTDidHideMatchListing set laststatus=2
 
 nnoremap <silent><C-p> :CommandT<CR>
