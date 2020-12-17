@@ -11,5 +11,6 @@ if (has("autocmd") && !has("gui_running"))
 endif
 
 let g:onedark_terminal_italics=1
+set background=dark
 
 colorscheme onedark

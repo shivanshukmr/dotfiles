@@ -22,9 +22,12 @@ nnoremap Y y$
 noremap ; :
 noremap : ;
 
-" Readline(idk what this is)
+" Readline
 inoremap <C-a> <Esc>I
 inoremap <C-e> <Esc>A
+
+" Remove trailing whitespaces
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " ======WINDOWS======
 

@@ -1,12 +1,11 @@
 call plug#begin($XDG_DATA_HOME . '/nvim/plugged')
-    
+
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
-    " Colorscheme
+    " Colorscheme(s)
     Plug 'joshdick/onedark.vim'
     Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-fugitive'
-    " Sneak
     Plug 'justinmk/vim-sneak'
     " Fuzzy finder
     Plug 'wincent/command-t', {
