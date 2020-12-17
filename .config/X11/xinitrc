@@ -1,6 +1,7 @@
 xmodmap ~/.Xmodmap
 xcape -e 'Hyper_L=Tab'
-xwallpaper --stretch $XDG_DATA_HOME/wall.jpg
+xwallpaper --stretch $XDG_DATA_HOME/wall.png
 picom &
 dwmblocks &
+unclutter -idle 3 &
 exec dwm
