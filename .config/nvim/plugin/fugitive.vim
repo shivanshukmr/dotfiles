@@ -3,5 +3,3 @@ nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gP :Gpull<CR>
 nnoremap <leader>gd :Gvdiffsplit<CR>
 nnoremap <leader>gl :Glog<CR>
-
-autocmd FileType fugitive setlocal nonumber norelativenumber

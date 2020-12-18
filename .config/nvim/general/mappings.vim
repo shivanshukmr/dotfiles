@@ -14,20 +14,20 @@ nnoremap <silent><C-k> :bnext<CR>
 nnoremap <silent><C-j> :bprevious<CR>
 
 " Quit
-nnoremap <silent> <leader>q :q<CR>
-nnoremap <silent> <leader>Q :q!<CR>
+nnoremap <silent><leader>q :q<CR>
+nnoremap <silent><leader>Q :q!<CR>
 
 nnoremap Y y$
 
-noremap ; :
-noremap : ;
-
 " Readline
-inoremap <C-a> <Esc>I
-inoremap <C-e> <Esc>A
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
 
 " Remove trailing whitespaces
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent><leader>zz :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " ======WINDOWS======
 
@@ -38,10 +38,10 @@ nnoremap <M-h> :vertical resize -2<CR>
 nnoremap <M-l> :vertical resize +2<CR>
 
 " Better window navigation
-nnoremap <silent><leader>h :wincmd h<CR>
-nnoremap <silent><leader>j :wincmd j<CR>
-nnoremap <silent><leader>k :wincmd k<CR>
-nnoremap <silent><leader>l :wincmd l<CR>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
 
 " Move current window
 nnoremap <silent><leader>H :wincmd H<CR>
@@ -75,24 +75,19 @@ nnoremap <silent><leader>n :nohlsearch<CR>
 nnoremap <silent><leader>x :bdelete<CR>
 
 " Move between last 2 buffers
-nnoremap <silent><leader><space> :e #<CR>
+nnoremap <silent><leader><leader> <C-^>
 
 " ======TERMINAL======
 
 " Easy esc
-tnoremap <C-o><C-j> <C-\><C-n>
+tnoremap jk <C-\><C-n>
+tnoremap kj <C-\><C-n>
 
 nnoremap <silent><leader>ts :split<CR>:terminal<CR>i
 nnoremap <silent><leader>tv :vsplit<CR>:terminal<CR>i
 nnoremap <silent><leader>tt :terminal<CR>i
 
 " ======COMPLETION======
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "<C-k>"
-
-cnoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "<C-j>"
-cnoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "<C-k>"
-
 inoremap <C-space> <C-x><C-o>
 inoremap <C-]> <C-x><C-]>
 

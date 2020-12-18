@@ -3,7 +3,6 @@ filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 set completeopt=menuone,noinsert,noselect,preview
 set nocompatible
-set guicursor=
 set path+=**
 set wildmenu
 set hidden
@@ -14,7 +13,6 @@ set splitbelow splitright
 set tabstop=4 shiftwidth=4 smarttab expandtab
 set smartindent autoindent cindent
 set undofile undodir=/tmp
-set laststatus=2
 set number relativenumber
 set showtabline=0
 set noswapfile nobackup nowritebackup

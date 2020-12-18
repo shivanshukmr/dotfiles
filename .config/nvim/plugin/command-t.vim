@@ -8,4 +8,4 @@ autocmd User CommandTWillShowMatchListing set noruler laststatus=0
 autocmd! User CommandTDidHideMatchListing
 autocmd User CommandTDidHideMatchListing set ruler laststatus=2
 
-nnoremap <silent><C-p> :CommandT<CR>
+nmap <silent><C-p> <Plug>(CommandT)

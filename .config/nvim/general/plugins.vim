@@ -11,6 +11,7 @@ call plug#begin($XDG_DATA_HOME . '/nvim/plugged')
     Plug 'wincent/command-t', {
         \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
         \ }
+    Plug 'wincent/ferret'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
     " Bufferline
@@ -19,5 +20,7 @@ call plug#begin($XDG_DATA_HOME . '/nvim/plugged')
     Plug 'ludovicchabant/vim-gutentags'
     " Linting & formatting
     Plug 'dense-analysis/ale'
+    " Local rc
+    Plug 'ii14/exrc.vim'
 
 call plug#end()
