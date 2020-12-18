@@ -45,7 +45,11 @@ keycode  47 = semicolon colon semicolon colon
 keycode  48 = apostrophe quotedbl apostrophe quotedbl
 keycode  49 = grave asciitilde grave asciitilde
 keycode  50 = Shift_L NoSymbol Shift_L
-keycode  51 = backslash bar backslash bar
+! keycode  51 = backslash bar backslash bar
+clear lock
+clear mod1
+keycode  51 = Alt_L Meta_L Alt_L Meta_L
+add mod1 = Alt_L
 keycode  52 = z Z z Z
 keycode  53 = x X x X
 keycode  54 = c C c C
@@ -254,6 +258,7 @@ keycode 250 =
 keycode 251 = XF86MonBrightnessCycle NoSymbol XF86MonBrightnessCycle
 keycode 252 =
 keycode 253 =
-keycode 254 = XF86WWAN NoSymbol XF86WWAN
+! keycode 254 = XF86WWAN NoSymbol XF86WWAN
+keycode  254 = backslash bar backslash bar
 ! keycode 255 = XF86RFKill NoSymbol XF86RFKill
 keycode 255 = Tab ISO_Left_Tab Tab ISO_Left_Tab

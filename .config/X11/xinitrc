@@ -1,5 +1,5 @@
 xmodmap ~/.Xmodmap
-xcape -e 'Hyper_L=Tab'
+xcape -e 'Hyper_L=Tab;Alt_L=backslash'
 xwallpaper --stretch $XDG_DATA_HOME/wall.png
 picom &
 dwmblocks &
