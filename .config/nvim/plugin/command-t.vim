@@ -9,3 +9,4 @@ autocmd! User CommandTDidHideMatchListing
 autocmd User CommandTDidHideMatchListing set ruler laststatus=2
 
 nmap <silent><C-p> <Plug>(CommandT)
+nmap <silent><C-h> <Plug>(CommandTHelp)

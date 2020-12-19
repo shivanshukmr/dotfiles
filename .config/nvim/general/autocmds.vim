@@ -7,3 +7,10 @@ endif
 
 " Terminal
 autocmd TermOpen * setlocal nonumber norelativenumber
+
+augroup Idleboot
+    autocmd!
+    if has('vim_starting')
+        autocmd CursorHold,CursorHoldI * call autocmds#idleboot()
+    endif
+augroup END
