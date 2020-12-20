@@ -6,9 +6,6 @@ let mapleader = " "
 inoremap jk <Esc>
 inoremap kj <Esc>
 
-cnoremap jk <Esc>
-cnoremap kj <Esc>
-
 " C-j and C-k in normal mode will move text buffer
 nnoremap <silent><C-k> :bnext<CR>
 nnoremap <silent><C-j> :bprevious<CR>
@@ -19,15 +16,21 @@ nnoremap <silent><leader>Q :q!<CR>
 
 nnoremap Y y$
 
-" Readline
+" Readline binds
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
+cnoremap <C-f> <Right>
+cnoremap <C-b> <Left>
 
 " Remove trailing whitespaces
 nnoremap <silent><leader>zz :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Store relative line number jumps in the jumplist if they exceed a threshold
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
 
 " ======WINDOWS======
 
@@ -67,7 +70,7 @@ nnoremap <leader>W :w!<CR>
 " Source init.vim
 nnoremap <leader>i :source $HOME/.config/nvim/init.vim<CR>
 
-" Nohighlight
+" No highlight
 nnoremap <silent><leader>n :nohlsearch<CR>
 
 " Buffer delete
