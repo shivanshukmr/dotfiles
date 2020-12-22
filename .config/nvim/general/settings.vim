@@ -8,7 +8,7 @@ set wildmenu
 set hidden
 set nowrap
 set ruler
-set list listchars=nbsp:¬,tab:»·,trail:·,extends:>
+set list listchars=nbsp:¬,tab:»·,trail:·,extends:>,precedes:<
 set splitbelow splitright
 set tabstop=4 shiftwidth=4 smarttab expandtab
 set smartindent autoindent cindent
@@ -20,9 +20,12 @@ set clipboard+=unnamedplus
 set incsearch
 set backspace=indent,eol,start
 set wildignore+=*/.git,*/__pycache__
+set nojoinspaces
+set sidescrolloff=5
+set lazyredraw
 
 if has("termguicolors")
-    set termguicolors
+  set termguicolors
 endif
 
 " Providers

@@ -1,1 +1,1 @@
-set nonumber norelativenumber
+setlocal nonumber norelativenumber

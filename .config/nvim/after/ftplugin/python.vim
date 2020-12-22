@@ -1,4 +1,4 @@
 let b:ale_linters = ['flake8']
 let b:ale_fixers = ['black', 'isort']
 
-set tags=~/.local/lib/python3.9/site-packages/tags,./tags;,tags
+setlocal tags=~/.local/lib/python3.9/site-packages/tags,./tags;,tags
