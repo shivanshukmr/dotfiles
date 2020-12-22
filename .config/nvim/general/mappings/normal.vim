@@ -18,3 +18,15 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
+
+" Traverse quickfix list with arrow keys
+nnoremap <silent> <Up> :cprevious<CR>
+nnoremap <silent> <Down> :cnext<CR>
+nnoremap <silent> <Left> :cpfile<CR>
+nnoremap <silent> <Right> :cnfile<CR>
+
+" Traverse location list with shift+arrow keys
+nnoremap <silent> <S-Up> :lprevious<CR>
+nnoremap <silent> <S-Down> :lnext<CR>
+nnoremap <silent> <S-Left> :lpfile<CR>
+nnoremap <silent> <S-Right> :lnfile<CR>

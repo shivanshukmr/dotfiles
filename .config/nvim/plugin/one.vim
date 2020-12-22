@@ -17,4 +17,5 @@ if (!has("gui_running"))
     call one#highlight('ErrorMsg', 'e06c75', s:bg, 'none')
     call one#highlight('Error', 'e06c75', s:bg, 'underline')
     call one#highlight('SpellCap', 'd19a66', s:bg, 'underline')
+    call one#highlight('StatusLineNC', '5c6370', s:bg, 'none')
 endif
