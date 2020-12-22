@@ -17,4 +17,4 @@
 [pull]
 	rebase = false
 [core]
-	excludesfile = ~/.config/git/gitignore
+	excludesfile = ~/.config/git/ignore

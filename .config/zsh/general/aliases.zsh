@@ -1,4 +1,5 @@
 alias x="exit"
+alias ...="cd ../.."
 alias dg="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias ls="ls --color=auto --group-directories-first"
 alias la="ls -a"
