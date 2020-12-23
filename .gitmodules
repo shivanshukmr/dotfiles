@@ -1,0 +1,36 @@
+[submodule "ale"]
+	path = .local/share/nvim/site/pack/bundle/opt/ale
+	url = https://github.com/dense-analysis/ale.git
+[submodule "command-t"]
+	path = .local/share/nvim/site/pack/bundle/opt/command-t
+	url = https://github.com/wincent/command-t.git
+[submodule "exrc.vim"]
+	path = .local/share/nvim/site/pack/bundle/opt/exrc.vim
+	url = https://github.com/ii14/exrc.vim.git
+[submodule "ferret"]
+	path = .local/share/nvim/site/pack/bundle/opt/ferret
+	url = https://github.com/wincent/ferret.git
+[submodule "nvim-treesitter"]
+	path = .local/share/nvim/site/pack/bundle/opt/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "vim-buftabline"]
+	path = .local/share/nvim/site/pack/bundle/opt/vim-buftabline
+	url = https://github.com/ap/vim-buftabline.git
+[submodule "vim-commentary"]
+	path = .local/share/nvim/site/pack/bundle/opt/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim-fugitive"]
+	path = .local/share/nvim/site/pack/bundle/opt/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim-gutentags"]
+	path = .local/share/nvim/site/pack/bundle/opt/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "vim-one"]
+	path = .local/share/nvim/site/pack/bundle/opt/vim-one
+	url = https://github.com/rakr/vim-one
+[submodule "vim-sneak"]
+	path = .local/share/nvim/site/pack/bundle/opt/vim-sneak
+	url = https://github.com/justinmk/vim-sneak.git
+[submodule "vim-surround"]
+	path = .local/share/nvim/site/pack/bundle/opt/vim-surround
+	url = https://github.com/tpope/vim-surround.git
