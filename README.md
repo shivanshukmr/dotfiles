@@ -1,12 +1,10 @@
 # dotfiles
 
 Do a ```--bare``` clone
-```bash
-$ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 ```
-```bash
-$ zplug install
+$ alias dg="git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+$ dg checkout master
+$ dg submodule update --init
 ```
-:PlugInstall
 
 [Method](https://www.atlassian.com/git/tutorials/dotfiles)
