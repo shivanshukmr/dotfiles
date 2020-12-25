@@ -1,7 +1,7 @@
 if &loadplugins
   if has('packages')
     packadd! nvim-treesitter
-    packadd! vim-one
+    packadd! onedark.vim
     packadd! vim-fugitive
     packadd! vim-sneak
     packadd! command-t

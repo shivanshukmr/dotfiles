@@ -25,12 +25,12 @@
 [submodule "vim-gutentags"]
 	path = .local/share/nvim/site/pack/bundle/opt/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
-[submodule "vim-one"]
-	path = .local/share/nvim/site/pack/bundle/opt/vim-one
-	url = https://github.com/rakr/vim-one
 [submodule "vim-sneak"]
 	path = .local/share/nvim/site/pack/bundle/opt/vim-sneak
 	url = https://github.com/justinmk/vim-sneak.git
 [submodule "vim-surround"]
 	path = .local/share/nvim/site/pack/bundle/opt/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "onedark.vim"]
+	path = .local/share/nvim/site/pack/bundle/opt/onedark.vim
+	url = https://github.com/joshdick/onedark.vim
