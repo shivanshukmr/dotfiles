@@ -1,7 +1,6 @@
 syntax on
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
-set completeopt=menuone,noinsert,noselect,preview
 set nocompatible
 set path+=**
 set wildmenu
@@ -22,8 +21,8 @@ set backspace=indent,eol,start
 set wildignore+=*/.git,*/__pycache__
 set nojoinspaces
 set sidescrolloff=5
-set lazyredraw
 set ttimeoutlen=10
+set updatetime=300
 
 if has("termguicolors")
   set termguicolors

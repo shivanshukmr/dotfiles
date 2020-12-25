@@ -8,10 +8,10 @@ nnoremap <silent><leader>Q :q!<CR>
 " Remove trailing whitespaces
 nnoremap <silent><leader>zz :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 
 vnoremap <leader>h <C-w>h
 vnoremap <leader>j <C-w>j
@@ -19,15 +19,15 @@ vnoremap <leader>k <C-w>k
 vnoremap <leader>l <C-w>l
 
 " Move current window
-nnoremap <silent><leader>H :wincmd H<CR>
-nnoremap <silent><leader>J :wincmd J<CR>
-nnoremap <silent><leader>K :wincmd K<CR>
-nnoremap <silent><leader>L :wincmd L<CR>
+nnoremap <silent><leader>H <C-w>H
+nnoremap <silent><leader>J <C-w>J
+nnoremap <silent><leader>K <C-w>K
+nnoremap <silent><leader>L <C-w>L
 
-vnoremap <silent><leader>H :wincmd H<CR>
-vnoremap <silent><leader>J :wincmd J<CR>
-vnoremap <silent><leader>K :wincmd K<CR>
-vnoremap <silent><leader>L :wincmd L<CR>
+vnoremap <silent><leader>H <C-w>H
+vnoremap <silent><leader>J <C-w>J
+vnoremap <silent><leader>K <C-w>K
+vnoremap <silent><leader>L <C-w>L
 
 " Close all windows except the current one
 nnoremap <leader>o :only<CR>
