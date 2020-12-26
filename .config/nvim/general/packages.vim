@@ -9,8 +9,8 @@ if &loadplugins
     packadd! vim-commentary
     packadd! vim-surround
     packadd! vim-buftabline
-    packadd! vim-gutentags
-    packadd! ale
+    packadd! nvim-lspconfig
+    packadd! completion-nvim
     packadd! exrc.vim
   endif
 endif

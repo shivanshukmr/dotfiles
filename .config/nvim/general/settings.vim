@@ -22,7 +22,8 @@ set wildignore+=*/.git,*/__pycache__
 set nojoinspaces
 set sidescrolloff=5
 set ttimeoutlen=10
-set updatetime=300
+set updatetime=250
+set inccommand=nosplit
 
 if has("termguicolors")
   set termguicolors
