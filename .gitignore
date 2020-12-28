@@ -1,6 +1,5 @@
 ./dotfiles
 .zcompdump
-.config/zsh/zplug/.zplug
 .config/nvim/.netrwhist
 __pycache__
 .pyc

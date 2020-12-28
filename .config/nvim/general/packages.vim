@@ -1,6 +1,7 @@
 if &loadplugins
   if has('packages')
-    packadd! ale
+    packadd! nvim-lspconfig
+    packadd! completion-nvim
     packadd! vim-polyglot
     packadd! onedark.vim
     packadd! vim-fugitive
