@@ -1,3 +1,6 @@
+[submodule "ale"]
+	path = .local/share/nvim/site/pack/bundle/opt/ale
+	url = https://github.com/dense-analysis/ale.git
 [submodule "command-t"]
 	path = .local/share/nvim/site/pack/bundle/opt/command-t
 	url = https://github.com/wincent/command-t.git
@@ -28,12 +31,6 @@
 [submodule "zsh-async"]
 	path = .config/zsh/plugin/zsh-async
 	url = https://github.com/mafredri/zsh-async
-[submodule "nvim-lspconfig"]
-	path = .local/share/nvim/site/pack/bundle/opt/nvim-lspconfig
-	url = https://github.com/neovim/nvim-lspconfig
-[submodule "completion-nvim"]
-	path = .local/share/nvim/site/pack/bundle/opt/completion-nvim
-	url = https://github.com/nvim-lua/completion-nvim
 [submodule "vim-polyglot"]
 	path = .local/share/nvim/site/pack/bundle/opt/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
