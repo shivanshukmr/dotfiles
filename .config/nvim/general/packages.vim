@@ -1,6 +1,6 @@
 if &loadplugins
   if has('packages')
-    packadd! nvim-treesitter
+    packadd! vim-polyglot
     packadd! onedark.vim
     packadd! vim-fugitive
     packadd! vim-sneak
