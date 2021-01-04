@@ -32,7 +32,7 @@ vnoremap <silent><leader>L <C-w>L
 " Close all windows except the current one
 nnoremap <leader>o :only<CR>
 
-" All windows equal sizes 
+" All windows equal sizes
 nnoremap <leader>= <C-w>=
 
 " Save file

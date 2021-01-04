@@ -5,4 +5,5 @@ source $XDG_CONFIG_HOME/nvim/general/autocmds.vim
 source $XDG_CONFIG_HOME/nvim/general/mappings/leader.vim
 source $XDG_CONFIG_HOME/nvim/general/mappings/normal.vim
 source $XDG_CONFIG_HOME/nvim/general/mappings/insert.vim
+source $XDG_CONFIG_HOME/nvim/general/mappings/command.vim
 source $XDG_CONFIG_HOME/nvim/general/netrw.vim

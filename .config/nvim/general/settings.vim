@@ -24,11 +24,10 @@ set sidescrolloff=5
 set ttimeoutlen=10
 set updatetime=250
 set inccommand=nosplit
+set ignorecase smartcase
+set foldmethod=indent
+set foldlevelstart=99
 
 if has("termguicolors")
   set termguicolors
 endif
-
-" Providers
-" Python
-let g:python3_host_prog = "/bin/python3"

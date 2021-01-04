@@ -26,7 +26,7 @@ function () {
   if [[ $EUID -eq 0 ]]; then
     local SUFFIX=$(printf '#%.0s')
   else
-    local SUFFIX=$(printf '\$%.0s')
+    local SUFFIX=$(printf '$%.0s')
   fi
   if [[ -n "$TMUX" ]]; then
     # Note use a non-breaking space at the end of the prompt because we can use it as
