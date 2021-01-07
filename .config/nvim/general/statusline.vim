@@ -11,6 +11,7 @@ let g:currentmode={
       \ 'R'  : '<R> ',
       \ 'Rv' : '<VR> ',
       \ 'c'  : '<C> ',
+      \ 's'  : '<S> ',
       \}
 function! Filetypename() abort
   return toupper(&filetype[0]) . &filetype[1:]

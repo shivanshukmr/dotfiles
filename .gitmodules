@@ -37,3 +37,6 @@
 [submodule "completion-nvim"]
 	path = .local/share/nvim/site/pack/bundle/opt/completion-nvim
 	url = https://github.com/nvim-lua/completion-nvim
+[submodule "ReplaceWithRegister"]
+	path = .local/share/nvim/site/pack/bundle/opt/ReplaceWithRegister
+	url = https://github.com/vim-scripts/ReplaceWithRegister

@@ -12,5 +12,6 @@ if &loadplugins
     packadd! vim-surround
     packadd! vim-buftabline
     packadd! exrc.vim
+    packadd! ReplaceWithRegister
   endif
 endif

@@ -4,6 +4,6 @@ cnoremap <C-e> <End>
 cnoremap <C-d> <Del>
 
 cnoremap <C-l> <Right>
-cnoremap <C-L> <C-Right>
+cnoremap <M-l> <C-Right>
 cnoremap <C-h> <Left>
-cnoremap <C-H> <C-Left>
+cnoremap <M-h> <C-Left>
