@@ -48,9 +48,6 @@ nnoremap <silent><leader>n :nohlsearch<CR>
 " Buffer delete
 nnoremap <silent><leader>x :bdelete<CR>
 
-" Move between last 2 buffers
-nnoremap <silent><leader><leader> <C-^>
-
 nnoremap <silent><leader>ts :split<CR>:terminal<CR>i
 nnoremap <silent><leader>tv :vsplit<CR>:terminal<CR>i
 nnoremap <silent><leader>tt :terminal<CR>i

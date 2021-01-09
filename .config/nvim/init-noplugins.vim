@@ -1,3 +1,21 @@
+" PACKAGES
+if &loadplugins
+  if has('packages')
+    packadd! nvim-lspconfig
+    packadd! completion-nvim
+    packadd! vim-polyglot
+    packadd! onedark.vim
+    packadd! vim-fugitive
+    packadd! vim-sneak
+    packadd! command-t
+    packadd! ferret
+    packadd! vim-commentary
+    packadd! vim-surround
+    packadd! vim-buftabline
+    packadd! ReplaceWithRegister
+  endif
+endif
+
 " SETTINGS
 syntax on
 filetype plugin indent on
@@ -8,7 +26,7 @@ set wildmenu
 set hidden
 set nowrap
 set ruler
-set list listchars=nbsp:¬,tab:»·,trail:·,extends:>,precedes:<
+set list listchars=nbsp:␣,tab:»·,trail:·,extends:>,precedes:<
 set splitbelow splitright
 set tabstop=4 shiftwidth=4 smarttab expandtab
 set smartindent autoindent cindent
@@ -19,19 +37,23 @@ set noswapfile nobackup nowritebackup
 set clipboard+=unnamedplus
 set incsearch
 set backspace=indent,eol,start
-set wildignore+=*/.git,*/__pycache__
+set wildignore+=*/.git,*/__pycache__,*/venv
 set nojoinspaces
 set sidescrolloff=5
 set ttimeoutlen=10
-set updatetime=300
+set updatetime=250
+set inccommand=nosplit
+set ignorecase smartcase
+set foldmethod=indent
+set foldlevelstart=99
 
 if has("termguicolors")
   set termguicolors
 endif
 
-" Providers
-" Python
-let g:python3_host_prog = "/bin/python3"
+" Not loading python(3) providers for faster startup time
+let g:loaded_python_provider=0
+let g:loaded_python3_provider=0
 
 " STATUSLINE
 set laststatus=2
@@ -47,7 +69,9 @@ let g:currentmode={
       \ 'R'  : '<R> ',
       \ 'Rv' : '<VR> ',
       \ 'c'  : '<C> ',
+      \ 's'  : '<S> ',
       \}
+
 function! Filetypename() abort
   return toupper(&filetype[0]) . &filetype[1:]
 endfunction
@@ -56,13 +80,15 @@ set statusline=
 set statusline=\ %{g:currentmode[mode()]}
 set statusline+=\ 
 set statusline+=%{&modified?'*\ ':''}
-set statusline+=%t
+set statusline+=%f
 set statusline+=\ 
 set statusline+=\ 
 set statusline+=%l:%c
 set statusline+=\ 
 set statusline+=%P
 set statusline+=%=
+set statusline+=%{(fugitive#head()==''?'':'@').fugitive#head()}
+set statusline+=\ 
 set statusline+=%{Filetypename()}
 set statusline+=\ 
 
@@ -112,7 +138,7 @@ vnoremap <silent><leader>L <C-w>L
 " Close all windows except the current one
 nnoremap <leader>o :only<CR>
 
-" All windows equal sizes 
+" All windows equal sizes
 nnoremap <leader>= <C-w>=
 
 " Save file
@@ -127,9 +153,6 @@ nnoremap <silent><leader>n :nohlsearch<CR>
 
 " Buffer delete
 nnoremap <silent><leader>x :bdelete<CR>
-
-" Move between last 2 buffers
-nnoremap <silent><leader><leader> <C-^>
 
 nnoremap <silent><leader>ts :split<CR>:terminal<CR>i
 nnoremap <silent><leader>tv :vsplit<CR>:terminal<CR>i
@@ -151,11 +174,6 @@ nnoremap <M-j> :resize -2<CR>
 nnoremap <M-k> :resize +2<CR>
 nnoremap <M-h> :vertical resize -2<CR>
 nnoremap <M-l> :vertical resize +2<CR>
-
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
-cnoremap <C-f> <Right>
-cnoremap <C-b> <Left>
 
 " Traverse quickfix list with arrow keys
 nnoremap <silent> <Up> :cprevious<CR>
@@ -207,6 +225,21 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Easy esc
 tnoremap jk <C-\><C-n>
 tnoremap kj <C-\><C-n>
+
+" MAPPINGS/COMMAND
+" Readline like binds
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-d> <Del>
+
+cnoremap <C-l> <Right>
+cnoremap <M-l> <C-Right>
+cnoremap <C-h> <Left>
+cnoremap <M-h> <C-Left>
+
+" CTRL-P/N acts like Up/Down in command mode, see :h c_<Up>
+cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<Up>"
+cnoremap <expr> <C-n> pumvisible() ? "\<C-n>" : "\<Down>"
 
 " NETRW
 let g:netrw_banner = 0

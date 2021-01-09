@@ -1,14 +1,11 @@
-lua require('lsp')
+lua require'custom.lsp'.init()
 
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
-let g:completion_enable_auto_hover = 0
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-let g:completion_trigger_on_delete = 1
-
 " ALE like diagnostics
 sign define LspDiagnosticsSignError text=>>
 sign define LspDiagnosticsSignWarning text=--
-
+sign define LspDiagnosticsSignHint text=--
+sign define LspDiagnosticsSignInformation text=--
 hi link LspDiagnosticsSignWarning Todo
