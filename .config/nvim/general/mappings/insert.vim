@@ -5,9 +5,6 @@ inoremap kj <Esc>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 
-inoremap <C-space> <C-x><C-o>
-inoremap <C-]> <C-x><C-]>
-
 inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>

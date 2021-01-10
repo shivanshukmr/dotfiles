@@ -1,21 +1,3 @@
-" PACKAGES
-if &loadplugins
-  if has('packages')
-    packadd! nvim-lspconfig
-    packadd! completion-nvim
-    packadd! vim-polyglot
-    packadd! onedark.vim
-    packadd! vim-fugitive
-    packadd! vim-sneak
-    packadd! command-t
-    packadd! ferret
-    packadd! vim-commentary
-    packadd! vim-surround
-    packadd! vim-buftabline
-    packadd! ReplaceWithRegister
-  endif
-endif
-
 " SETTINGS
 syntax on
 filetype plugin indent on
@@ -28,10 +10,10 @@ set nowrap
 set ruler
 set list listchars=nbsp:␣,tab:»·,trail:·,extends:>,precedes:<
 set splitbelow splitright
-set tabstop=4 shiftwidth=4 smarttab expandtab
+set smarttab
 set smartindent autoindent cindent
 set undofile undodir=/tmp
-set number relativenumber
+set relativenumber
 set showtabline=0
 set noswapfile nobackup nowritebackup
 set clipboard+=unnamedplus
@@ -41,11 +23,11 @@ set wildignore+=*/.git,*/__pycache__,*/venv
 set nojoinspaces
 set sidescrolloff=5
 set ttimeoutlen=10
-set updatetime=250
 set inccommand=nosplit
 set ignorecase smartcase
 set foldmethod=indent
 set foldlevelstart=99
+set laststatus=0
 
 if has("termguicolors")
   set termguicolors
@@ -54,43 +36,6 @@ endif
 " Not loading python(3) providers for faster startup time
 let g:loaded_python_provider=0
 let g:loaded_python3_provider=0
-
-" STATUSLINE
-set laststatus=2
-set noshowmode
-
-let g:currentmode={
-      \ 'n'  : '<N> ',
-      \ 'v'  : '<V> ',
-      \ 'V'  : '<Vl> ',
-      \ '' : '<Vb> ',
-      \ 'i'  : '<I> ',
-      \ 't'  : '<I> ',
-      \ 'R'  : '<R> ',
-      \ 'Rv' : '<VR> ',
-      \ 'c'  : '<C> ',
-      \ 's'  : '<S> ',
-      \}
-
-function! Filetypename() abort
-  return toupper(&filetype[0]) . &filetype[1:]
-endfunction
-
-set statusline=
-set statusline=\ %{g:currentmode[mode()]}
-set statusline+=\ 
-set statusline+=%{&modified?'*\ ':''}
-set statusline+=%f
-set statusline+=\ 
-set statusline+=\ 
-set statusline+=%l:%c
-set statusline+=\ 
-set statusline+=%P
-set statusline+=%=
-set statusline+=%{(fugitive#head()==''?'':'@').fugitive#head()}
-set statusline+=\ 
-set statusline+=%{Filetypename()}
-set statusline+=\ 
 
 " AUTOCMDS
 augroup Generalautocmds

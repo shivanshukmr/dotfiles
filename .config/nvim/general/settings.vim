@@ -26,6 +26,7 @@ set inccommand=nosplit
 set ignorecase smartcase
 set foldmethod=indent
 set foldlevelstart=99
+set laststatus=0
 
 if has("termguicolors")
   set termguicolors

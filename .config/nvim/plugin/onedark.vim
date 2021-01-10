@@ -7,6 +7,7 @@ if has("autocmd") && !has("gui_running")
     autocmd ColorScheme * call onedark#set_highlight("Pmenu", {"bg": s:pmenu})
     autocmd ColorScheme * call onedark#set_highlight("PmenuSbar", {"bg": s:pmenu})
     autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " `bg` will not be styled since there is no `bg` setting
+    autocmd ColorScheme * hi clear StatusLine StatusLineTerm
   augroup END
 endif
 
