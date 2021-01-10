@@ -1,16 +1,15 @@
 if &loadplugins
   if has('packages')
-    packadd! nvim-lspconfig
-    packadd! completion-nvim
-    packadd! vim-polyglot
-    packadd! onedark.vim
-    packadd! vim-fugitive
-    packadd! vim-sneak
-    packadd! command-t
-    packadd! ferret
-    packadd! vim-commentary
-    packadd! vim-surround
-    packadd! vim-buftabline
     packadd! ReplaceWithRegister
+    packadd! command-t
+    packadd! completion-nvim
+    packadd! ferret
+    packadd! nvim-lspconfig
+    packadd! onedark.vim
+    packadd! vim-buftabline
+    packadd! vim-commentary
+    packadd! vim-fugitive
+    packadd! vim-polyglot
+    packadd! vim-surround
   endif
 endif

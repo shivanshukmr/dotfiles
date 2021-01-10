@@ -9,10 +9,10 @@ set nowrap
 set ruler
 set list listchars=nbsp:␣,tab:»·,trail:·,extends:>,precedes:<
 set splitbelow splitright
-set tabstop=4 shiftwidth=4 smarttab expandtab
+set smarttab
 set smartindent autoindent cindent
 set undofile undodir=/tmp
-set number relativenumber
+set relativenumber
 set showtabline=0
 set noswapfile nobackup nowritebackup
 set clipboard+=unnamedplus
@@ -22,7 +22,6 @@ set wildignore+=*/.git,*/__pycache__,*/venv
 set nojoinspaces
 set sidescrolloff=5
 set ttimeoutlen=10
-set updatetime=250
 set inccommand=nosplit
 set ignorecase smartcase
 set foldmethod=indent

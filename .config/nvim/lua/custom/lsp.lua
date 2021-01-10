@@ -31,6 +31,7 @@ M.init = function()
   vim.lsp.handlers['textDocument/publishDiagnostics'] = function(_, _, params, client_id, _, config)
     config = {
       virtual_text = false,
+      signs = false,
     }
     vim.lsp.diagnostic.on_publish_diagnostics(_, _, params, client_id, _, config)
   end
