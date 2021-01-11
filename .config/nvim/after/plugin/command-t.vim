@@ -1,3 +1,4 @@
+" DO - 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
 let g:CommandTMaxHeight = 10
 let g:CommandTCancelMap=['<C-c>', '<Esc>']
 

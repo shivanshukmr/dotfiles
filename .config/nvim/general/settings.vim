@@ -9,7 +9,7 @@ set nowrap
 set ruler
 set list listchars=nbsp:␣,tab:»·,trail:·,extends:>,precedes:<
 set splitbelow splitright
-set smarttab
+set expandtab smarttab
 set smartindent autoindent cindent
 set undofile undodir=/tmp
 set relativenumber

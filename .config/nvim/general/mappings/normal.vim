@@ -9,10 +9,10 @@ nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
 
 " Use alt + hjkl to resize windows
-nnoremap <M-j> :resize -2<CR>
-nnoremap <M-k> :resize +2<CR>
-nnoremap <M-h> :vertical resize -2<CR>
-nnoremap <M-l> :vertical resize +2<CR>
+nnoremap <M-j> :resize -3<CR>
+nnoremap <M-k> :resize +3<CR>
+nnoremap <M-h> :vertical resize -3<CR>
+nnoremap <M-l> :vertical resize +3<CR>
 
 " Traverse quickfix list with arrow keys
 nnoremap <silent> <Up> :cprevious<CR>

@@ -42,7 +42,7 @@ function () {
 }
 
 export RPROMPT=$RPROMPT_BASE
-export SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%Bn%b%By%b%Ba%b%Be%b]? "
+export SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%Bnyae%b]? "
 
 # Hooks
 autoload -U add-zsh-hook
