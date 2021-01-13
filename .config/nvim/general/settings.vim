@@ -23,8 +23,6 @@ set nojoinspaces
 set sidescrolloff=5
 set inccommand=nosplit
 set ignorecase smartcase
-set foldmethod=indent
-set foldlevelstart=99
 set laststatus=0
 set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr:hor20  " so cursor doesn't change it's shape in operator pending mode(which gives weird flickering for 'x' command)
 set statusline=%<%=%-14.(%l,%c%V%)\ %P

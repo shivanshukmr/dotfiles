@@ -9,7 +9,6 @@ if &loadplugins
     packadd! vim-buftabline
     packadd! vim-commentary
     packadd! vim-fugitive
-    packadd! vim-polyglot
     packadd! vim-surround
   endif
 endif
