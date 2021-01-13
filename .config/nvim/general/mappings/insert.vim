@@ -1,6 +1,3 @@
-inoremap jk <Esc>
-inoremap kj <Esc>
-
 " Readline binds
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
@@ -28,7 +25,3 @@ endfunction
 
 inoremap <expr> <Tab> TabMapping()
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Easy esc
-tnoremap jk <C-\><C-n>
-tnoremap kj <C-\><C-n>

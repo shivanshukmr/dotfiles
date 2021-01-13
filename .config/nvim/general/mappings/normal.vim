@@ -25,3 +25,5 @@ nnoremap <silent> <S-Up> :lprevious<CR>
 nnoremap <silent> <S-Down> :lnext<CR>
 nnoremap <silent> <S-Left> :lpfile<CR>
 nnoremap <silent> <S-Right> :lnfile<CR>
+
+nnoremap <silent> - :Explore<CR>

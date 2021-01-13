@@ -7,7 +7,7 @@ local mapper = function(mode, key, value)
   vim.fn.nvim_buf_set_keymap(0, mode, key, value, {noremap = true, silent = true})
 end
 
-local custom_attach = function(client)
+local custom_attach = function(client, bufnr)
   require'completion'.on_attach({
       enable_auto_hover = 0,
       matching_strategy_list = {'exact', 'fuzzy'},
