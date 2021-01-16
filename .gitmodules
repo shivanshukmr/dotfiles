@@ -13,9 +13,6 @@
 [submodule "nvim-lspconfig"]
 	path = .local/share/nvim/site/pack/bundle/opt/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
-[submodule "onedark.vim"]
-	path = .local/share/nvim/site/pack/bundle/opt/onedark.vim
-	url = https://github.com/joshdick/onedark.vim
 [submodule "vim-buftabline"]
 	path = .local/share/nvim/site/pack/bundle/opt/vim-buftabline
 	url = https://github.com/ap/vim-buftabline.git

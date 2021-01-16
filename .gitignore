@@ -1,4 +1,5 @@
 ./dotfiles
+.zcalc_history
 .zcompdump
 .config/nvim/.netrwhist
 __pycache__

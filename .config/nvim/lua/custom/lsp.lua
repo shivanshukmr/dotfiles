@@ -9,11 +9,11 @@ end
 
 local custom_attach = function(client, bufnr)
   require'completion'.on_attach({
-      enable_auto_hover = 0,
-      matching_strategy_list = {'exact', 'fuzzy'},
-      trigger_on_delete = 1,
-      confirm_key = '<C-y>',
-    })
+    enable_auto_hover = 0,
+    matching_strategy_list = {'exact', 'fuzzy'},
+    trigger_on_delete = 1,
+    confirm_key = '<C-y>',
+  })
   mapper('n', '<C-]>', '<cmd>lua vim.lsp.buf.definition()<CR>')
   mapper('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>')
   mapper('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
@@ -32,6 +32,7 @@ M.init = function()
     config = {
       virtual_text = false,
       signs = false,
+      update_in_insert = true,
     }
     vim.lsp.diagnostic.on_publish_diagnostics(_, _, params, client_id, _, config)
   end

@@ -5,7 +5,6 @@ if &loadplugins
     packadd! completion-nvim
     packadd! ferret
     packadd! nvim-lspconfig
-    packadd! onedark.vim
     packadd! vim-buftabline
     packadd! vim-commentary
     packadd! vim-fugitive

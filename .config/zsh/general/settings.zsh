@@ -13,3 +13,5 @@ setopt list_packed          # make completion lists more densly packaed
 setopt correct              # command auto-correction
 setopt correctall           # argument auto-correction
 setopt nonomatch            # unmatched patterns are left unchanged
+
+autoload -U zcalc
