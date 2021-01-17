@@ -4,7 +4,7 @@ let mapleader = " "
 
 " Quit
 nnoremap <silent><leader>q :q<CR>
-nnoremap <silent><leader>Q :qa!<CR>
+nnoremap <silent><leader>Q :q!<CR>
 
 " Remove trailing whitespaces
 nnoremap <silent><leader>zz :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
