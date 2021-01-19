@@ -25,6 +25,3 @@
 [submodule "vim-surround"]
 	path = .local/share/nvim/site/pack/bundle/opt/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "zsh-async"]
-	path = .config/zsh/plugin/zsh-async
-	url = https://github.com/mafredri/zsh-async
