@@ -15,9 +15,17 @@ function fg-bg() {
 zle -N fg-bg
 bindkey '^Z' fg-bg
 
-function up_widget() {
-    BUFFER="cd .."
-    zle accept-line
+function up-widget() {
+  BUFFER="cd .."
+  zle accept-line
 }
-zle -N up_widget
-bindkey '^[k' up_widget
+zle -N up-widget
+bindkey '^[k' up-widget
+
+function delete-path-section() {
+  WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+  zle backward-kill-word
+  WORDCHARS+='/'
+}
+zle -N delete-path-section
+bindkey '^[^?' delete-path-section

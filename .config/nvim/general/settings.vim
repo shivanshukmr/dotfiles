@@ -5,7 +5,7 @@ set nocompatible
 set path+=**
 set wildmenu
 set hidden nowrap ruler
-set list listchars=nbsp:␣,tab:»·,trail:·,extends:>,precedes:<
+set list listchars=nbsp:_,tab:»·,trail:·,extends:>,precedes:<
 set splitbelow splitright
 set tabstop=2 shiftwidth=2 expandtab smarttab
 set smartindent autoindent cindent

@@ -81,16 +81,17 @@ nnoremap <silent> <leader>e :Explore<CR>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 
-inoremap ( ()<Left>
-inoremap [ []<Left>
-inoremap { {}<Left>
+" Only complete when there's nothing in front of the cursor
+inoremap <expr> ( getline('.')[col('.')-1] !=# '' ? '(' : '()<Left>'
+inoremap <expr> [ getline('.')[col('.')-1] !=# '' ? '(' : '[]<Left>'
+inoremap <expr> { getline('.')[col('.')-1] !=# '' ? '(' : '{}<Left>'
 
-inoremap <expr> ) matchstr(getline('.'), '\%' . col('.') . 'c.') == ')' ? '<Right>' : ')'
-inoremap <expr> ] matchstr(getline('.'), '\%' . col('.') . 'c.') == ']' ? '<Right>' : ']'
-inoremap <expr> } matchstr(getline('.'), '\%' . col('.') . 'c.') == '}' ? '<Right>' : '}'
-inoremap <expr> " matchstr(getline('.'), '\%' . col('.') . 'c.') == '"' ? '<Right>' : '""<Left>'
-inoremap <expr> ' matchstr(getline('.'), '\%' . col('.') . 'c.') == "'" ? '<Right>' : "''<Left>"
-inoremap <expr> <CR> matchstr(getline('.'), '\%' . col('.') . 'c.') == '}' ? '<Space><BS><CR><Space><BS><CR><ESC>ka<Tab>' : '<Space><BS><CR>'
+inoremap <expr> ) getline('.')[col('.')-1] == ')' ? '<Right>' : ')'
+inoremap <expr> ] getline('.')[col('.')-1] == ']' ? '<Right>' : ']'
+inoremap <expr> } getline('.')[col('.')-1] == '}' ? '<Right>' : '}'
+inoremap <expr> " getline('.')[col('.')-1] == '"' ? '<Right>' : '""<Left>'
+inoremap <expr> ' getline('.')[col('.')-1] == "'" ? '<Right>' : "''<Left>"
+inoremap <expr> <CR> getline('.')[col('.')-1] == '}' ? '<Space><BS><CR><Space><BS><CR><ESC>ka<Tab>' : '<Space><BS><CR>'
 
 function! TabMapping()
   if pumvisible()
