@@ -40,7 +40,11 @@ nnoremap <silent><leader>n :nohlsearch<CR>
 nnoremap <silent><leader>x :bdelete<CR>
 nnoremap <silent><leader>X :bdelete!<CR>
 
+" Switching buffers
 nnoremap <leader>b :b 
+
+" Grep
+nnoremap <leader>a :silent grep  \| cw<LEFT><LEFT><LEFT><LEFT><LEFT>
 
 nnoremap <silent><leader>t :terminal<CR>i
 

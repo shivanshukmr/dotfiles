@@ -3,7 +3,6 @@ if &loadplugins
     packadd! ReplaceWithRegister
     packadd! command-t
     packadd! completion-nvim
-    packadd! ferret
     packadd! nvim-lspconfig
     packadd! vim-buftabline
     packadd! vim-commentary

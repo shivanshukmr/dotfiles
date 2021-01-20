@@ -16,7 +16,7 @@ set noswapfile nobackup nowritebackup
 set clipboard=unnamedplus
 set incsearch
 set backspace=indent,eol,start
-set wildignore+=*/.git,*/__pycache__,*/venv
+set wildignore+=*/.git,*/__pycache__,*/venv,*.o
 set nojoinspaces
 set sidescrolloff=5
 set ignorecase smartcase
@@ -24,6 +24,10 @@ set laststatus=0
 set statusline=%<%=%-14.(%l,%c%V%)\ %P
 set updatetime=50
 set signcolumn=no
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --smart-case
+  set grepformat^=%f:%l:%c:%m
+endif
 
 if has('termguicolors')
   set termguicolors
