@@ -23,9 +23,7 @@ set ignorecase smartcase
 set laststatus=0
 set statusline=%<%=%-14.(%l,%c%V%)\ %P
 set updatetime=50
-if exists('&inccommand')
-  set inccommand=nosplit
-endif
+set signcolumn=no
 
 if has('termguicolors')
   set termguicolors

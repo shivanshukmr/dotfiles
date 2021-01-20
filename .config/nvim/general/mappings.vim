@@ -50,6 +50,7 @@ nnoremap <silent><C-k> :bnext<CR>
 nnoremap <silent><C-j> :bprevious<CR>
 
 nnoremap Y y$
+nnoremap <BS> <C-^>
 
 " Store relative line number jumps in the jumplist if they exceed a threshold
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
@@ -73,7 +74,7 @@ nnoremap <silent> <S-Down> :lnext<CR>
 nnoremap <silent> <S-Left> :lpfile<CR>
 nnoremap <silent> <S-Right> :lnfile<CR>
 
-nnoremap <silent> - :Explore<CR>
+nnoremap <silent> <leader>e :Explore<CR>
 
 " INSERT
 " Readline binds
