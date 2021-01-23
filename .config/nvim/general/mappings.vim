@@ -3,28 +3,25 @@
 let mapleader = " "
 
 " Quit
-nnoremap <silent><leader>q :q<CR>
-nnoremap <silent><leader>Q :q!<CR>
+nnoremap <silent> <leader>q :q<CR>
+nnoremap <silent> <leader>Q :q!<CR>
 
 " Remove trailing whitespaces
-nnoremap <silent><leader>zz :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <leader>zz :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
+nnoremap <leader>h <C-W>h
+nnoremap <leader>j <C-W>j
+nnoremap <leader>k <C-W>k
+nnoremap <leader>l <C-W>l
 
 " Move current window
-nnoremap <silent><leader>H <C-w>H
-nnoremap <silent><leader>J <C-w>J
-nnoremap <silent><leader>K <C-w>K
-nnoremap <silent><leader>L <C-w>L
+nnoremap <leader>H <C-W>H
+nnoremap <leader>J <C-W>J
+nnoremap <leader>K <C-W>K
+nnoremap <leader>L <C-W>L
 
 " Close all windows except the current one
 nnoremap <leader>o :only<CR>
-
-" All windows equal sizes
-nnoremap <leader>= <C-w>=
 
 " Save file
 nnoremap <leader>w :w<CR>
@@ -34,11 +31,11 @@ nnoremap <leader>W :w!<CR>
 nnoremap <leader>i :source $HOME/.config/nvim/init.vim<CR>
 
 " No highlight
-nnoremap <silent><leader>n :nohlsearch<CR>
+nnoremap <silent> <leader>n :nohlsearch<CR>
 
 " Buffer delete
-nnoremap <silent><leader>x :bdelete<CR>
-nnoremap <silent><leader>X :bdelete!<CR>
+nnoremap <silent> <leader>x :bdelete<CR>
+nnoremap <silent> <leader>X :bdelete!<CR>
 
 " Switching buffers
 nnoremap <leader>b :b 
@@ -46,12 +43,13 @@ nnoremap <leader>b :b
 " Grep
 nnoremap <leader>a :silent grep  \| cw<LEFT><LEFT><LEFT><LEFT><LEFT>
 
-nnoremap <silent><leader>t :terminal<CR>i
+nnoremap <silent> <leader>t :terminal<CR>i
+nnoremap <silent> - :Explore<CR>
 
 " NORMAL
 " C-j and C-k in normal mode will move text buffer
-nnoremap <silent><C-k> :bnext<CR>
-nnoremap <silent><C-j> :bprevious<CR>
+nnoremap <silent> <C-K> :bnext<CR>
+nnoremap <silent> <C-J> :bprevious<CR>
 
 nnoremap Y y$
 nnoremap <BS> <C-^>
@@ -59,6 +57,14 @@ nnoremap <BS> <C-^>
 " Store relative line number jumps in the jumplist if they exceed a threshold
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
+
+" Using very-magic
+nnoremap / /\v
+nnoremap ? ?\v
+vnoremap / /\v
+vnoremap ? ?\v
+onoremap / /\v
+onoremap ? ?\v
 
 " Use alt + hjkl to resize windows
 nnoremap <M-j> :resize -3<CR>
@@ -78,28 +84,25 @@ nnoremap <silent> <S-Down> :lnext<CR>
 nnoremap <silent> <S-Left> :lpfile<CR>
 nnoremap <silent> <S-Right> :lnfile<CR>
 
-nnoremap <silent> <leader>e :Explore<CR>
-
 " INSERT
 " Readline binds
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
+inoremap <C-A> <Home>
+inoremap <C-E> <End>
 
-" Only complete when there's nothing in front of the cursor
-inoremap <expr> ( getline('.')[col('.')-1] !=# '' ? '(' : '()<Left>'
-inoremap <expr> [ getline('.')[col('.')-1] !=# '' ? '(' : '[]<Left>'
-inoremap <expr> { getline('.')[col('.')-1] !=# '' ? '(' : '{}<Left>'
+inoremap ( ()<LEFT>
+inoremap [ []<LEFT>
+inoremap { {}<LEFT>
 
 inoremap <expr> ) getline('.')[col('.')-1] == ')' ? '<Right>' : ')'
 inoremap <expr> ] getline('.')[col('.')-1] == ']' ? '<Right>' : ']'
 inoremap <expr> } getline('.')[col('.')-1] == '}' ? '<Right>' : '}'
 inoremap <expr> " getline('.')[col('.')-1] == '"' ? '<Right>' : '""<Left>'
 inoremap <expr> ' getline('.')[col('.')-1] == "'" ? '<Right>' : "''<Left>"
-inoremap <expr> <CR> getline('.')[col('.')-1] == '}' ? '<Space><BS><CR><Space><BS><CR><ESC>ka<Tab>' : '<Space><BS><CR>'
+inoremap <expr> <CR> getline('.')[col('.')-1] == '}' ? '<SPACE><BS><CR><SPACE><BS><CR><ESC>ka<TAB>' : '<SPACE><BS><CR>'
 
 function! TabMapping()
   if pumvisible()
-    return "\<C-n>"
+    return "\<C-N>"
   elseif getline('.')[col('.')-1] =~? '[]>)}''"`]'
     return "\<Right>"
   else
@@ -108,15 +111,15 @@ function! TabMapping()
 endfunction
 
 inoremap <expr> <Tab> TabMapping()
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
 
-inoremap <C-c> <ESC>
+inoremap <C-C> <ESC>
 
 " COMMAND
 " Readline like binds
-cnoremap <C-a> <Home>
-cnoremap <C-d> <Del>
+cnoremap <C-A> <Home>
+cnoremap <C-D> <Del>
 
 " CTRL-P/N acts like Up/Down in command mode, see :h c_<Up>
-cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<Up>"
-cnoremap <expr> <C-n> pumvisible() ? "\<C-n>" : "\<Down>"
+cnoremap <expr> <C-P> pumvisible() ? "\<C-P>" : "\<Up>"
+cnoremap <expr> <C-N> pumvisible() ? "\<C-N>" : "\<Down>"

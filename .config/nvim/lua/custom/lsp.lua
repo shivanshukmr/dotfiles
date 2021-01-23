@@ -12,7 +12,7 @@ local custom_attach = function(client, bufnr)
   -- diagnostics
   vim.api.nvim_command [[ augroup Lsp ]]
   vim.api.nvim_command [[ autocmd! ]]
-  vim.api.nvim_command [[ autocmd CursorMoved *.py,*.vim lua require'custom.lsp'.show_diagnostics() ]]
+  vim.api.nvim_command [[ autocmd CURSORMOVED *.py,*.vim lua require'custom.lsp'.show_diagnostics() ]]
   vim.api.nvim_command [[ augroup END ]]
 
   -- completion
@@ -22,7 +22,7 @@ local custom_attach = function(client, bufnr)
     enable_auto_hover = 0,
     matching_strategy_list = {'exact', 'fuzzy'},
     trigger_on_delete = 1,
-    confirm_key = '<C-y>',
+    confirm_key = '<C-Y>',
   })
 
   -- mappings
@@ -70,7 +70,6 @@ M.init = function()
     config = {
       virtual_text = false,
       signs = false,
-      update_in_insert = true,
     }
     lsp.diagnostic.on_publish_diagnostics(_, _, params, client_id, _, config)
     M["show_diagnostics"](1)

@@ -1,9 +1,9 @@
 augroup Generalautocmds
   autocmd!
   if exists('##TextYankPost') && has('nvim')
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({"IncSearch", 50})
+    autocmd TEXTYANKPOST * silent! lua require'vim.highlight'.on_yank({"IncSearch", 50})
   endif
 
   " Terminal
-  autocmd TermOpen * setlocal nonumber norelativenumber
+  autocmd TERMOPEN * setlocal nonumber norelativenumber
 augroup END

@@ -22,8 +22,7 @@ set sidescrolloff=5
 set ignorecase smartcase
 set laststatus=0
 set statusline=%<%=%-14.(%l,%c%V%)\ %P
-set updatetime=50
-set signcolumn=no
+set updatetime=300
 if executable('rg')
   set grepprg=rg\ --vimgrep\ --smart-case
   set grepformat^=%f:%l:%c:%m

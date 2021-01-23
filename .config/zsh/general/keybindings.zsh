@@ -22,10 +22,10 @@ function up-widget() {
 zle -N up-widget
 bindkey '^[k' up-widget
 
-function delete-path-section() {
+function delete-path-part() {
   WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
   zle backward-kill-word
   WORDCHARS+='/'
 }
-zle -N delete-path-section
-bindkey '^[^?' delete-path-section
+zle -N delete-path-part
+bindkey '^[^?' delete-path-part
