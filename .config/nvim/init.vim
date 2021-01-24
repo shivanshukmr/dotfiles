@@ -1,4 +1,15 @@
-source $XDG_CONFIG_HOME/nvim/general/packages.vim
-source $XDG_CONFIG_HOME/nvim/general/settings.vim
-source $XDG_CONFIG_HOME/nvim/general/autocmds.vim
-source $XDG_CONFIG_HOME/nvim/general/mappings.vim
+if &loadplugins
+  if has('packages')
+    packadd! ReplaceWithRegister
+    packadd! command-t
+    packadd! completion-nvim
+    packadd! nvim-lspconfig
+    packadd! vim-buftabline
+    packadd! vim-commentary
+    packadd! vim-fugitive
+    packadd! vim-surround
+  endif
+endif
+
+filetype plugin indent on
+syntax on

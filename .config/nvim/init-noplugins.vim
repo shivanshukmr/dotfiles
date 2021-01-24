@@ -1,60 +1,45 @@
-" SETTINGS
-syntax on
 filetype plugin indent on
-set guicursor=
-set nocompatible
-set path+=**
-set wildmenu
-set hidden nowrap ruler
-set list listchars=nbsp:_,tab:»·,trail:·,extends:>,precedes:<
-set splitbelow splitright
-set tabstop=2 shiftwidth=2 expandtab smarttab
-set smartindent autoindent cindent
-set undofile undodir=/tmp
-set relativenumber
-set showtabline=0
-set noswapfile nobackup nowritebackup
-set clipboard=unnamedplus
-set incsearch
-set backspace=indent,eol,start
-set wildignore+=*/.git,*/__pycache__,*/venv,*.o
-set nojoinspaces
-set sidescrolloff=5
-set ignorecase smartcase
-set laststatus=0
-set statusline=%<%=%-14.(%l,%c%V%)\ %P
-set updatetime=50
-set signcolumn=no
-if executable('rg')
-  set grepprg=rg\ --vimgrep\ --smart-case
-  set grepformat^=%f:%l:%c:%m
-endif
-
-if has('termguicolors')
-  set termguicolors
-endif
-
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_winsize = 15
-
-" Not loading python(3) providers for faster startup time
-let g:loaded_python_provider=0
-let g:loaded_python3_provider=0
+syntax on
 
 " AUTOCMDS
 augroup Generalautocmds
   autocmd!
   if exists('##TextYankPost') && has('nvim')
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({"IncSearch", 50})
+    autocmd TEXTYANKPOST * silent! lua require'vim.highlight'.on_yank({"IncSearch", 50})
   endif
 
   " Terminal
-  autocmd TermOpen * setlocal nonumber norelativenumber
+  autocmd TERMOPEN * setlocal nonumber norelativenumber
 augroup END
 
-" MAPPINGS
+" COMMAND
+" Readline like binds
+cnoremap <C-A> <Home>
+cnoremap <C-D> <Del>
+
+" CTRL-P/N acts like Up/Down in command mode, see :h c_<Up>
+cnoremap <expr> <C-P> pumvisible() ? "\<C-P>" : "\<Up>"
+cnoremap <expr> <C-N> pumvisible() ? "\<C-N>" : "\<Down>"
+
+" INSERT
+inoremap ( ()<LEFT>
+inoremap [ []<LEFT>
+inoremap { {}<LEFT>
+
+inoremap <expr> ) getline('.')[col('.')-1] == ')' ? '<Right>' : ')'
+inoremap <expr> ] getline('.')[col('.')-1] == ']' ? '<Right>' : ']'
+inoremap <expr> } getline('.')[col('.')-1] == '}' ? '<Right>' : '}'
+inoremap <expr> " getline('.')[col('.')-1] == '"' ? '<Right>' : '""<Left>'
+inoremap <expr> ' getline('.')[col('.')-1] == "'" ? '<Right>' : "''<Left>"
+inoremap <expr> <CR> getline('.')[col('.')-1] == '}' ? '<SPACE><BS><CR><SPACE><BS><CR><ESC>ka<TAB>' : '<SPACE><BS><CR>'
+
+inoremap <expr> <Tab> getline('.')[col('.')-1] =~? '[]>)}''"`]' ? '<RIGHT>' : '<TAB>'
+
+inoremap <C-C> <ESC>
+
+" BUILT-IN TERMINAL
+tnoremap <C-\><C-\> <C-\><C-n>
+
 " LEADER
 " Set leader key
 let mapleader = " "
@@ -66,22 +51,19 @@ nnoremap <silent> <leader>Q :q!<CR>
 " Remove trailing whitespaces
 nnoremap <leader>zz :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
+nnoremap <leader>h <C-W>h
+nnoremap <leader>j <C-W>j
+nnoremap <leader>k <C-W>k
+nnoremap <leader>l <C-W>l
 
 " Move current window
-nnoremap <leader>H <C-w>H
-nnoremap <leader>J <C-w>J
-nnoremap <leader>K <C-w>K
-nnoremap <leader>L <C-w>L
+nnoremap <leader>H <C-W>H
+nnoremap <leader>J <C-W>J
+nnoremap <leader>K <C-W>K
+nnoremap <leader>L <C-W>L
 
 " Close all windows except the current one
 nnoremap <leader>o :only<CR>
-
-" All windows equal sizes
-nnoremap <leader>= <C-w>=
 
 " Save file
 nnoremap <leader>w :w<CR>
@@ -104,12 +86,12 @@ nnoremap <leader>b :b
 nnoremap <leader>a :silent grep  \| cw<LEFT><LEFT><LEFT><LEFT><LEFT>
 
 nnoremap <silent> <leader>t :terminal<CR>i
-nnoremap <silent> <leader>e :Explore<CR>
+nnoremap <silent> - :Explore<CR>
 
 " NORMAL
 " C-j and C-k in normal mode will move text buffer
-nnoremap <silent> <C-k> :bnext<CR>
-nnoremap <silent> <C-j> :bprevious<CR>
+nnoremap <silent> <C-K> :bnext<CR>
+nnoremap <silent> <C-J> :bprevious<CR>
 
 nnoremap Y y$
 nnoremap <BS> <C-^>
@@ -144,42 +126,44 @@ nnoremap <silent> <S-Down> :lnext<CR>
 nnoremap <silent> <S-Left> :lpfile<CR>
 nnoremap <silent> <S-Right> :lnfile<CR>
 
-" INSERT
-" Readline binds
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
+" SETTINGS
+set guicursor=
+set nocompatible
+set path+=**
+set wildmenu
+set hidden nowrap ruler
+set list listchars=nbsp:_,tab:»·,trail:·,extends:>,precedes:<
+set splitbelow splitright
+set tabstop=2 shiftwidth=2 expandtab smarttab
+set smartindent autoindent cindent
+set undofile undodir=/tmp
+set relativenumber
+set showtabline=0
+set noswapfile nobackup nowritebackup
+set clipboard=unnamedplus
+set incsearch
+set backspace=indent,eol,start
+set wildignore+=*/.git,*/__pycache__,*/venv,*.o
+set nojoinspaces
+set sidescrolloff=5
+set ignorecase smartcase
+set laststatus=0
+set statusline=%<%=%-14.(%l,%c%V%)\ %P
+set updatetime=300
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --smart-case
+  set grepformat^=%f:%l:%c:%m
+endif
 
-inoremap ( ()<LEFT>
-inoremap [ []<LEFT>
-inoremap { {}<LEFT>
+if has('termguicolors')
+  set termguicolors
+endif
 
-inoremap <expr> ) getline('.')[col('.')-1] == ')' ? '<Right>' : ')'
-inoremap <expr> ] getline('.')[col('.')-1] == ']' ? '<Right>' : ']'
-inoremap <expr> } getline('.')[col('.')-1] == '}' ? '<Right>' : '}'
-inoremap <expr> " getline('.')[col('.')-1] == '"' ? '<Right>' : '""<Left>'
-inoremap <expr> ' getline('.')[col('.')-1] == "'" ? '<Right>' : "''<Left>"
-inoremap <expr> <CR> getline('.')[col('.')-1] == '}' ? '<Space><BS><CR><Space><BS><CR><ESC>ka<Tab>' : '<Space><BS><CR>'
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 15
 
-function! TabMapping()
-  if pumvisible()
-    return "\<C-n>"
-  elseif getline('.')[col('.')-1] =~? '[]>)}''"`]'
-    return "\<Right>"
-  else
-    return "\<TAB>"
-  endif
-endfunction
-
-inoremap <expr> <Tab> TabMapping()
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-inoremap <C-c> <ESC>
-
-" COMMAND
-" Readline like binds
-cnoremap <C-a> <Home>
-cnoremap <C-d> <Del>
-
-" CTRL-P/N acts like Up/Down in command mode, see :h c_<Up>
-cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<Up>"
-cnoremap <expr> <C-n> pumvisible() ? "\<C-n>" : "\<Down>"
+" Not loading python(3) providers for faster startup time
+let g:loaded_python_provider=0
+let g:loaded_python3_provider=0
