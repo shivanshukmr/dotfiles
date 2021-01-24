@@ -1,4 +1,5 @@
 bindkey -e
+export WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>:'
 
 autoload -U edit-command-line
 zle -N edit-command-line
@@ -22,10 +23,10 @@ function up-widget() {
 zle -N up-widget
 bindkey '^[k' up-widget
 
-function delete-path-part() {
+function delete-path-component() {
   WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
   zle backward-kill-word
-  WORDCHARS+='/'
+  WORDCHARS+='/:'
 }
-zle -N delete-path-part
-bindkey '^[^?' delete-path-part
+zle -N delete-path-component
+bindkey '^[^?' delete-path-component

@@ -85,10 +85,6 @@ nnoremap <silent> <S-Left> :lpfile<CR>
 nnoremap <silent> <S-Right> :lnfile<CR>
 
 " INSERT
-" Readline binds
-inoremap <C-A> <Home>
-inoremap <C-E> <End>
-
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
 inoremap { {}<LEFT>
@@ -100,18 +96,7 @@ inoremap <expr> " getline('.')[col('.')-1] == '"' ? '<Right>' : '""<Left>'
 inoremap <expr> ' getline('.')[col('.')-1] == "'" ? '<Right>' : "''<Left>"
 inoremap <expr> <CR> getline('.')[col('.')-1] == '}' ? '<SPACE><BS><CR><SPACE><BS><CR><ESC>ka<TAB>' : '<SPACE><BS><CR>'
 
-function! TabMapping()
-  if pumvisible()
-    return "\<C-N>"
-  elseif getline('.')[col('.')-1] =~? '[]>)}''"`]'
-    return "\<Right>"
-  else
-    return "\<TAB>"
-  endif
-endfunction
-
-inoremap <expr> <Tab> TabMapping()
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
+inoremap <expr> <Tab> getline('.')[col('.')-1] =~? '[]>)}''"`]' ? '<RIGHT>' : '<TAB>'
 
 inoremap <C-C> <ESC>
 
