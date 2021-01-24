@@ -1,6 +1,6 @@
 # bind prefix key to Ctrl-Space
 unbind C-b
-set -g prefix C-a
+set-option -g prefix C-Space
 
 # Vi mode
 set-window-option -g mode-keys vi
