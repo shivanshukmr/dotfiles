@@ -30,10 +30,10 @@ if has('termguicolors')
   set termguicolors
 endif
 
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_winsize = 15
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+let g:netrw_browse_split=4
+let g:netrw_winsize=15
 
 " Not loading python(3) providers for faster startup time
 let g:loaded_python_provider=0

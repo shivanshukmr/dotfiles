@@ -1,5 +1,5 @@
 bindkey -e
-export WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>:'
+WORDCHARS+=':'
 
 autoload -U edit-command-line
 zle -N edit-command-line

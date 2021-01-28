@@ -81,10 +81,6 @@ M.init = function()
       lspconfig.util.dirname(filename)
     end,
   }
-
-  lspconfig.vimls.setup{
-    on_attach = custom_attach,
-  }
 end
 
 return M

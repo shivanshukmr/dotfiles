@@ -37,7 +37,7 @@ nnoremap <silent> <leader>x :bdelete<CR>
 nnoremap <silent> <leader>X :bdelete!<CR>
 
 " Switching buffers
-nnoremap <leader>b :b 
+nnoremap <leader>b :b<SPACE>
 
 " Grep
 nnoremap <leader>a :silent grep  \| cw<LEFT><LEFT><LEFT><LEFT><LEFT>

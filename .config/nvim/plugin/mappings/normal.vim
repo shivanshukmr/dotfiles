@@ -1,4 +1,3 @@
-" C-j and C-k in normal mode will move text buffer
 nnoremap <silent> <C-K> :bnext<CR>
 nnoremap <silent> <C-J> :bprevious<CR>
 
@@ -9,15 +8,13 @@ nnoremap <BS> <C-^>
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
 
-" Using very-magic
 nnoremap / /\v
 nnoremap ? ?\v
 vnoremap / /\v
 vnoremap ? ?\v
-onoremap / /\v
-onoremap ? ?\v
+onoremap / /\V
+onoremap ? ?\V
 
-" Use alt + hjkl to resize windows
 nnoremap <M-j> :resize -3<CR>
 nnoremap <M-k> :resize +3<CR>
 nnoremap <M-h> :vertical resize -3<CR>
