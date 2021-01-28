@@ -17,7 +17,6 @@ local custom_attach = function(client, bufnr)
 
   -- completion
   vim.o.completeopt = 'menuone,noinsert,noselect'
-  vim.o.shortmess = vim.o.shortmess .. 'c'
   require'completion'.on_attach({
     enable_auto_hover = 0,
     matching_strategy_list = {'exact', 'fuzzy'},
@@ -41,14 +40,14 @@ end
 local print_diagnostics_in_commandline = function()
   local diagnostics = lsp.diagnostic.get_line_diagnostics(0, vim.api.nvim_win_get_cursor(0)[1] - 1)[1]
   if diagnostics == nil then
-    print("\n")
+    print('\n')
     return
   end
-  local code_diagnostics = diagnostics["code"]
+  local code_diagnostics = diagnostics['code']
   if code_diagnostics then
-    print(code_diagnostics .. ": " .. diagnostics["message"])
+    print(code_diagnostics .. ': ' .. diagnostics['message'])
   else
-    print(diagnostics["message"])
+    print(diagnostics['message'])
   end
 end
 
@@ -72,7 +71,7 @@ M.init = function()
       signs = false,
     }
     lsp.diagnostic.on_publish_diagnostics(_, _, params, client_id, _, config)
-    M["show_diagnostics"](1)
+    M['show_diagnostics'](1)
   end
 
   lspconfig.pyright.setup{

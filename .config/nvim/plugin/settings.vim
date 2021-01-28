@@ -19,8 +19,8 @@ set nojoinspaces
 set sidescrolloff=5
 set ignorecase smartcase
 set laststatus=0
-set statusline=%<%=%-14.(%l,%c%V%)\ %P
 set updatetime=300
+set pumheight=13
 if executable('rg')
   set grepprg=rg\ --vimgrep\ --smart-case
   set grepformat^=%f:%l:%c:%m
@@ -38,3 +38,5 @@ let g:netrw_winsize = 15
 " Not loading python(3) providers for faster startup time
 let g:loaded_python_provider=0
 let g:loaded_python3_provider=0
+
+colorscheme onedark
