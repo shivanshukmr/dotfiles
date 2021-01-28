@@ -1,5 +1,5 @@
-nnoremap <silent> <C-K> :bnext<CR>
-nnoremap <silent> <C-J> :bprevious<CR>
+nnoremap <silent> <C-k> :bnext<CR>
+nnoremap <silent> <C-j> :bprevious<CR>
 
 nnoremap Y y$
 nnoremap <BS> <C-^>

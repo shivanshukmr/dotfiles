@@ -8,16 +8,16 @@ nnoremap <silent> <leader>Q :q!<CR>
 " Remove trailing whitespaces
 nnoremap <leader>zz :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-nnoremap <leader>h <C-W>h
-nnoremap <leader>j <C-W>j
-nnoremap <leader>k <C-W>k
-nnoremap <leader>l <C-W>l
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 
 " Move current window
-nnoremap <leader>H <C-W>H
-nnoremap <leader>J <C-W>J
-nnoremap <leader>K <C-W>K
-nnoremap <leader>L <C-W>L
+nnoremap <leader>H <C-w>H
+nnoremap <leader>J <C-w>J
+nnoremap <leader>K <C-w>K
+nnoremap <leader>L <C-w>L
 
 " Close all windows except the current one
 nnoremap <leader>o :only<CR>
