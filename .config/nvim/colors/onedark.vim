@@ -137,9 +137,9 @@ highlight SpellBad guifg=#E06C75 guibg=NONE guisp=NONE gui=underline ctermfg=204
 highlight SpellCap guifg=#D19A66 guibg=NONE guisp=NONE gui=NONE ctermfg=173 ctermbg=NONE cterm=NONE " Word that should start with a capital. This will be combined with the highlighting used otherwise.
 highlight SpellLocal guifg=#D19A66 guibg=NONE guisp=NONE gui=NONE ctermfg=173 ctermbg=NONE cterm=NONE " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 highlight SpellRare guifg=#D19A66 guibg=NONE guisp=NONE gui=NONE ctermfg=173 ctermbg=NONE cterm=NONE " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
-highlight StatusLine guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE " status line of current window
+highlight StatusLine guifg=#ABB2BF guibg=#2C323C guisp=NONE gui=NONE ctermfg=145 ctermbg=236 cterm=NONE " status line of current window
 highlight StatusLineNC guifg=#5C6370 guibg=NONE guisp=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-highlight StatusLineTerm guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE " status line of current :terminal window
+highlight StatusLineTerm guifg=#ABB2BF guibg=#2C323C guisp=NONE gui=NONE ctermfg=145 ctermbg=236 cterm=NONE " status line of current :terminal window
 highlight StatusLineTermNC guifg=#5C6370 guibg=NONE guisp=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE " status line of non-current :terminal window
 highlight TabLine guifg=#5C6370 guibg=NONE guisp=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE " tab pages line, not active tab page label
 highlight TabLineFill guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE " tab pages line, where there are no labels

@@ -33,14 +33,15 @@ nnoremap <leader>i :source $HOME/.config/nvim/init.vim<CR>
 nnoremap <silent> <leader>n :nohlsearch<CR>
 
 " Buffer delete
-nnoremap <silent> <leader>x :bdelete<CR>
-nnoremap <silent> <leader>X :bdelete!<CR>
+nnoremap <silent> <leader>x :lua require'custom.bufdel'()<CR>
 
 " Switching buffers
 nnoremap <leader>b :b<SPACE>
+
+nnoremap <silent> <leader>s :split<CR>
+nnoremap <silent> <leader>v :vsplit<CR>
 
 " Grep
 nnoremap <leader>a :silent grep  \| cw<LEFT><LEFT><LEFT><LEFT><LEFT>
 
 nnoremap <silent> <leader>t :terminal<CR>i
-nnoremap <silent> - :Explore<CR>

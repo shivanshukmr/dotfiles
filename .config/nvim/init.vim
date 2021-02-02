@@ -2,7 +2,7 @@ if &loadplugins
   if has('packages')
     packadd! ReplaceWithRegister
     packadd! command-t
-    packadd! completion-nvim
+    packadd! nvim-compe
     packadd! nvim-lspconfig
     packadd! vim-buftabline
     packadd! vim-commentary

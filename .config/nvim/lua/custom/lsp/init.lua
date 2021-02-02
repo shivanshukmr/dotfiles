@@ -2,7 +2,6 @@ local M = {}
 
 
 local lspconfig = require'lspconfig'
-local lsp = require'vim.lsp'
 
 local mapper = function(mode, lhs, rhs)
   vim.fn.nvim_buf_set_keymap(0, mode, lhs, rhs, {noremap = true, silent = true})
@@ -12,17 +11,12 @@ local custom_attach = function(client, bufnr)
   -- diagnostics
   vim.api.nvim_command [[ augroup Lsp ]]
   vim.api.nvim_command [[ autocmd! ]]
-  vim.api.nvim_command [[ autocmd CURSORMOVED *.py,*.vim lua require'custom.lsp'.show_diagnostics() ]]
+  vim.api.nvim_command [[ autocmd CURSORMOVED *.py lua require'custom.lsp'.show_diagnostics() ]]
+  vim.api.nvim_command [[ autocmd INSERTLEAVE *.py lua require'custom.lsp'.show_diagnostics(1) ]]
   vim.api.nvim_command [[ augroup END ]]
 
   -- completion
-  vim.o.completeopt = 'menuone,noinsert,noselect'
-  require'completion'.on_attach({
-    enable_auto_hover = 0,
-    matching_strategy_list = {'exact', 'fuzzy'},
-    trigger_on_delete = 1,
-    confirm_key = '<C-Y>',
-  })
+  vim.o.completeopt = 'menu,menuone,noselect'
 
   -- mappings
   mapper('n', '<C-]>', '<cmd>lua vim.lsp.buf.definition()<CR>')
@@ -38,7 +32,7 @@ local custom_attach = function(client, bufnr)
 end
 
 local print_diagnostics_in_commandline = function()
-  local diagnostics = lsp.diagnostic.get_line_diagnostics(0, vim.api.nvim_win_get_cursor(0)[1] - 1)[1]
+  local diagnostics = vim.lsp.diagnostic.get_line_diagnostics(0, vim.api.nvim_win_get_cursor(0)[1] - 1)[1]
   if diagnostics == nil then
     print('\n')
     return
@@ -52,7 +46,7 @@ local print_diagnostics_in_commandline = function()
 end
 
 M.show_diagnostics = function(source)
-  if source == 1 then -- called by handler
+  if source == 1 then -- called by handler, insert leave event
     print_diagnostics_in_commandline()
   else -- cursor move event
     if previous_cursor_position ~= vim.api.nvim_win_get_cursor(0)[1] then
@@ -65,15 +59,19 @@ end
 M.init = function()
   local previous_cursor_position = 1
   -- Override publishDiagnostics handler
-  lsp.handlers['textDocument/publishDiagnostics'] = function(_, _, params, client_id, _, config)
+  vim.lsp.handlers['textDocument/publishDiagnostics'] = function(_, _, params, client_id, _, config)
     config = {
       virtual_text = false,
       signs = false,
     }
-    lsp.diagnostic.on_publish_diagnostics(_, _, params, client_id, _, config)
+    vim.lsp.diagnostic.on_publish_diagnostics(_, _, params, client_id, _, config)
     M['show_diagnostics'](1)
   end
 
+  -- Completion
+  require'custom.lsp.compe'
+
+  -- Server setups
   lspconfig.pyright.setup{
     on_attach = custom_attach,
     root_dir = function(filename)

@@ -3,6 +3,7 @@ nnoremap <silent> <C-j> :bprevious<CR>
 
 nnoremap Y y$
 nnoremap <BS> <C-^>
+nnoremap <silent> - :Explore<CR>
 
 " Store relative line number jumps in the jumplist if they exceed a threshold
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
