@@ -11,8 +11,8 @@ nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
 
 nnoremap / /\v
 nnoremap ? ?\v
-vnoremap / /\v
-vnoremap ? ?\v
+vnoremap / /\V
+vnoremap ? ?\V
 onoremap / /\V
 onoremap ? ?\V
 

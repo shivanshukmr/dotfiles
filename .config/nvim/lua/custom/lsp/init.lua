@@ -9,7 +9,7 @@ end
 
 local custom_attach = function(client, bufnr)
   -- diagnostics
-  vim.api.nvim_command [[ augroup Lsp ]]
+  vim.api.nvim_command [[ augroup LspDiagnostics ]]
   vim.api.nvim_command [[ autocmd! ]]
   vim.api.nvim_command [[ autocmd CURSORMOVED *.py lua require'custom.lsp'.show_diagnostics() ]]
   vim.api.nvim_command [[ autocmd INSERTLEAVE *.py lua require'custom.lsp'.show_diagnostics(1) ]]
@@ -46,7 +46,7 @@ local print_diagnostics_in_commandline = function()
 end
 
 M.show_diagnostics = function(source)
-  if source == 1 then -- called by handler, insert leave event
+  if source == 1 then -- called by handler or insert leave event
     print_diagnostics_in_commandline()
   else -- cursor move event
     if previous_cursor_position ~= vim.api.nvim_win_get_cursor(0)[1] then

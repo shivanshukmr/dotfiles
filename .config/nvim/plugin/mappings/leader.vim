@@ -19,29 +19,15 @@ nnoremap <leader>J <C-w>J
 nnoremap <leader>K <C-w>K
 nnoremap <leader>L <C-w>L
 
-" Close all windows except the current one
-nnoremap <leader>o :only<CR>
-
-" Save file
-nnoremap <leader>w :w<CR>
-nnoremap <leader>W :w!<CR>
-
-" Source init.vim
-nnoremap <leader>i :source $HOME/.config/nvim/init.vim<CR>
-
-" No highlight
-nnoremap <silent> <leader>n :nohlsearch<CR>
-
-" Buffer delete
-nnoremap <silent> <leader>x :lua require'custom.bufdel'()<CR>
-
-" Switching buffers
-nnoremap <leader>b :b<SPACE>
-
 nnoremap <silent> <leader>s :split<CR>
 nnoremap <silent> <leader>v :vsplit<CR>
 
+nnoremap <leader>o :only<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <silent> <leader>n :nohlsearch<CR>
+
+nnoremap <silent> <leader>x :lua require'custom.bufdel'()<CR>
+nnoremap <leader>b :b<SPACE>
+
 " Grep
 nnoremap <leader>a :silent grep  \| cw<LEFT><LEFT><LEFT><LEFT><LEFT>
-
-nnoremap <silent> <leader>t :terminal<CR>i

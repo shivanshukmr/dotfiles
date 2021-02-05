@@ -24,6 +24,7 @@ set sidescrolloff=5
 set ignorecase smartcase
 set laststatus=0
 set updatetime=300
+set shortmess+=I
 set pumheight=13
 if executable('rg')
   set grepprg=rg\ --vimgrep\ --smart-case
@@ -35,9 +36,6 @@ if has('termguicolors')
 endif
 
 let g:netrw_banner=0
-let g:netrw_liststyle=3
-let g:netrw_browse_split=4
-let g:netrw_winsize=15
 
 " Not loading python(3) providers for faster startup time
 let g:loaded_python_provider=0

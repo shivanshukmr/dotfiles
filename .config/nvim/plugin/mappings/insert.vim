@@ -14,4 +14,4 @@ inoremap <expr> <Tab> getline('.')[col('.')-1] =~? '[]>)}''"`]' ? '<RIGHT>' : '<
 inoremap <C-c> <ESC>
 
 " BUILT-IN TERMINAL
-tnoremap <C-\><C-\> <C-\><C-n>
+tnoremap <C-\> <C-\><C-n>
