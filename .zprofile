@@ -33,8 +33,7 @@ export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 
 export EDITOR="nvim"
 export TERMINAL="st"
-export BROWSER="qutebrowser"
 
-export PATH=/home/me/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XDG_CONFIG_HOME/x11/xinitrc"
