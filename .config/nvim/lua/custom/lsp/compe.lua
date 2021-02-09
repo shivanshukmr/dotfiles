@@ -3,9 +3,11 @@ require'compe'.setup{
   debug = false,
   min_length = 2,
   preselect = 'disable',
+  documentation = false,
 
   source = {
     nvim_lsp = true,
+    nvim_lua = true,
   },
 }
 

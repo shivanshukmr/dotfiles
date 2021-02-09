@@ -31,7 +31,7 @@ local custom_attach = function(client, bufnr)
   mapper('n', 'gD', '<cmd>lua vim.lsp.buf.implementation()<CR>')
 end
 
-local print_diagnostics_in_commandline = function()
+local print_line_diagnostics = function()
   local diagnostics = vim.lsp.diagnostic.get_line_diagnostics(0, vim.api.nvim_win_get_cursor(0)[1] - 1)[1]
   if diagnostics == nil then
     print('\n')
@@ -47,10 +47,10 @@ end
 
 M.show_diagnostics = function(source)
   if source == 1 then -- called by handler or insert leave event
-    print_diagnostics_in_commandline()
+    print_line_diagnostics()
   else -- cursor move event
     if previous_cursor_position ~= vim.api.nvim_win_get_cursor(0)[1] then
-      print_diagnostics_in_commandline()
+      print_line_diagnostics()
       previous_cursor_position = vim.api.nvim_win_get_cursor(0)[1]
     end
   end
