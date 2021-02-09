@@ -1,24 +1,15 @@
 [submodule "ReplaceWithRegister"]
 	path = .local/share/nvim/site/pack/bundle/opt/ReplaceWithRegister
 	url = https://github.com/vim-scripts/ReplaceWithRegister
-[submodule "command-t"]
-	path = .local/share/nvim/site/pack/bundle/opt/command-t
-	url = https://github.com/wincent/command-t.git
 [submodule "nvim-compe"]
 	path = .local/share/nvim/site/pack/bundle/opt/nvim-compe
 	url = https://github.com/hrsh7th/nvim-compe
 [submodule "nvim-lspconfig"]
 	path = .local/share/nvim/site/pack/bundle/opt/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
-[submodule "vim-buftabline"]
-	path = .local/share/nvim/site/pack/bundle/opt/vim-buftabline
-	url = https://github.com/ap/vim-buftabline.git
 [submodule "vim-commentary"]
 	path = .local/share/nvim/site/pack/bundle/opt/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule "vim-fugitive"]
-	path = .local/share/nvim/site/pack/bundle/opt/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim-surround"]
 	path = .local/share/nvim/site/pack/bundle/opt/vim-surround
 	url = https://github.com/tpope/vim-surround.git

@@ -1,4 +1,3 @@
-" Readline like binds
 cnoremap <C-a> <Home>
 cnoremap <C-d> <Del>
 

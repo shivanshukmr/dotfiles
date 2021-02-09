@@ -18,7 +18,7 @@ function! custom#verymagic#very_magic_slash() abort
   endif
 
   if index(['g', 's', 'v', 'g!'], l:cmd) != -1
-    return '/' . '\v'
+    return '/\v'
   endif
 
   return '/'
