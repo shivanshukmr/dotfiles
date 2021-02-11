@@ -68,9 +68,6 @@ M.init = function()
     M['show_diagnostics'](1)
   end
 
-  -- Completion
-  require'custom.lsp.compe'
-
   -- Server setups
   lspconfig.pyright.setup{
     on_attach = custom_attach,
