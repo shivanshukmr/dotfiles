@@ -1,1 +1,1 @@
-lua require'custom.lsp.compe'
+lua require'custom.compe'
