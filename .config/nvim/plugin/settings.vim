@@ -29,6 +29,7 @@ set pumheight=13
 if executable('rg')
   set grepprg=rg\ --vimgrep\ --smart-case
   set grepformat^=%f:%l:%c:%m
+  command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
 endif
 
 if has('termguicolors')

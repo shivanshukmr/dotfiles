@@ -27,5 +27,4 @@ nnoremap <silent> <leader>x :lua require'custom.bufdel'()<CR>
 nnoremap <leader>b :ls<CR>:b<SPACE>
 nnoremap <leader>p :find<SPACE>
 
-" Grep
-nnoremap <leader>a :silent grep  \| cw<LEFT><LEFT><LEFT><LEFT><LEFT>
+nnoremap <leader>r :Rg<SPACE>
