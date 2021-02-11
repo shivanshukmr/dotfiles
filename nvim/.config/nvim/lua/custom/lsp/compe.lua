@@ -1,7 +1,6 @@
 require'compe'.setup{
   enabled = true,
   debug = false,
-  min_length = 2,
   preselect = 'disable',
   documentation = false,
 
