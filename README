@@ -1,0 +1,11 @@
+dotfiles
+========
+
+Usage
+-----
+cd ~
+git clone
+cd dotfiles
+stow *
+
+Uses GNU Stow – https://www.gnu.org/software/stow/
