@@ -1,5 +1,4 @@
 set guicursor=
-set nocompatible
 set path+=**
 set wildmenu
 set hidden nowrap ruler
@@ -11,11 +10,7 @@ set undofile undodir=/tmp
 set relativenumber
 set showtabline=0
 set noswapfile nobackup nowritebackup
-if has('win32')
-  set clipboard=unnamed
-else
-  set clipboard=unnamedplus
-endif
+set clipboard=unnamedplus
 set incsearch
 set backspace=indent,eol,start
 set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,*.o
@@ -26,11 +21,9 @@ set laststatus=0
 set updatetime=300
 set shortmess+=I shortmess-=F
 set pumheight=13
-if executable('rg')
-  set grepprg=rg\ --vimgrep\ --smart-case
-  set grepformat^=%f:%l:%c:%m
-  command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
-endif
+set grepprg=rg\ --vimgrep\ --smart-case
+set grepformat^=%f:%l:%c:%m
+command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
 
 if has('termguicolors')
   set termguicolors
