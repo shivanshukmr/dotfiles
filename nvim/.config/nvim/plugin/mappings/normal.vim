@@ -17,7 +17,7 @@ nnoremap <M-k> :resize +3<CR>
 nnoremap <M-h> :vertical resize -3<CR>
 nnoremap <M-l> :vertical resize +3<CR>
 
-nnoremap <silent> <Up> :cprevious<CR>
-nnoremap <silent> <Down> :cnext<CR>
-nnoremap <silent> <Left> :cpfile<CR>
-nnoremap <silent> <Right> :cnfile<CR>
+nnoremap <silent> <C-k> :cprevious<CR>
+nnoremap <silent> <C-j> :cnext<CR>
+nnoremap <silent> <C-h> :cpfile<CR>
+nnoremap <silent> <C-l> :cnfile<CR>

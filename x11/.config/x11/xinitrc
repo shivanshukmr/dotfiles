@@ -1,6 +1,5 @@
 setxkbmap -option ''
 setxkbmap -option shift:both_capslock
-xset r rate 280 40
 xwallpaper --stretch $XDG_DATA_HOME/wall.jpg
 picom &
 dwmstatus &

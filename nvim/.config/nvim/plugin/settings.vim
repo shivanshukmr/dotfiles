@@ -24,7 +24,7 @@ set sidescrolloff=5
 set ignorecase smartcase
 set laststatus=0
 set updatetime=300
-set shortmess+=I
+set shortmess+=I shortmess-=F
 set pumheight=13
 if executable('rg')
   set grepprg=rg\ --vimgrep\ --smart-case

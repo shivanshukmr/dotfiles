@@ -21,3 +21,5 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order 'local-directories named-
 # Categorize completion suggestions with headings:
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format %F{default}%B%{$__GENERAL[ITALIC_ON]%}--- %d ---%{$__GENERAL[ITALIC_OFF]%}%b%f
+
+setopt glob_dots

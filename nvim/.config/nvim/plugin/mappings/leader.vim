@@ -19,7 +19,6 @@ nnoremap <leader>L <C-w>L
 nnoremap <silent> <leader>s :split<CR>
 nnoremap <silent> <leader>v :vsplit<CR>
 
-nnoremap <leader><leader> <C-^>
 nnoremap <leader>o :only<CR>
 nnoremap <silent> <leader>n :nohlsearch<CR>
 
