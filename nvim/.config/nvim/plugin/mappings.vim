@@ -24,7 +24,7 @@ nnoremap <leader>o :only<CR>
 nnoremap <silent> <leader>n :nohlsearch<CR>
 
 nnoremap <silent> <leader>x :lua require'custom.bufdel'()<CR>
-nnoremap <leader>b :ls<CR>:b<SPACE>
+nnoremap <leader>b :b<SPACE><C-d>
 nnoremap <leader>p :find<SPACE>
 
 nnoremap <leader>r :Rg<SPACE>
@@ -59,7 +59,6 @@ inoremap <C-c> <ESC>
 
 " COMMAND
 cnoremap <C-a> <Home>
-cnoremap <C-d> <Del>
 
 " CTRL-P/N acts like Up/Down in command mode, see :h c_<Up>
 cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<Up>"
