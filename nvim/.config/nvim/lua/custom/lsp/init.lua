@@ -15,9 +15,6 @@ local custom_attach = function(client, bufnr)
   vim.api.nvim_command [[ autocmd INSERTLEAVE *.py lua require'custom.lsp'.show_diagnostics(1) ]]
   vim.api.nvim_command [[ augroup END ]]
 
-  -- completion
-  vim.o.completeopt = 'menu,menuone,noselect'
-
   -- mappings
   mapper('n', '<C-]>', '<cmd>lua vim.lsp.buf.definition()<CR>')
   mapper('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>')

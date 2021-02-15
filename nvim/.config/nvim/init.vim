@@ -1,7 +1,3 @@
-if &compatible
-  set nocompatible
-endif
-
 set runtimepath+=~/.local/share/nvim/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.local/share/nvim/dein')
@@ -27,11 +23,15 @@ if dein#load_state('~/.local/share/nvim/dein')
   call dein#add('tpope/vim-commentary', {
         \ 'lazy': 1,
         \ 'on_map': 'gc',
-        \ 'on_cmd': 'Commentary'
         \ })
   call dein#add('tpope/vim-surround', {
         \ 'lazy': 1,
         \ 'on_map': {'n': ['cs', 'ds', 'ys'], 'x': 'S'}
+        \ })
+  call dein#add('ctrlpvim/ctrlp.vim', {
+        \ 'lazy': 1,
+        \ 'on_map': '<C-p>',
+        \ 'hook_source': 'source ./dein/plugin/ctrlp.vim',
         \ })
 
   call dein#end()

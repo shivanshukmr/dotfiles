@@ -25,7 +25,6 @@ nnoremap <silent> <leader>n :nohlsearch<CR>
 
 nnoremap <silent> <leader>x :lua require'custom.bufdel'()<CR>
 nnoremap <leader>b :b<SPACE><C-d>
-nnoremap <leader>p :find<SPACE>
 
 nnoremap <leader>r :Rg<SPACE>
 

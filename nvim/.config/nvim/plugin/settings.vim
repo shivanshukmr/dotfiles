@@ -10,7 +10,7 @@ set undofile undodir=/tmp
 set relativenumber
 set showtabline=0
 set noswapfile nobackup nowritebackup
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 set incsearch
 set backspace=indent,eol,start
 set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,*.o
