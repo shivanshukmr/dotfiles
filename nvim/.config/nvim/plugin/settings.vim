@@ -1,5 +1,4 @@
 set guicursor=
-set path=.,,**
 set wildmenu
 set hidden nowrap ruler
 set list listchars=nbsp:_,tab:»·,trail:·,extends:>,precedes:<
@@ -20,6 +19,7 @@ set ignorecase smartcase
 set laststatus=0
 set updatetime=300
 set shortmess+=I
+set virtualedit=block
 set pumheight=13
 set grepprg=rg\ --vimgrep\ --smart-case
 set grepformat^=%f:%l:%c:%m

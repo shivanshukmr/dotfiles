@@ -73,6 +73,7 @@ M.init = function()
       lspconfig.util.dirname(filename)
     end,
   }
+  vim.api.nvim_command('e')
 end
 
 return M

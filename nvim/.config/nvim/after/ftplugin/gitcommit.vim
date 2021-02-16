@@ -1,2 +1,2 @@
-setlocal spell
-let b:undo_ftplugin .= "|setlocal spell<"
+setlocal spell nornu
+let b:undo_ftplugin .= "|setlocal spell< rnu<"
