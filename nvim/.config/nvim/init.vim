@@ -31,7 +31,6 @@ if dein#load_state('~/.local/share/nvim/dein')
   call dein#add('ctrlpvim/ctrlp.vim', {
         \ 'lazy': 1,
         \ 'on_map': '<C-p>',
-        \ 'hook_source': 'source ' . stdpath('config') . '/dein/plugin/ctrlp.vim',
         \ })
 
   call dein#end()

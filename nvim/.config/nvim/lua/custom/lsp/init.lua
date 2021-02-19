@@ -68,10 +68,6 @@ M.init = function()
   -- Server setups
   lspconfig.pyright.setup{
     on_attach = custom_attach,
-    root_dir = function(filename)
-      return lspconfig.util.find_git_ancestor(filename) or
-      lspconfig.util.dirname(filename)
-    end,
   }
   vim.api.nvim_command('e')
 end

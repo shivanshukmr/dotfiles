@@ -21,7 +21,6 @@ nnoremap <silent> <leader>s :split<CR>
 nnoremap <silent> <leader>v :vsplit<CR>
 
 nnoremap <leader>o :only<CR>
-nnoremap <silent> <leader>n :nohlsearch<CR>
 
 nnoremap <silent> <leader>x :lua require'custom.bufdel'()<CR>
 nnoremap <leader>b :b<SPACE><C-d>
