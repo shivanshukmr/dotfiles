@@ -17,6 +17,7 @@ set nojoinspaces
 set sidescrolloff=5
 set ignorecase smartcase
 set laststatus=0
+set termguicolors
 set updatetime=300
 set shortmess+=I
 set virtualedit=block
@@ -24,10 +25,6 @@ set pumheight=13
 set grepprg=rg\ --vimgrep\ --smart-case
 set grepformat^=%f:%l:%c:%m
 command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
-
-if has('termguicolors')
-  set termguicolors
-endif
 
 let g:netrw_banner=0
 

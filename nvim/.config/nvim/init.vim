@@ -26,9 +26,9 @@ if dein#load_state('~/.local/share/nvim/dein')
         \ 'lazy': 1,
         \ 'on_map': {'n': ['cs', 'ds', 'ys'], 'x': 'S'}
         \ })
-  call dein#add('ctrlpvim/ctrlp.vim', {
-        \ 'lazy': 1,
-        \ 'on_map': '<C-p>',
+  call dein#add('junegunn/fzf', {
+        \ 'lazy':1,
+        \ 'hook_post_update': 'fzf#install()'
         \ })
 
   call dein#end()
