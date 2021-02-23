@@ -3,9 +3,7 @@ set runtimepath+=~/.local/share/nvim/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.local/share/nvim/dein')
   call dein#begin('~/.local/share/nvim/dein')
 
-  " dein manages dein
   call dein#add('~/.local/share/nvim/dein/repos/github.com/Shougo/dein.vim')
-
   call dein#add('vim-scripts/ReplaceWithRegister', {
         \ 'lazy': 1,
         \ 'on_map': 'gr',
