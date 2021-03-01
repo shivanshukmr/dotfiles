@@ -24,9 +24,9 @@ zle -N up-widget
 bindkey '^[k' up-widget
 
 function delete-path-component() {
-  WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+  WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
   zle backward-kill-word
-  WORDCHARS+='/:'
+  WORDCHARS+='/:='
 }
 zle -N delete-path-component
 bindkey '^[^?' delete-path-component

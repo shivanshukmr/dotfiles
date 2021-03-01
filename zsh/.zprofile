@@ -2,7 +2,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# ~/ Clean-up:
+# ~ cleanup:
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch-config"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export LESSHISTFILE="-"
@@ -31,9 +31,12 @@ export STACK_ROOT="$XDG_DATA_HOME/stack"
 export GEM_HOME="$XDG_DATA_HOME"/gem
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 
+# Other
+export FZF_DEFAULT_OPTS="--info=hidden --pointer=' ' --color=gutter:0,prompt:15,marker:0"
+export FZF_DEFAULT_COMMAND="git ls-files --cached --others --exclude-standard || fd --type f --type l --hidden --follow"
+
 export EDITOR="nvim"
 export TERMINAL="st"
-
 export PATH=$HOME/.local/bin:$PATH
 
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XDG_CONFIG_HOME/x11/xinitrc"

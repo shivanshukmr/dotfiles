@@ -11,5 +11,6 @@ setopt histignorealldups
 setopt histfindnodups
 setopt listpacked
 setopt correct
+setopt noflowcontrol
 
 autoload -Uz zcalc
