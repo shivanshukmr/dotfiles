@@ -30,6 +30,7 @@ if dein#load_state('~/.local/share/nvim/dein')
         \ 'lazy':1,
         \ 'hook_post_update': 'fzf#install()'
         \ })
+  call dein#add('lifepillar/gruvbox8')
 
   call dein#end()
   call dein#save_state()
