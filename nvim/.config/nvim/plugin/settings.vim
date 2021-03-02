@@ -9,11 +9,11 @@ set relativenumber
 set nobackup nowritebackup
 set clipboard+=unnamedplus
 set incsearch nohlsearch
-set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,*.o
+set wildignorecase wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,*.o
 set nojoinspaces
 set sidescrolloff=5
 set ignorecase smartcase
-set shortmess-=F
+set shortmess-=F shortmess+=c
 set laststatus=0
 set virtualedit=block
 set pumheight=13

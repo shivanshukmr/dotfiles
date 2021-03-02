@@ -4,8 +4,6 @@ let mapleader = " "
 nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>Q :q!<CR>
 
-nnoremap <silent> <leader>n :noh<CR>
-
 nnoremap <silent> <leader>x :silent confirm bd<CR>
 nnoremap <leader>b :b<SPACE><C-D>
 
