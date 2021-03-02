@@ -8,7 +8,7 @@ set undofile undodir=/tmp
 set relativenumber
 set nobackup nowritebackup
 set clipboard+=unnamedplus
-set incsearch
+set incsearch nohlsearch
 set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,*.o
 set nojoinspaces
 set sidescrolloff=5

@@ -32,9 +32,6 @@ export GEM_HOME="$XDG_DATA_HOME"/gem
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 
 # Other
-export FZF_DEFAULT_OPTS="--info=hidden --pointer=' ' --color=gutter:0,prompt:15,marker:0"
-export FZF_DEFAULT_COMMAND="git ls-files --cached --others --exclude-standard || fd --type f --type l --hidden --follow"
-
 export EDITOR="nvim"
 export TERMINAL="st"
 export PATH=$HOME/.local/bin:$PATH

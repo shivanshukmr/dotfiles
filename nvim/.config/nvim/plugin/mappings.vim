@@ -36,8 +36,7 @@ nnoremap <silent> <C-J> :cnext<CR>
 nnoremap <silent> <C-H> :cpfile<CR>
 nnoremap <silent> <C-L> :cnfile<CR>
 
-" Fzf
-nnoremap <silent> <C-P> :FZF<CR>
+nmap <silent> <C-P> <Plug>(CommandT)
 
 " INSERT
 inoremap <C-C> <Esc>

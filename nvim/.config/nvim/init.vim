@@ -24,13 +24,11 @@ if dein#load_state('~/.local/share/nvim/dein')
         \ })
   call dein#add('tpope/vim-surround', {
         \ 'lazy': 1,
-        \ 'on_map': {'n': ['cs', 'ds', 'ys'], 'x': 'S'}
+        \ 'on_map': {'n': ['cs', 'ds', 'ys'], 'x': 'S'},
         \ })
-  call dein#add('junegunn/fzf', {
-        \ 'lazy':1,
-        \ 'hook_post_update': 'fzf#install()'
+  call dein#add('wincent/command-t', {
+        \ 'build': 'sh -c "cd ruby/command-t/ext/command-t && ruby extconf.rb && make"',
         \ })
-  call dein#add('lifepillar/gruvbox8')
 
   call dein#end()
   call dein#save_state()
