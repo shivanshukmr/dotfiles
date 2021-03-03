@@ -16,16 +16,24 @@ local custom_attach = function(client, bufnr)
   vim.api.nvim_command [[ augroup END ]]
 
   -- mappings
-  mapper('n', '<C-]>', '<cmd>lua vim.lsp.buf.definition()<CR>')
-  mapper('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>')
-  mapper('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
+  if client.resolved_capabilities.code_action then
+    mapper('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+  end
+  if client.resolved_capabilities.goto_definition then
+    mapper('n', '<C-]>', '<cmd>lua vim.lsp.buf.definition()<CR>')
+  end
+  if client.resolved_capabilities.find_references then
+    mapper('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+  end
+  if client.resolved_capabilities.hover then
+    mapper('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
+  end
   if client.resolved_capabilities.document_formatting then
     mapper('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
   end
-  mapper('n', 'g0', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
-  mapper('n', '1gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-  mapper('n', 'gW', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
-  mapper('n', 'gD', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+  if client.resolved_capabilities.rename then
+    mapper('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>')
+  end
 end
 
 local print_line_diagnostics = function()
@@ -66,9 +74,36 @@ M.init = function()
   end
 
   -- Server setups
-  lspconfig.pyright.setup{
+  lspconfig.pyright.setup {
     on_attach = custom_attach,
   }
+
+  lspconfig.efm.setup {
+    on_attach = custom_attach,
+    init_options = {documentFormatting = true},
+    settings = {
+      rootMarkers = {".git/"},
+      languages = {
+        python = {
+          {
+            formatCommand = "black -",
+            formatStdin = true,
+          },
+          {
+            formatCommand = "isort --stdout --profile black -",
+            formatStdin = true,
+          },
+          {
+            lintCommand = "flake8 --max-line-length 160 --stdin-display-name ${INPUT} -",
+            lintStdin = true,
+            lintIgnoreExitCode = true,
+            lintFormats = {"%f=%l:%c: %m"},
+          },
+        },
+      },
+    },
+  }
+
   vim.api.nvim_command('e')
 end
 

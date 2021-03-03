@@ -5,9 +5,7 @@ nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>Q :q!<CR>
 
 nnoremap <silent> <leader>x :silent confirm bd<CR>
-nnoremap <leader>b :b<SPACE><C-D>
-
-nnoremap <leader>r :Rg<SPACE>
+nnoremap <leader>b :b <C-D>
 
 " NORMAL
 nnoremap Y y$

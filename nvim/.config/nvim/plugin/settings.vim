@@ -9,7 +9,7 @@ set relativenumber
 set nobackup nowritebackup
 set clipboard+=unnamedplus
 set incsearch nohlsearch
-set wildignorecase wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,*.o
+set wildignorecase wildignore=*/.git/*,*/__pycache__/*,*/venv/*,*.o
 set nojoinspaces
 set sidescrolloff=5
 set ignorecase smartcase
