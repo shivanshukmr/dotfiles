@@ -34,6 +34,8 @@ export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 # Other
 export EDITOR="nvim"
 export TERMINAL="st"
-export PATH=$HOME/.local/bin:$PATH
+
+export GOPATH=$HOME/misc/go
+export PATH=$HOME/.local/bin:$GOPATH/bin:$PATH
 
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XDG_CONFIG_HOME/x11/xinitrc"

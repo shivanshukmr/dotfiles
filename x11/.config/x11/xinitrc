@@ -1,6 +1,7 @@
 setxkbmap -option ''
 setxkbmap -option shift:both_capslock
 xwallpaper --stretch $XDG_DATA_HOME/wall.jpg
+firefox &
 picom &
 dwmstatus &
 unclutter -idle 3 &

@@ -83,10 +83,10 @@ prompt_pure_preprompt_render() {
 	local preprompt=""
 	local rprompt=""
 
-	# show virtual env
-	# preprompt+="%(12V.%F{242}%12v%f .)"
-	# directory, colored by vim status
+	# directory
   preprompt+="%F{$STATUS_COLOR}$(prompt_pure_pwd)%f"
+	# show virtual env
+	rprompt+="%(12V.%F{$git_color}%12v%f.)"
 	# git info
 	rprompt+="%F{$git_color}${vcs_info_msg_0_}${prompt_pure_git_dirty}%f"
 
