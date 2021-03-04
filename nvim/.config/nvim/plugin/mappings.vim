@@ -1,6 +1,7 @@
 " LEADER
 let mapleader = " "
 
+nnoremap <silent> <leader>w :w<CR>
 nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>Q :q!<CR>
 

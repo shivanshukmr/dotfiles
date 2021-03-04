@@ -11,5 +11,5 @@ require'compe'.setup{
 }
 
 vim.o.completeopt = 'menu,menuone,noselect'
-vim.api.nvim_command [[ inoremap <expr> <C-Space> compe#complete() ]]
-vim.api.nvim_command [[ inoremap <expr> <C-Y> compe#confirm() ]]
+vim.api.nvim_command('inoremap <expr> <C-Space> compe#complete()')
+vim.api.nvim_command('inoremap <expr> <C-Y> compe#confirm()')
