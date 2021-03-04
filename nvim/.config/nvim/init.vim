@@ -36,3 +36,4 @@ endif
 
 filetype plugin indent on
 syntax enable
+source $XDG_CONFIG_HOME/nvim/plugin/local.vim
