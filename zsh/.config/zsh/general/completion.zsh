@@ -1,7 +1,7 @@
 # Case Insensitive auto-completion
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \
-  '+l:|?=** r:|?=**'
+	'+l:|?=** r:|?=**'
 
 # Make completion:
 # - Try exact (case-sensitive) match first.

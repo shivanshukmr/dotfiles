@@ -62,7 +62,7 @@ prompt_pure_string_length_to_var() {
 }
 
 prompt_pure_pwd() {
-  echo "${PWD/#$HOME/~}" | sed -e 's-\(\.*[^/]\)[^/]*/-\1/-g'
+	echo "${PWD/#$HOME/~}" | sed -e 's-\(\.*[^/]\)[^/]*/-\1/-g'
 }
 
 prompt_pure_preprompt_render() {
@@ -84,7 +84,7 @@ prompt_pure_preprompt_render() {
 	local rprompt=""
 
 	# directory
-  preprompt+="%B%F{$STATUS_COLOR}$(prompt_pure_pwd)%f%b"
+	preprompt+="%B%F{$STATUS_COLOR}$(prompt_pure_pwd)%f%b"
 	# show virtual env
 	rprompt+="%(12V.%F{$git_color}%12v%f.)"
 	# git info
@@ -138,7 +138,7 @@ prompt_pure_precmd() {
 	prompt_pure_preprompt_render "precmd"
 
 	# Increment command counter
-  PURER_PROMPT_COMMAND_COUNT=$((PURER_PROMPT_COMMAND_COUNT+1))
+	PURER_PROMPT_COMMAND_COUNT=$((PURER_PROMPT_COMMAND_COUNT+1))
 
 	# print the preprompt
 	prompt_pure_preprompt_render "precmd"
@@ -170,9 +170,9 @@ prompt_pure_async_tasks() {
 	# initialize async worker
 	((!${prompt_pure_async_init:-0})) && {
 		async_start_worker "prompt_pure" -u -n
-		async_register_callback "prompt_pure" prompt_pure_async_callback
-		prompt_pure_async_init=1
-	}
+			async_register_callback "prompt_pure" prompt_pure_async_callback
+			prompt_pure_async_init=1
+		}
 
 	# store working_tree without the "x" prefix
 	local working_tree="${vcs_info_msg_1_#x}"
@@ -248,24 +248,24 @@ prompt_pure_setup() {
 	add-zsh-hook precmd prompt_pure_precmd
 	add-zsh-hook preexec prompt_pure_preexec
 
-  function auto-ls-after-cd() {
-    emulate -L zsh
-    # Only in response to a user-initiated `cd`, not indirectly (eg. via another
-    # function).
-    if [ "$ZSH_EVAL_CONTEXT" = "toplevel:shfunc" ]; then
-      ls -a
-    fi
-  }
-  add-zsh-hook chpwd auto-ls-after-cd
+	function auto-ls-after-cd() {
+		emulate -L zsh
+		# Only in response to a user-initiated `cd`, not indirectly (eg. via another
+		# function).
+		if [ "$ZSH_EVAL_CONTEXT" = "toplevel:shfunc" ]; then
+			ls -a
+		fi
+	}
+add-zsh-hook chpwd auto-ls-after-cd
 
-	zstyle ':vcs_info:*' enable git
-	zstyle ':vcs_info:*' use-simple true
-	# only export two msg variables from vcs_info
-	zstyle ':vcs_info:*' max-exports 2
-	# vcs_info_msg_0_ = ' %b' (for branch)
-	# vcs_info_msg_1_ = 'x%R' git top level (%R), x-prefix prevents creation of a named path (AUTO_NAME_DIRS)
-	zstyle ':vcs_info:git*' formats ' %b' 'x%R'
-	zstyle ':vcs_info:git*' actionformats ' %b|%a' 'x%R'
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' use-simple true
+# only export two msg variables from vcs_info
+zstyle ':vcs_info:*' max-exports 2
+# vcs_info_msg_0_ = ' %b' (for branch)
+# vcs_info_msg_1_ = 'x%R' git top level (%R), x-prefix prevents creation of a named path (AUTO_NAME_DIRS)
+zstyle ':vcs_info:git*' formats ' %b' 'x%R'
+zstyle ':vcs_info:git*' actionformats ' %b|%a' 'x%R'
 
 	# if the user has not registered a custom zle widget for clear-screen,
 	# override the builtin one so that the preprompt is displayed correctly when
