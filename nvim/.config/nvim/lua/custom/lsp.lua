@@ -31,10 +31,10 @@ end
 
 M.init = function()
   -- define signs
-  vim.api.nvim_command('sign define LspDiagnosticsSignError text=>>  texthl=LspDiagnosticsSignError')
-  vim.api.nvim_command('sign define LspDiagnosticsSignWarning text=--  texthl=LspDiagnosticsSignWarning')
-  vim.api.nvim_command('sign define LspDiagnosticsSignInformation text=--  texthl=LspDiagnosticsSignInformation')
-  vim.api.nvim_command('sign define LspDiagnosticsSignHint text=--  texthl=LspDiagnosticsSignHint')
+  vim.fn.sign_define('LspDiagnosticsSignError', {text='>>', texthl='LspDiagnosticsSignError'})
+  vim.fn.sign_define('LspDiagnosticsSignWarning', {text='--', texthl='LspDiagnosticsSignWarning'})
+  vim.fn.sign_define('LspDiagnosticsSignInformation', {text='--', texthl='LspDiagnosticsSignInformation'})
+  vim.fn.sign_define('LspDiagnosticsSignHint', {text='--', texthl='LspDiagnosticsSignHint'})
 
   -- Server setups
   lspconfig.pyright.setup {

@@ -15,7 +15,6 @@ set sidescrolloff=5
 set ignorecase smartcase
 set shortmess-=F shortmess+=c
 set laststatus=0
-set cursorline
 set virtualedit=block
 set pumheight=13
 set grepprg=rg\ --vimgrep\ --smart-case

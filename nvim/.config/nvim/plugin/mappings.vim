@@ -23,10 +23,10 @@ vnoremap ? ?\V
 onoremap / /\V
 onoremap ? ?\V
 
-nnoremap <M-J> :resize -3<CR>
-nnoremap <M-K> :resize +3<CR>
-nnoremap <M-H> :vertical resize -3<CR>
-nnoremap <M-L> :vertical resize +3<CR>
+nnoremap <M-j> :resize -3<CR>
+nnoremap <M-k> :resize +3<CR>
+nnoremap <M-h> :vertical resize -3<CR>
+nnoremap <M-l> :vertical resize +3<CR>
 
 nnoremap <silent> <C-K> :cprevious<CR>
 nnoremap <silent> <C-J> :cnext<CR>
