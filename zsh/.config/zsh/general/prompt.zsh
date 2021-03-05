@@ -84,7 +84,7 @@ prompt_pure_preprompt_render() {
 	local rprompt=""
 
 	# directory
-  preprompt+="%F{$STATUS_COLOR}$(prompt_pure_pwd)%f"
+  preprompt+="%B%F{$STATUS_COLOR}$(prompt_pure_pwd)%f%b"
 	# show virtual env
 	rprompt+="%(12V.%F{$git_color}%12v%f.)"
 	# git info
@@ -247,6 +247,16 @@ prompt_pure_setup() {
 
 	add-zsh-hook precmd prompt_pure_precmd
 	add-zsh-hook preexec prompt_pure_preexec
+
+  function auto-ls-after-cd() {
+    emulate -L zsh
+    # Only in response to a user-initiated `cd`, not indirectly (eg. via another
+    # function).
+    if [ "$ZSH_EVAL_CONTEXT" = "toplevel:shfunc" ]; then
+      ls -a
+    fi
+  }
+  add-zsh-hook chpwd auto-ls-after-cd
 
 	zstyle ':vcs_info:*' enable git
 	zstyle ':vcs_info:*' use-simple true
