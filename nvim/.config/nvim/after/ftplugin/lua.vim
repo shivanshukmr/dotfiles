@@ -1,2 +1,2 @@
-setlocal tabstop=4 shiftwidth=4 noexpandtab
+setlocal tabstop=2 shiftwidth=2 expandtab
 let b:undo_ftplugin .= "|setlocal tabstop< shiftwidth< expandtab<"

@@ -2,7 +2,7 @@ set guicursor=
 set hidden nowrap
 set list listchars=nbsp:_,tab:»·,trail:·,extends:>,precedes:<
 set splitbelow splitright
-set tabstop=2 shiftwidth=2 expandtab smarttab
+set tabstop=4 shiftwidth=4 smarttab
 set smartindent autoindent cindent
 set undofile undodir=/tmp
 set relativenumber
