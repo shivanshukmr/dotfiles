@@ -1,3 +1,9 @@
+augroup general
+  autocmd!
+  autocmd VimEnter,WinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
+
 augroup deinhooks
   autocmd!
   autocmd VimEnter * call dein#call_hook('post_source')

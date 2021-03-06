@@ -38,7 +38,7 @@ nmap <silent> <C-P> <Plug>(CommandT)
 " INSERT
 inoremap <C-C> <Esc>
 
-" COMMAND
+" CMDLINE
 " CTRL-P/N acts like Up/Down in command mode, see :h c_<Up>
 cnoremap <expr> <C-P> pumvisible() ? "\<C-P>" : "\<Up>"
 cnoremap <expr> <C-N> pumvisible() ? "\<C-N>" : "\<Down>"

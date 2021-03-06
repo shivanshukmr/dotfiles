@@ -28,8 +28,9 @@ export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export STACK_ROOT="$XDG_DATA_HOME/stack"
-export GEM_HOME="$XDG_DATA_HOME"/gem
-export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
+export GEM_HOME="$XDG_DATA_HOME/gem"
+export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
+export XAUTHORITY="$XDG_DATA_HOME/x11/Xauthority"
 
 # Other
 export EDITOR="nvim"
