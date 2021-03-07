@@ -8,16 +8,7 @@ if dein#load_state('~/.local/share/nvim/dein')
         \ 'lazy': 1,
         \ 'on_map': 'gr',
         \ })
-  call dein#add('hrsh7th/nvim-compe', {
-        \ 'lazy': 1,
-        \ 'on_ft': ['lua', 'python'],
-        \ 'hook_post_source': 'lua require"custom.compe"',
-        \ })
-  call dein#add('neovim/nvim-lspconfig', {
-        \ 'lazy': 1,
-        \ 'on_ft': ['python'],
-        \ 'hook_post_source': 'lua require"custom.lsp".init()',
-        \ })
+  call dein#add('neovim/nvim-lspconfig')
   call dein#add('tpope/vim-commentary', {
         \ 'lazy': 1,
         \ 'on_map': 'gc',
@@ -36,4 +27,4 @@ endif
 
 filetype plugin indent on
 syntax enable
-source $XDG_CONFIG_HOME/nvim/plugin/local.vim
+source $XDG_DATA_HOME/nvim/local.vim
