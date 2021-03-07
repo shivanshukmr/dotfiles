@@ -13,9 +13,11 @@ set wildignorecase wildignore=*/.git/*,*/__pycache__/*,*/venv/*,*.o
 set nojoinspaces
 set sidescrolloff=5
 set ignorecase smartcase
-set shortmess-=F shortmess+=c
+set shortmess-=F shortmess+=Ic
 set laststatus=0
 set cursorline
+set foldmethod=indent foldlevelstart=99
+set completeopt=menu
 set virtualedit=block
 set pumheight=13
 set grepprg=rg\ --vimgrep\ --smart-case

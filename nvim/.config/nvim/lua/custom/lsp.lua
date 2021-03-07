@@ -4,10 +4,11 @@ local M = {}
 local lspconfig = require'lspconfig'
 
 local mapper = function(mode, lhs, rhs)
-  vim.fn.nvim_buf_set_keymap(0, mode, lhs, rhs, {noremap = true, silent = true})
+  vim.fn.nvim_buf_set_keymap(0, mode, lhs, rhs, { noremap = true, silent = true })
 end
 
 local custom_attach = function(client, bufnr)
+  vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   -- mappings
   if client.resolved_capabilities.code_action then
     mapper('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>')
@@ -31,43 +32,27 @@ end
 
 M.init = function()
   -- define signs
-  vim.fn.sign_define('LspDiagnosticsSignError', {text='>>', texthl='LspDiagnosticsSignError'})
-  vim.fn.sign_define('LspDiagnosticsSignWarning', {text='--', texthl='LspDiagnosticsSignWarning'})
-  vim.fn.sign_define('LspDiagnosticsSignInformation', {text='--', texthl='LspDiagnosticsSignInformation'})
-  vim.fn.sign_define('LspDiagnosticsSignHint', {text='--', texthl='LspDiagnosticsSignHint'})
+  vim.fn.sign_define('LspDiagnosticsSignError', { text='>>', texthl='LspDiagnosticsSignError' })
+  vim.fn.sign_define('LspDiagnosticsSignWarning', { text='--', texthl='LspDiagnosticsSignWarning' })
+  vim.fn.sign_define('LspDiagnosticsSignInformation', { text='--', texthl='LspDiagnosticsSignInformation' })
+  vim.fn.sign_define('LspDiagnosticsSignHint', { text='--', texthl='LspDiagnosticsSignHint' })
+
+  -- override diagnostics
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+      underline = {
+        severity_limit = "Warning",
+      },
+      virtual_text = {
+        severity_limit = "Warning",
+      },
+    }
+  )
 
   -- Server setups
   lspconfig.pyright.setup {
     on_attach = custom_attach,
   }
-
-  lspconfig.efm.setup {
-    on_attach = custom_attach,
-    init_options = {documentFormatting = true},
-    settings = {
-      rootMarkers = {".git/"},
-      languages = {
-        python = {
-          {
-            formatCommand = "black -",
-            formatStdin = true,
-          },
-          {
-            formatCommand = "isort --stdout --profile black -",
-            formatStdin = true,
-          },
-          {
-            lintCommand = "flake8 --max-line-length 160 --stdin-display-name ${INPUT} -",
-            lintStdin = true,
-            lintIgnoreExitCode = true,
-            lintFormats = {"%f=%l:%c: %m"},
-          },
-        },
-      },
-    },
-  }
-
-  vim.api.nvim_command('e')
 end
 
 return M

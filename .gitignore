@@ -1,4 +1,3 @@
 .zcalc_history
 .zcompdump*
 .netrwhist
-nvim/.config/nvim/plugin/local.vim

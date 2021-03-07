@@ -1,4 +1,5 @@
-" LEADER
+" vim: fdm=marker fdl=0
+" LEADER {{{
 let mapleader = " "
 
 nnoremap <silent> <leader>w :w<CR>
@@ -7,10 +8,11 @@ nnoremap <silent> <leader>Q :q!<CR>
 
 nnoremap <silent> <leader>x :silent confirm bd<CR>
 nnoremap <leader>b :b <C-D>
-
-" NORMAL
+" }}}
+" NORMAL {{{
 nnoremap Y y$
 nnoremap <silent> - :Explore<CR>
+nnoremap <S-Tab> za
 
 " Store relative line number jumps in the jumplist if they exceed a threshold(5)
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
@@ -34,13 +36,14 @@ nnoremap <silent> <C-H> :cpfile<CR>
 nnoremap <silent> <C-L> :cnfile<CR>
 
 nmap <silent> <C-P> <Plug>(CommandT)
-
-" INSERT
+" }}}
+" INSERT {{{
 inoremap <C-C> <Esc>
-
-" CMDLINE
+" }}}
+" CMDLINE {{{
 " CTRL-P/N acts like Up/Down in command mode, see :h c_<Up>
 cnoremap <expr> <C-P> pumvisible() ? "\<C-P>" : "\<Up>"
 cnoremap <expr> <C-N> pumvisible() ? "\<C-N>" : "\<Down>"
 
 cnoremap <expr> / custom#verymagic#very_magic_slash()
+" }}}

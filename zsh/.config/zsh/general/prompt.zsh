@@ -170,8 +170,8 @@ prompt_pure_async_tasks() {
 	# initialize async worker
 	((!${prompt_pure_async_init:-0})) && {
 		async_start_worker "prompt_pure" -u -n
-			async_register_callback "prompt_pure" prompt_pure_async_callback
-			prompt_pure_async_init=1
+		async_register_callback "prompt_pure" prompt_pure_async_callback
+		prompt_pure_async_init=1
 		}
 
 	# store working_tree without the "x" prefix

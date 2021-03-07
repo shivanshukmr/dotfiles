@@ -36,7 +36,6 @@ export XAUTHORITY="$XDG_DATA_HOME/x11/Xauthority"
 export EDITOR="nvim"
 export TERMINAL="st"
 
-export GOPATH=$HOME/misc/go
-export PATH=$HOME/.local/bin:$GOPATH/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XDG_CONFIG_HOME/x11/xinitrc"
