@@ -53,6 +53,7 @@ M.init = function()
   lspconfig.pyright.setup {
     on_attach = custom_attach,
   }
+  vim.api.nvim_command('e')
 end
 
 return M

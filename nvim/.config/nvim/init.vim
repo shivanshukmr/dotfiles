@@ -8,16 +8,23 @@ if dein#load_state('~/.local/share/nvim/dein')
         \ 'lazy': 1,
         \ 'on_map': 'gr',
         \ })
-  call dein#add('neovim/nvim-lspconfig')
+  call dein#add('neovim/nvim-lspconfig', {
+        \ 'lazy': 1,
+        \ 'on_ft': ['python'],
+        \ 'hook_post_source': 'lua require"custom.lsp".init()',
+        \ })
   call dein#add('tpope/vim-commentary', {
         \ 'lazy': 1,
         \ 'on_map': 'gc',
         \ })
   call dein#add('tpope/vim-surround', {
         \ 'lazy': 1,
-        \ 'on_map': {'n': ['cs', 'ds', 'ys'], 'x': 'S'},
+        \ 'on_map': { 'n': ['cs', 'ds', 'ys'], 'x': 'S' },
         \ })
   call dein#add('wincent/command-t', {
+        \ 'lazy': 1,
+        \ 'on_map': { 'n': '<C-p>' },
+        \ 'hook_post_source': 'nmap <silent> <C-P> <Plug>(CommandT)',
         \ 'build': 'sh -c "cd ruby/command-t/ext/command-t && ruby extconf.rb && make"',
         \ })
 
