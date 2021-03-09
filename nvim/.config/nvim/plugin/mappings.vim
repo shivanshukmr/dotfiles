@@ -12,7 +12,6 @@ nnoremap <leader>b :b <C-D>
 " NORMAL {{{
 nnoremap Y y$
 nnoremap <silent> - :Explore<CR>
-nnoremap <S-Tab> za
 
 " Store relative line number jumps in the jumplist if they exceed a threshold(5)
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
@@ -24,11 +23,6 @@ vnoremap / /\V
 vnoremap ? ?\V
 onoremap / /\V
 onoremap ? ?\V
-
-nnoremap <M-j> :resize -3<CR>
-nnoremap <M-k> :resize +3<CR>
-nnoremap <M-h> :vertical resize -3<CR>
-nnoremap <M-l> :vertical resize +3<CR>
 
 nnoremap <silent> <C-K> :cprevious<CR>
 nnoremap <silent> <C-J> :cnext<CR>

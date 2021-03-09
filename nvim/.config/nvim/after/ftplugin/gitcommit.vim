@@ -1,2 +1,2 @@
-setlocal spell nornu nocursorline
-let b:undo_ftplugin .= "|setlocal spell< rnu< cursorline<"
+setlocal spell nornu
+let b:undo_ftplugin .= "|setlocal spell< rnu<"
