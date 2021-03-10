@@ -37,5 +37,5 @@ inoremap <C-C> <Esc>
 cnoremap <expr> <C-P> pumvisible() ? "\<C-P>" : "\<Up>"
 cnoremap <expr> <C-N> pumvisible() ? "\<C-N>" : "\<Down>"
 
-cnoremap <expr> / custom#verymagic#very_magic_slash()
+cnoremap <expr> / luaeval('require"custom.verymagic"()')
 " }}}

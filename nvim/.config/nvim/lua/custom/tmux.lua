@@ -7,12 +7,12 @@ M.clear = function()
 end
 
 M.build = function(source)
-  if vim.fn.has('vim_starting') == 1 or vim.api.nvim_buf_get_option(0, 'filetype') == 'command-t' then
+  if vim.fn.has('vim_starting') == 1 or vim.bo.filetype == 'command-t' then
     return
   end
   local curlinepos = vim.api.nvim_win_get_cursor(0)[1]
   local cmd = 'tmux set-option -g status-right "' .. vim.fn.expand('%:~:.') .. ' ' .. curlinepos .. 'L' .. ' "'
-  if source == 1 then -- cursor move event
+  if source == 1 then  -- cursor move event
     if curlinepos ~= lastlinepos then
       vim.fn.system(cmd)
       lastlinepos = curlinepos
