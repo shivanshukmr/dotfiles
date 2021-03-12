@@ -2,6 +2,6 @@
 
 while true
 do
-	xsetroot -name " $(date "+%a %H:%M")"
+	xsetroot -name " $(date "+%d %b %a %H:%M")"
 	sleep 1m
 done

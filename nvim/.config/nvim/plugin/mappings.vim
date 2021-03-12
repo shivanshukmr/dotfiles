@@ -8,6 +8,7 @@ nnoremap <silent> <leader>Q :q!<CR>
 
 nnoremap <silent> <leader>x :silent confirm bd<CR>
 nnoremap <leader>b :b <C-D>
+nnoremap <leader>g :silent grep<Space>
 " }}}
 " NORMAL {{{
 nnoremap Y y$
@@ -24,10 +25,9 @@ vnoremap ? ?\V
 onoremap / /\V
 onoremap ? ?\V
 
+nnoremap <silent> \ :silent make %<CR>
 nnoremap <silent> <C-K> :cprevious<CR>
 nnoremap <silent> <C-J> :cnext<CR>
-nnoremap <silent> <C-H> :cpfile<CR>
-nnoremap <silent> <C-L> :cnfile<CR>
 " }}}
 " INSERT {{{
 inoremap <C-C> <Esc>

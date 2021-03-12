@@ -3,8 +3,8 @@ export LANG=en_US.UTF-8
 
 # History in cache directory:
 HISTFILE=~/.cache/zsh/histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 
 setopt autocd
 setopt histignorealldups

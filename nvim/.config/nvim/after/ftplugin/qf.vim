@@ -1,2 +1,2 @@
 setlocal norelativenumber
-let b:undo_ftplugin .= "|setlocal norelativenumber<"
+let b:undo_ftplugin .= '|setlocal norelativenumber<'

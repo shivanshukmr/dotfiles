@@ -21,7 +21,6 @@ set virtualedit=block
 set pumheight=13
 set grepprg=rg\ --vimgrep\ --smart-case
 set grepformat^=%f:%l:%c:%m
-command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
 
 let g:netrw_banner=0
 

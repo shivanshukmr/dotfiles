@@ -4,7 +4,7 @@ local M = {}
 local lspconfig = require'lspconfig'
 
 local mapper = function(mode, lhs, rhs)
-  vim.fn.nvim_buf_set_keymap(0, mode, lhs, rhs, { noremap = true, silent = true })
+  vim.api.nvim_buf_set_keymap(0, mode, lhs, rhs, { noremap = true, silent = true })
 end
 
 local custom_attach = function(client, bufnr)
@@ -53,7 +53,6 @@ M.init = function()
   lspconfig.pyright.setup {
     on_attach = custom_attach,
   }
-  vim.api.nvim_command('e')
 end
 
 return M
