@@ -2,7 +2,7 @@ set guicursor=
 set hidden nowrap
 set list listchars=nbsp:_,tab:»·,trail:·,extends:>,precedes:<
 set splitbelow splitright
-set tabstop=4 shiftwidth=4 smarttab
+set tabstop=4 softtabstop=-1 shiftwidth=0 smarttab
 set smartindent autoindent cindent
 set undofile undodir=/tmp
 set relativenumber
@@ -22,11 +22,12 @@ set pumheight=13
 set grepprg=rg\ --vimgrep\ --smart-case
 set grepformat^=%f:%l:%c:%m
 
-let g:netrw_banner=0
+let g:black_fast = 1
+let g:black_quiet = 1
 
-" Not loading python(3) providers for faster startup time
+let g:netrw_banner=0
 let g:loaded_python_provider=0
-let g:loaded_python3_provider=0
+let g:python3_host_prog = '~/misc/neovim/pynvim/bin/python'
 
 let g:gruvbox_filetype_hi_groups=1
 set termguicolors

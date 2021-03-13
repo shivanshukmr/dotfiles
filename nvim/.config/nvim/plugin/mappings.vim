@@ -25,7 +25,6 @@ vnoremap ? ?\V
 onoremap / /\V
 onoremap ? ?\V
 
-nnoremap <silent> \ :silent make %<CR>
 nnoremap <silent> <C-K> :cprevious<CR>
 nnoremap <silent> <C-J> :cnext<CR>
 " }}}

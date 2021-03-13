@@ -8,7 +8,11 @@ if dein#load_state('~/.local/share/nvim/dein')
         \ 'lazy': 1,
         \ 'on_map': 'gr',
         \ })
-  call dein#add('neovim/nvim-lspconfig')
+  call dein#add('neovim/nvim-lspconfig', {
+        \ 'lazy': 1,
+        \ 'on_ft': ['python'],
+        \ 'hook_post_source': 'lua require"custom.lsp".init()',
+        \ })
   call dein#add('tpope/vim-commentary', {
         \ 'lazy': 1,
         \ 'on_map': 'gc',
@@ -24,11 +28,15 @@ if dein#load_state('~/.local/share/nvim/dein')
         \ 'hook_post_source': 'nmap <silent> <C-P> <Plug>(CommandT)',
         \ 'build': 'sh -c "cd ruby/command-t/ext/command-t && ruby extconf.rb && make"',
         \ })
+  call dein#add('~/.local/share/nvim/dein/repos/github.com/psf/black', {
+        \ 'lazy': 1,
+        \ 'on_ft': 'python',
+        \ })
 
   call dein#end()
   call dein#save_state()
 endif
 
 filetype plugin indent on
-syntax on
+syntax enable
 source $XDG_DATA_HOME/nvim/local.vim
