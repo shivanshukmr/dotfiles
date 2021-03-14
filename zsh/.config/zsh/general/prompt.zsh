@@ -26,7 +26,7 @@
 source $XDG_CONFIG_HOME/zsh/plugin/async.zsh
 
 PURER_PROMPT_COMMAND_COUNT=0
-STATUS_COLOR='208'
+STATUS_COLOR='4'
 
 prompt_pure_clear_screen() {
 	# enable output to terminal
@@ -85,10 +85,14 @@ prompt_pure_preprompt_render() {
 
 	# directory
 	preprompt+="%B%F{$STATUS_COLOR}$(prompt_pure_pwd)%f%b"
+	rprompt+="%F{$git_color}"
+	# status code
+	rprompt+="%(?..%?)"
 	# show virtual env
-	rprompt+="%(12V.%F{$git_color}%12v%f.)"
+	rprompt+="%(12V. %12v.)"
 	# git info
-	rprompt+="%F{$git_color}${vcs_info_msg_0_}${prompt_pure_git_dirty}%f"
+	rprompt+="${vcs_info_msg_0_}${prompt_pure_git_dirty}"
+	rprompt+="%f"
 
 	preprompt+=" "
 

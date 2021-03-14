@@ -28,6 +28,7 @@ local custom_attach = function(client, bufnr)
   if client.resolved_capabilities.rename then
     mapper('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>')
   end
+  mapper('n', '<leader>d', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
 end
 
 M.init = function()
