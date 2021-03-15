@@ -11,7 +11,7 @@ nnoremap <leader>b :b <C-D>
 nnoremap <leader>g :silent grep<Space>
 " }}}
 " NORMAL {{{
-nnoremap Y y$
+noremap Y y$
 nnoremap <silent> - :Explore<CR>
 
 " Store relative line number jumps in the jumplist if they exceed a threshold(5)

@@ -86,8 +86,6 @@ prompt_pure_preprompt_render() {
 	# directory
 	preprompt+="%B%F{$STATUS_COLOR}$(prompt_pure_pwd)%f%b"
 	rprompt+="%F{$git_color}"
-	# status code
-	rprompt+="%(?..%?)"
 	# show virtual env
 	rprompt+="%(12V. %12v.)"
 	# git info

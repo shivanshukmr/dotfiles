@@ -12,5 +12,6 @@ setopt histfindnodups
 setopt listpacked
 setopt correct
 setopt noflowcontrol
+setopt printexitvalue
 
 autoload -Uz zcalc

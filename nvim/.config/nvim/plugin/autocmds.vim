@@ -3,7 +3,7 @@ augroup deinhooks
     autocmd VimEnter * call dein#call_hook('post_source')
 augroup END
 
-if !empty($TMUX)
+if exists('$TMUX')
   augroup tmuxstatus
     autocmd!
     autocmd BufEnter * lua require'custom.tmux'.build()
