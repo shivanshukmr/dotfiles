@@ -11,18 +11,18 @@ M.build = function(source)
     return
   end
   local curlinepos = vim.api.nvim_win_get_cursor(0)[1]
-  local cmd = 'tmux set-option -g status-right "' .. vim.fn.expand('%:~:.') .. ' ' .. curlinepos .. 'L' .. ' "'
+  local cmd = { 'tmux', 'set-option', '-g', 'status-right', vim.fn.expand('%:~:.') .. ' ' .. curlinepos .. 'L' }
   if source == 1 then  -- cursor move event
     if curlinepos ~= lastlinepos then
-      vim.fn.system(cmd)
+      vim.fn.jobstart(cmd)
       lastlinepos = curlinepos
     end
   elseif source == 2 then  -- focus gained event
     -- delay required on FocusGained event so another vim instance can clear the statusline
     vim.api.nvim_command('sleep 15m')
-    vim.fn.system(cmd)
+    vim.fn.jobstart(cmd)
   else
-    vim.fn.system(cmd)
+    vim.fn.jobstart(cmd)
   end
 end
 
