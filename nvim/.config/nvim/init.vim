@@ -19,6 +19,7 @@ if dein#load_state('~/.local/share/nvim/dein')
   call dein#add('wincent/command-t', {
         \ 'lazy': 1,
         \ 'on_map': { 'n': '<C-p>' },
+        \ 'on_cmd': ['CommandT'],
         \ 'hook_post_source': 'nmap <silent> <C-P> <Plug>(CommandT)',
         \ 'build': 'sh -c "cd ruby/command-t/ext/command-t && ruby extconf.rb && make"',
         \ })
