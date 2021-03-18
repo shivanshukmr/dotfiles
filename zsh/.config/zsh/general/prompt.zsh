@@ -85,14 +85,15 @@ prompt_pure_preprompt_render() {
 
 	# directory
 	preprompt+="%B%F{$STATUS_COLOR}$(prompt_pure_pwd)%f%b"
+	preprompt+="%(1j.%F{3}*%f.)"
+	preprompt+=" "
+
 	rprompt+="%F{$git_color}"
 	# show virtual env
 	rprompt+="%(12V. %12v.)"
 	# git info
 	rprompt+="${vcs_info_msg_0_}${prompt_pure_git_dirty}"
 	rprompt+="%f"
-
-	preprompt+=" "
 
 	# make sure prompt_pure_last_preprompt is a global array
 	typeset -g -a prompt_pure_last_preprompt

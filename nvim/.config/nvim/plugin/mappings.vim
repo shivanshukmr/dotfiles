@@ -8,7 +8,6 @@ nnoremap <silent> <leader>Q :q!<CR>
 
 nnoremap <silent> <leader>x :silent confirm bd<CR>
 nnoremap <leader>b :b <C-D>
-nnoremap <leader><leader> <C-^>
 nnoremap <leader>g :silent grep<Space>
 " }}}
 " NORMAL {{{
@@ -21,10 +20,6 @@ nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
 
 nnoremap / /\v
 nnoremap ? ?\v
-vnoremap / /\V
-vnoremap ? ?\V
-onoremap / /\V
-onoremap ? ?\V
 
 nnoremap <silent> <C-K> :cprevious<CR>
 nnoremap <silent> <C-J> :cnext<CR>
@@ -37,5 +32,6 @@ inoremap <C-C> <Esc>
 cnoremap <expr> <C-P> pumvisible() ? "\<C-P>" : "\<Up>"
 cnoremap <expr> <C-N> pumvisible() ? "\<C-N>" : "\<Down>"
 
+cnoremap <C-A> <Home>
 cnoremap <expr> / luaeval('require"custom.verymagic"()')
 " }}}
