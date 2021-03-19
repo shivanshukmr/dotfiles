@@ -4,4 +4,5 @@ let g:CommandTTraverseSCM = 'pwd'
 let g:CommandTGitIncludeUntracked = 1
 let g:CommandTScanDotDirectories = 1
 let g:CommandTWildIgnore = &wildignore
+let g:CommandTMaxFiles = 200000
 let g:CommandTInputDebounce = 50
