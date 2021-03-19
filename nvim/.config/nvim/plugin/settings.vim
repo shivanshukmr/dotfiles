@@ -3,7 +3,7 @@ set hidden nowrap
 set list listchars=nbsp:_,tab:»·,trail:·,extends:>,precedes:<
 set splitbelow splitright
 set tabstop=4 softtabstop=-1 shiftwidth=0 smarttab
-set smartindent autoindent cindent
+set autoindent cindent
 set undofile undodir=/tmp
 set relativenumber
 set nobackup nowritebackup
