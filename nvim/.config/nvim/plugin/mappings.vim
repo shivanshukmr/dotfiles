@@ -24,8 +24,11 @@ nnoremap <silent> <C-K> :cprevious<CR>
 nnoremap <silent> <C-J> :cnext<CR>
 
 nnoremap <Tab> za
-" Configured st to send F11 when pressing <C-I>
-nnoremap <F11> <C-I>
+" Configured st to send F35(C-F11) when pressing <C-I>
+nnoremap <F35> <C-I>
+nnoremap [<F35> [<C-I>
+nnoremap ]<F35> ]<C-I>
+inoremap <C-X><F35> <C-X><C-I>
 " }}}
 " INSERT {{{
 inoremap <C-C> <Esc>

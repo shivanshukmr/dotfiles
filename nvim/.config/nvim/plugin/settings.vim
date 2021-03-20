@@ -16,7 +16,7 @@ set ignorecase smartcase
 set shortmess+=Ic
 set laststatus=0
 set fillchars=eob:\ ,
-set foldmethod=indent foldlevelstart=99
+set foldmethod=indent foldlevelstart=1
 set completeopt=menu
 set virtualedit=block
 set pumheight=13
