@@ -3,7 +3,6 @@ local M = {}
 local api = vim.api
 local loop = vim.loop
 local lastlinepos = 1
-lastbuf = "" -- debug, make local
 
 M.clear = function()
   vim.fn.system('tmux set-option -g status-right ""')
@@ -23,10 +22,8 @@ M.build = function(source)
   elseif source == 2 then  -- focus gained event
     -- delay on FocusGained event so another vim instance can clear the statusline
     api.nvim_command('sleep 15m')
-    lastbuf = api.nvim_buf_get_name(0)
     loop.spawn('tmux', { args = tmux_args, }, function() end)
   else
-    lastbuf = api.nvim_buf_get_name(0)
     loop.spawn('tmux', { args = tmux_args, }, function() end)
   end
 end
