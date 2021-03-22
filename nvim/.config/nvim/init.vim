@@ -16,6 +16,10 @@ if dein#load_state('~/.local/share/nvim/dein')
         \ 'lazy': 1,
         \ 'on_map': { 'n': ['cs', 'ds', 'ys'], 'x': 'S' },
         \ })
+  call dein#add('rstacruz/vim-closer', {
+        \ 'lazy': 1,
+        \ 'on_map': { 'i': '<CR>' },
+        \ })
   call dein#add('wincent/command-t', {
         \ 'lazy': 1,
         \ 'on_map': { 'n': '<C-p>' },
