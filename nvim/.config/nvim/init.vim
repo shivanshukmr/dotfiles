@@ -26,7 +26,7 @@ if dein#load_state('~/.local/share/nvim/dein')
   call dein#add('neovim/nvim-lspconfig', {
         \ 'lazy': 1,
         \ 'on_ft': ['python'],
-        \ 'hook_post_source': 'lua require"custom.lsp".init()',
+        \ 'hook_post_source': 'lua require"config.lsp".init()',
         \ })
   call dein#add('~/.local/share/nvim/dein/repos/github.com/psf/black', {
         \ 'lazy': 1,

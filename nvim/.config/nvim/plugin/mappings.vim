@@ -39,5 +39,5 @@ cnoremap <expr> <C-P> pumvisible() ? "\<C-P>" : "\<Up>"
 cnoremap <expr> <C-N> pumvisible() ? "\<C-N>" : "\<Down>"
 
 cnoremap <C-A> <Home>
-cnoremap <expr> / luaeval('require"custom.verymagic"()')
+cnoremap <expr> / luaeval('require"config.verymagic"()')
 " }}}

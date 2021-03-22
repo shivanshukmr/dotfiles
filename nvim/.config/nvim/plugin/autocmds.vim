@@ -1,14 +1,14 @@
 augroup deinhooks
   autocmd!
-    autocmd VimEnter * call dein#call_hook('post_source')
+  autocmd VimEnter * call dein#call_hook('post_source')
 augroup END
 
 if exists('$TMUX')
   augroup tmuxstatus
     autocmd!
-    autocmd BufEnter * lua require'custom.tmux'.build()
-    autocmd CursorMoved,CursorMovedI * lua require'custom.tmux'.build(1)
-    autocmd FocusGained * lua require'custom.tmux'.build(2)
-    autocmd VimLeave,VimSuspend,FocusLost * lua require'custom.tmux'.clear()
+    autocmd BufEnter * lua require'config.tmux'.build()
+    autocmd CursorMoved,CursorMovedI * lua require'config.tmux'.build(1)
+    autocmd FocusGained * lua require'config.tmux'.build(2)
+    autocmd VimLeave,VimSuspend,FocusLost * lua require'config.tmux'.clear()
   augroup END
 endif
