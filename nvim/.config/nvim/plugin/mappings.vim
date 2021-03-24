@@ -7,6 +7,7 @@ nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>Q :q!<CR>
 
 nnoremap <silent> <leader>x :silent confirm bd<CR>
+nnoremap <silent> <leader>X :bd!<CR>
 nnoremap <leader>b :b <C-D>
 nnoremap <leader>g :silent grep<Space>
 " }}}

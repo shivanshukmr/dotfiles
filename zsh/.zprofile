@@ -37,5 +37,6 @@ export EDITOR="nvim"
 export TERMINAL="st"
 
 export PATH=$HOME/.local/bin:$PATH
+export XDEB_PKGROOT="$XDG_DATA_HOME/xdeb"
 
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XDG_CONFIG_HOME/x11/xinitrc"
