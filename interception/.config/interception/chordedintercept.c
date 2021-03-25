@@ -90,10 +90,6 @@ const mapping mappings[] = {
 		.to = {.code = KEY_C, .modifiers = {.ctrl = LEFT}},
 	},
 	{
-		.from = {.code = KEY_L, .modifiers = {.alt = EITHER}},
-		.to = {.code = KEY_L, .modifiers = {.ctrl = LEFT}},
-	},
-	{
 		.from = {.code = KEY_N, .modifiers = {.alt = EITHER}},
 		.to = {.code = KEY_N, .modifiers = {.ctrl = LEFT}},
 	},
