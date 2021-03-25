@@ -20,3 +20,8 @@
 	excludesfile = ~/.config/git/ignore
 [init]
 	defaultBranch = main
+[diff]
+	tool = nvimdiff
+	algorithm = patience
+[difftool "nvimdiff"]
+	cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""

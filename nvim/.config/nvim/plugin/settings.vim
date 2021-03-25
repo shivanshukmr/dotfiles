@@ -22,6 +22,11 @@ set virtualedit=block
 set pumheight=13
 set grepprg=rg\ --vimgrep\ --smart-case
 set grepformat^=%f:%l:%c:%m
+set diffopt+=context:3,indent-heuristic,algorithm:patience
+
+if &diff
+  syntax off
+endif
 
 let g:black_fast = 1
 let g:black_quiet = 1
