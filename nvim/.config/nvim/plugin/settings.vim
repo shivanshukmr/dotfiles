@@ -20,8 +20,6 @@ set foldmethod=indent foldlevelstart=99
 set completeopt=menu
 set virtualedit=block
 set pumheight=13
-set grepprg=rg\ --vimgrep\ --smart-case
-set grepformat^=%f:%l:%c:%m
 set diffopt+=context:3,indent-heuristic,algorithm:patience
 
 if &diff

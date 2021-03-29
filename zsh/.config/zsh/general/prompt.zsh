@@ -26,7 +26,7 @@
 source $XDG_CONFIG_HOME/zsh/plugin/async.zsh
 
 PURER_PROMPT_COMMAND_COUNT=0
-STATUS_COLOR='4'
+STATUS_COLOR='12'
 
 prompt_pure_clear_screen() {
 	# enable output to terminal
