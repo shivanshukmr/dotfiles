@@ -11,9 +11,8 @@ augroup END
 if exists('$TMUX')
   augroup tmuxstatus
     autocmd!
-    autocmd BufEnter * lua require'config.tmux'.build()
-    autocmd CursorMoved,CursorMovedI * lua require'config.tmux'.build(1)
-    autocmd FocusGained * lua require'config.tmux'.build(2)
+    autocmd BufEnter,BufWrite,Filetype * lua require'config.tmux'.build()
+    autocmd FocusGained * lua require'config.tmux'.build(1)
     autocmd VimLeave,VimSuspend,FocusLost * lua require'config.tmux'.clear()
   augroup END
 endif

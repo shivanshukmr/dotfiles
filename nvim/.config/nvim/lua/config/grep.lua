@@ -1,3 +1,4 @@
+-- https://teukka.tech/vimloop.html
 local M = {}
 
 
