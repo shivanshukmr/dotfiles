@@ -23,6 +23,7 @@ nnoremap ? ?\v
 
 nnoremap Y y$
 nnoremap c* *Ncgn
+nnoremap <expr> <C-C> &buftype == '' ? '<Esc>' : '<C-C>'
 nnoremap <silent> - :Explore<CR>
 nnoremap <silent> <C-K> :cprevious<CR>
 nnoremap <silent> <C-J> :cnext<CR>

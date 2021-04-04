@@ -7,7 +7,6 @@ set autoindent cindent
 set undofile undodir=/tmp
 set number relativenumber
 set nobackup nowritebackup
-set clipboard=unnamedplus
 set incsearch nohlsearch
 set wildignorecase wildignore=*/.git/*,*/__pycache__/*,*/venv/*,*.o
 set nojoinspaces noruler
@@ -25,6 +24,7 @@ set diffopt+=context:3,indent-heuristic,algorithm:patience
 if &diff
   syntax off
   set norelativenumber
+  set nolist
 endif
 
 let g:black_fast = 1

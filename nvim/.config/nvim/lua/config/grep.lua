@@ -5,6 +5,7 @@ local M = {}
 local loop = vim.loop
 local api = vim.api
 local fn = vim.fn
+local cc_cmd = true
 
 local setQFlist = function(results)
   vim.schedule(function()
@@ -23,6 +24,13 @@ local onread = function(err, data)
       table.insert(results, str)
     end
     setQFlist(results)
+    if cc_cmd == true then
+      vim.schedule(function()
+        api.nvim_command('silent! cc | redraw!')
+      end
+      )
+      cc_cmd = false
+    end
   end
 end
 
@@ -39,7 +47,6 @@ M.grep = function(regexp)
     stdout:close()
     stderr:close()
     handle:close()
-    api.nvim_command('silent! cc')
   end
   )
   )

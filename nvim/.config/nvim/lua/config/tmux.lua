@@ -8,7 +8,7 @@ M.clear = function()
   fn.system('tmux set-option -g status-right ""')
 end
 
-M.build = function(source)
+M.build = function(delay)
   if fn.has('vim_starting') == 1 then
     return
   end
@@ -25,8 +25,7 @@ M.build = function(source)
     '#[fg=white,bold,italics]' .. filetype .. '#[default] ' .. filename,
   }
 
-  if source == 1 then  -- focus gained event
-    -- delay on FocusGained event so another vim instance can clear the statusline
+  if delay == 1 then -- delay on FocusGained event so another vim instance can clear the statusline
     api.nvim_command('sleep 15m')
     loop.spawn('tmux', { args = tmux_args, }, function() end)
   else
