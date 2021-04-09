@@ -20,13 +20,13 @@ local onread = function(err, data)
   end
   if data then
     local results = {}
-    for str in string.gmatch(data, '([^'..'\n'..']+)') do
+    for str in string.gmatch(data, '([^\n]+)') do
       table.insert(results, str)
     end
     setQFlist(results)
     if cc_cmd == true then
       vim.schedule(function()
-        api.nvim_command('silent! cc | redraw!')
+        api.nvim_command('cc | redraw!')
       end
       )
       cc_cmd = false

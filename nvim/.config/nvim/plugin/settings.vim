@@ -13,7 +13,7 @@ set nojoinspaces noruler
 set sidescrolloff=5
 set ignorecase smartcase
 set shortmess+=Ic
-set laststatus=0 statusline=%f
+set laststatus=0 statusline=%<
 set fillchars=eob:\ ,
 set foldmethod=indent foldlevelstart=99
 set completeopt=menu
@@ -33,7 +33,3 @@ let g:black_quiet = 1
 let g:netrw_banner=0
 let g:loaded_python_provider=0
 let g:python3_host_prog = '~/misc/neovim/pynvim/bin/python'
-
-let g:gruvbox_filetype_hi_groups=1
-set termguicolors
-colorscheme gruvbox8_hard

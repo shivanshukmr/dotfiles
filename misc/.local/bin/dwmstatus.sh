@@ -3,14 +3,12 @@
 dunst() {
 	if $(dunstctl is-paused)
 	then
-		printf " P"
-	else
-		printf ""
+		printf "dunst/P"
 	fi
 }
 
 while true
 do
-	xsetroot -name "$(dunst)$(date "+ %d %b %a %H:%M")"
+	xsetroot -name "$(dunst)  $(date "+%a %b %d  %H:%M" | tr '[:upper:]' '[:lower:]')"
 	sleep 1s
 done
