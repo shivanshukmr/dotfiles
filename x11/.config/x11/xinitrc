@@ -1,9 +1,8 @@
 setxkbmap -option ''
 setxkbmap -option shift:both_capslock
-xwallpaper --stretch $XDG_DATA_HOME/wall.jpg
 brave-browser-stable 2>/dev/null &
-picom &
-dwmstatus.sh &
+dwmstatus &
 unclutter -idle 3 &
 dunst &
+clipmenud &
 exec dwm

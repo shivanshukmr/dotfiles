@@ -1,7 +1,6 @@
 local M = {}
 
 local fn = vim.fn
-local api = vim.api
 local loop = vim.loop
 
 M.clear = function()
@@ -9,11 +8,11 @@ M.clear = function()
 end
 
 M.build = function(delay)
-  if fn.has('vim_starting') == 1 then
+  if fn.has('vim_starting') == 1 or vim.bo.buftype == 'nofile' then
     return
   end
 
-  local filetype = api.nvim_buf_get_option(0, 'ft')
+  local filetype = vim.bo.filetype
   local filename = fn.expand('%:~:.')
   if filename ~= '' then
     filename = filename .. ' '
@@ -26,7 +25,7 @@ M.build = function(delay)
   }
 
   if delay == 1 then -- delay on FocusGained event so another vim instance can clear the statusline
-    api.nvim_command('sleep 15m')
+    vim.api.nvim_command('sleep 15m')
     loop.spawn('tmux', { args = tmux_args, }, function() end)
   else
     loop.spawn('tmux', { args = tmux_args, }, function() end)

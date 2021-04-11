@@ -1,4 +1,4 @@
-" vim: fdm=marker fdl=0
+" vim: fdm=marker
 " LEADER {{{
 let mapleader = " "
 
@@ -10,7 +10,7 @@ nnoremap <silent> <leader>x :silent confirm bd<CR>
 nnoremap <silent> <leader>X :bd!<CR>
 nnoremap <leader>b :b <C-D>
 
-command! -nargs=1 -bar Grep lua require'config.grep'.grep(<q-args>)
+command! -nargs=1 Grep lua require'config.grep'.grep(<q-args>)
 nnoremap <leader>g :Grep<Space>
 " }}}
 " NORMAL {{{

@@ -1,6 +1,6 @@
 set guicursor=
 set hidden nowrap
-set list listchars=nbsp:_,tab:»·,trail:·,extends:>,precedes:<
+set list listchars=nbsp:_,tab:»\ ,trail:·,extends:>,precedes:<
 set splitbelow splitright
 set tabstop=4 softtabstop=-1 shiftwidth=0
 set autoindent cindent
@@ -14,6 +14,7 @@ set sidescrolloff=5
 set ignorecase smartcase
 set shortmess+=Ic
 set laststatus=0 statusline=%<
+set signcolumn=number
 set fillchars=eob:\ ,
 set foldmethod=indent foldlevelstart=99
 set completeopt=menu
