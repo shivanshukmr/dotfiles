@@ -1,5 +1,4 @@
 HYPHEN_INSENSITIVE="true"
-export LANG=en_US.UTF-8
 
 # History in cache directory:
 HISTFILE=~/.cache/zsh/histfile
