@@ -14,15 +14,20 @@ local setQFlist = function(results)
   )
 end
 
+local str_split = function(str, delim)
+  local result = {}
+  for substr in string.gmatch(str, '([^' .. delim .. ']+)') do
+    table.insert(result, substr)
+  end
+  return result
+end
+
 local onread = function(err, data)
   if err then
     return
   end
   if data then
-    local results = {}
-    for str in string.gmatch(data, '([^\n]+)') do
-      table.insert(results, str)
-    end
+    local results = str_split(data, '\n')
     setQFlist(results)
     if cc_cmd == true then
       vim.schedule(function()
@@ -34,11 +39,18 @@ local onread = function(err, data)
   end
 end
 
-M.grep = function(regexp)
+local parse_args = function(args)
+  local result = str_split(args, ' ')
+  table.insert(result, '--vimgrep')
+  table.insert(result, '--smart-case')
+  return result
+end
+
+M.grep = function(...)
   local stdout = loop.new_pipe(false)
   local stderr = loop.new_pipe(false)
   handle = loop.spawn('rg', {
-    args = { regexp, '--vimgrep', '--smart-case' },
+    args = parse_args(...),
     stdio = { stdout, stderr },
   },
   vim.schedule_wrap(function()

@@ -32,10 +32,6 @@ if dein#load_state('~/.local/share/nvim/dein')
         \ 'on_ft': ['python'],
         \ 'hook_post_source': 'lua require"config.lsp".init()',
         \ })
-  call dein#add('~/.local/share/nvim/dein/repos/github.com/psf/black', {
-        \ 'lazy': 1,
-        \ 'on_ft': 'python',
-        \ })
 
   call dein#end()
   call dein#save_state()
