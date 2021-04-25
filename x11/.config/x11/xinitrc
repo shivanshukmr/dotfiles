@@ -1,6 +1,6 @@
 setxkbmap -option ''
-setxkbmap -option shift:both_capslock
-brave-browser-stable 2>/dev/null &
+setxkbmap -layout us -variant dvp -option shift:both_capslock
+firefox &
 dwmstatus &
 unclutter -idle 3 &
 dunst &
