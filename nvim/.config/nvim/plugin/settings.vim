@@ -33,4 +33,4 @@ let g:black_quiet = 1
 
 let g:netrw_banner=0
 let g:loaded_python_provider=0
-let g:python3_host_prog = '~/misc/neovim/pynvim/bin/python'
+let g:loaded_python3_provider=0

@@ -53,9 +53,6 @@ M.init = function()
   )
 
   -- Server setups
-  lspconfig.pyright.setup {
-    on_attach = custom_attach,
-  }
 
   -- lazy loading nvim-lspconfig doesn't trigger lsp on VimEnter
   vim.cmd('setfiletype ' .. vim.api.nvim_buf_get_option(0, 'ft'))
