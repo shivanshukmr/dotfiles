@@ -8,21 +8,14 @@ RPROMPT_COLOR="8"
 
 preprompt_render() {
 	local preprompt=""
+	preprompt+="%K{#282828}"
 	# directory
 	preprompt+="%B%F{$STATUS_COLOR}$(prompt_pwd)%f%b"
 	# jobs
 	preprompt+="%(1j.%F{3}*%f.)"
-	preprompt+=" "
+	preprompt+="%k "
 
 	PROMPT="$preprompt"
-
-	psvar[12]="${VIRTUAL_ENV:t}"
-
-	local rprompt=""
-	# virtual env
-	rprompt+="%F{$RPROMPT_COLOR}%(12V. %12v.)%f"
-
-	RPROMPT="$rprompt"
 }
 
 function auto-ls-after-cd() {

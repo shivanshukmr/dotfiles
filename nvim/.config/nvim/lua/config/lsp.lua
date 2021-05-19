@@ -35,10 +35,10 @@ end
 
 M.init = function()
   -- define signs
-  vim.fn.sign_define('LspDiagnosticsSignError', { text='>>', texthl='LspDiagnosticsDefaultError' })
-  vim.fn.sign_define('LspDiagnosticsSignWarning', { text='--', texthl='LspDiagnosticsDefaultWarning' })
-  vim.fn.sign_define('LspDiagnosticsSignInformation', { text='--', texthl='LspDiagnosticsDefaultInformation' })
-  vim.fn.sign_define('LspDiagnosticsSignHint', { text='--', texthl='LspDiagnosticsDefaultHint' })
+  vim.fn.sign_define('LspDiagnosticsSignError', { text='>>' })
+  vim.fn.sign_define('LspDiagnosticsSignWarning', { text='--' })
+  vim.fn.sign_define('LspDiagnosticsSignInformation', { text='--' })
+  vim.fn.sign_define('LspDiagnosticsSignHint', { text='--' })
 
   -- override diagnostics
   vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
