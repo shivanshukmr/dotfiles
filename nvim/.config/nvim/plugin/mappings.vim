@@ -34,9 +34,6 @@ nnoremap [<F35> [<C-I>
 nnoremap ]<F35> ]<C-I>
 inoremap <C-X><F35> <C-X><C-I>
 " }}}
-" INSERT {{{
-inoremap <C-C> <Esc>
-" }}}
 " CMDLINE {{{
 " CTRL-P/N acts like Up/Down in command mode, see :h c_<Up>
 cnoremap <expr> <C-P> pumvisible() ? "\<C-P>" : "\<Up>"

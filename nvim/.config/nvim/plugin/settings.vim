@@ -13,7 +13,7 @@ set nojoinspaces noruler
 set sidescrolloff=5
 set ignorecase smartcase
 set shortmess+=Ic
-set laststatus=0 statusline=%<
+set laststatus=0 statusline=%=%f
 set signcolumn=number
 set fillchars=eob:\ ,
 set foldmethod=indent foldlevelstart=99
