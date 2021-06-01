@@ -21,6 +21,7 @@ set completeopt=menu
 set virtualedit=block
 set pumheight=13
 set diffopt+=context:3,indent-heuristic,algorithm:patience
+set tabline=%!config#tabline#line()
 
 if &diff
   syntax off
