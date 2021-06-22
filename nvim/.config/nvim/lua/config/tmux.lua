@@ -4,7 +4,7 @@ local fn = vim.fn
 local loop = vim.loop
 
 M.clear = function()
-  fn.system('tmux set-option -g status-right ""')
+  fn.system('tmux set-option status-right ""')
 end
 
 M.build = function(delay)
@@ -19,7 +19,6 @@ M.build = function(delay)
   end
   local tmux_args = {
     'set-option',
-    '-g',
     'status-right',
     '#[fg=white,bold,italics]' .. filetype .. '#[default] ' .. filename,
   }

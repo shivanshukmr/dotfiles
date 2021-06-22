@@ -6,3 +6,6 @@ let g:CommandTScanDotDirectories = 1
 let g:CommandTWildIgnore = &wildignore
 let g:CommandTMaxFiles = 200000
 let g:CommandTInputDebounce = 50
+
+let g:CommandTCursorLeftMap = ['<Left>']
+let g:CommandTBackspaceMap = ['<BS>', '<C-H>']
