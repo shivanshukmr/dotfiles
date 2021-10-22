@@ -17,6 +17,9 @@ set laststatus=0 statusline=%=%f
 set signcolumn=number
 set fillchars=eob:\ ,
 set foldmethod=indent foldlevelstart=99
+set lazyredraw
+set grepprg=rg\ --vimgrep\ --smart-case
+set grepformat^=%f:%l:%c:%m
 set completeopt=menu
 set virtualedit=block
 set pumheight=13
@@ -28,9 +31,6 @@ if &diff
   set norelativenumber
   set nolist
 endif
-
-let g:black_fast = 1
-let g:black_quiet = 1
 
 let g:netrw_banner=0
 let g:loaded_python_provider=0

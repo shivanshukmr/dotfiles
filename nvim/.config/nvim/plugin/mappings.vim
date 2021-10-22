@@ -8,10 +8,7 @@ nnoremap <silent> <leader>Q :qa!<CR>
 
 nnoremap <silent> <leader>x :silent confirm bd<CR>
 nnoremap <silent> <leader>X :bd!<CR>
-nnoremap <leader>b :b <C-D>
-
-command! -nargs=+ Grep lua require'config.grep'.grep(<q-args>)
-nnoremap <leader>g :Grep<Space>
+nmap <leader>b <Plug>(CommandTBuffer)
 " }}}
 " NORMAL {{{
 " Store relative line number jumps in the jumplist if they exceed a threshold(5)
@@ -24,8 +21,6 @@ nnoremap ? ?\v
 nnoremap Y y$
 nnoremap c* *Ncgn
 nnoremap <silent> - :Explore<CR>
-nnoremap <silent> <C-K> :cprevious<CR>
-nnoremap <silent> <C-J> :cnext<CR>
 
 nnoremap <Tab> za
 " Configured st to send F35(C-F11) when pressing <C-I>
