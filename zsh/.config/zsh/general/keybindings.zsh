@@ -16,13 +16,6 @@ function fg-bg() {
 zle -N fg-bg
 bindkey '^Z' fg-bg
 
-function up-widget() {
-	BUFFER="cd .."
-	zle accept-line
-}
-zle -N up-widget
-bindkey '^[k' up-widget
-
 function delete-path-component() {
 	WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 	zle backward-kill-word
