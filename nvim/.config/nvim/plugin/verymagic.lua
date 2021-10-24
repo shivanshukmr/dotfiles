@@ -1,5 +1,7 @@
 -- github.com/wincent/loupe
-return function()
+_G._verymagic = {}
+
+_G._verymagic.verymagic = function()
   if vim.fn.getcmdtype() ~= ':' then
     return '/'
   end
@@ -22,3 +24,5 @@ return function()
   end
   return '/'
 end
+
+vim.api.nvim_set_keymap('c', '/', 'v:lua._verymagic.verymagic()', { noremap = true, expr = true })

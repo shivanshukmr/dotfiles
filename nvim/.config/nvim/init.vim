@@ -23,10 +23,7 @@ if dein#load_state('~/.local/share/nvim/dein')
   call dein#add('wincent/command-t', {
         \ 'build': 'sh -c "cd ruby/command-t/ext/command-t && ruby extconf.rb && make"',
         \ })
-  call dein#add('neovim/nvim-lspconfig', {
-        \ 'lazy': 1,
-        \ 'hook_post_source': 'lua require"config.lsp".init()',
-        \ })
+  call dein#add('neovim/nvim-lspconfig')
 
   call dein#end()
   call dein#save_state()

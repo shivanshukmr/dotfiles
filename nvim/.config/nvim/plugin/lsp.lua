@@ -1,5 +1,4 @@
-local M = {}
-
+_G.lsp = {}
 
 local lspconfig = require'lspconfig'
 
@@ -33,7 +32,7 @@ local custom_attach = function(client, bufnr)
   nnoremap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next({enable_popup = false })<CR>')
 end
 
-M.init = function()
+_G.lsp.init = function()
   -- define signs
   vim.fn.sign_define('LspDiagnosticsSignError', { text='>>' })
   vim.fn.sign_define('LspDiagnosticsSignWarning', { text='--' })
@@ -53,9 +52,4 @@ M.init = function()
   )
 
   -- Server setups
-
-  -- lazy loading nvim-lspconfig doesn't trigger lsp on VimEnter
-  vim.cmd('setfiletype ' .. vim.api.nvim_buf_get_option(0, 'ft'))
 end
-
-return M
