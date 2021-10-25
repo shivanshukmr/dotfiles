@@ -1,13 +1,11 @@
-_G.lsp = {}
-
 local lspconfig = require'lspconfig'
 
-local nnoremap = function(mode, lhs, rhs)
-  vim.api.nvim_buf_set_keymap(0, mode, lhs, rhs, { noremap = true, silent = true })
-end
-
 local custom_attach = function(client, bufnr)
-  vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  local nnoremap = function(mode, lhs, rhs)
+    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, { noremap = true, silent = true })
+  end
+
   -- mappings
   if client.resolved_capabilities.code_action then
     nnoremap('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>')
@@ -28,28 +26,32 @@ local custom_attach = function(client, bufnr)
     nnoremap('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>')
   end
   nnoremap('n', '<leader>d', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
-  nnoremap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev({enable_popup = false })<CR>')
-  nnoremap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next({enable_popup = false })<CR>')
+  nnoremap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev({ enable_popup = false })<CR>')
+  nnoremap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next({ enable_popup = false })<CR>')
+
+  -- completion
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
 
-_G.lsp.init = function()
-  -- define signs
-  vim.fn.sign_define('LspDiagnosticsSignError', { text='>>' })
-  vim.fn.sign_define('LspDiagnosticsSignWarning', { text='--' })
-  vim.fn.sign_define('LspDiagnosticsSignInformation', { text='--' })
-  vim.fn.sign_define('LspDiagnosticsSignHint', { text='--' })
+-- define signs
+vim.fn.sign_define('LspDiagnosticsSignError', { text='>>' })
+vim.fn.sign_define('LspDiagnosticsSignWarning', { text='--' })
+vim.fn.sign_define('LspDiagnosticsSignInformation', { text='--' })
+vim.fn.sign_define('LspDiagnosticsSignHint', { text='--' })
 
-  -- override diagnostics
-  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-      underline = {
-        severity_limit = "Warning",
-      },
-      virtual_text = {
-        severity_limit = "Warning",
-      },
-    }
-  )
+-- override diagnostics
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = {
+      severity_limit = "Warning",
+    },
+    virtual_text = {
+      severity_limit = "Warning",
+    },
+  }
+)
 
-  -- Server setups
-end
+-- server setup
+lspconfig.clangd.setup {
+  on_attach = custom_attach,
+}

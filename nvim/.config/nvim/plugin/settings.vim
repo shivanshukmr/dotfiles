@@ -5,7 +5,7 @@ set splitbelow splitright
 set tabstop=4 softtabstop=-1 shiftwidth=0
 set autoindent cindent
 set undofile undodir=/tmp
-set number relativenumber
+set number
 set nobackup nowritebackup
 set incsearch nohlsearch
 set wildignorecase wildignore=*/.git/*,*/__pycache__/*,*/venv/*,*.o
@@ -25,6 +25,7 @@ set virtualedit=block
 set pumheight=13
 set diffopt+=context:3,indent-heuristic,algorithm:patience
 set tabline=%!config#tabline#line()
+set mouse=a
 
 if &diff
   syntax off
