@@ -8,7 +8,7 @@ nnoremap <silent> <leader>Q :qa!<CR>
 
 nnoremap <silent> <leader>x :silent confirm bd<CR>
 nnoremap <silent> <leader>X :bd!<CR>
-nmap <leader>b <Plug>(CommandTBuffer)
+nmap <leader>b :b <C-d>
 " }}}
 " NORMAL {{{
 " Store relative line number jumps in the jumplist if they exceed a threshold(5)
