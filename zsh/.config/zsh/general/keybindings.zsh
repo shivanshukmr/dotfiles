@@ -23,3 +23,8 @@ function delete-path-component() {
 }
 zle -N delete-path-component
 bindkey '^[^?' delete-path-component
+
+# Different terminal emulators interpret key codes differently
+# Alacritty fix
+bindkey '^[^A' beginning-of-line
+bindkey '^[^B' backward-char
