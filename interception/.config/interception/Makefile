@@ -5,10 +5,10 @@ UDEVMONPREFIX = ${CONFIGPREFIX}/udevmon.d
 
 all: chordedintercept
 
-chordedintercept: chordedintercept.c
-	cc chordedintercept.c -o chordedintercept
+# chordedintercept: chordedintercept.c
+# 	cc chordedintercept.c -o chordedintercept
 
-install: chordedintercept
+install: # chordedintercept
 	# mkdir -p ${BINPREFIX}/bin
 	# cp -f chordedintercept ${BINPREFIX}/bin
 	mkdir -p ${DFKPREFIX}
