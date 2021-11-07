@@ -34,10 +34,24 @@ local custom_attach = function(client, bufnr)
 end
 
 -- define signs
-vim.fn.sign_define('LspDiagnosticsSignError', { text='>>' })
-vim.fn.sign_define('LspDiagnosticsSignWarning', { text='--' })
-vim.fn.sign_define('LspDiagnosticsSignInformation', { text='--' })
-vim.fn.sign_define('LspDiagnosticsSignHint', { text='--' })
+vim.fn.sign_define({
+  {
+    name = "LspDiagnosticsSignError",
+    text = ">>",
+  },
+  {
+    name = "LspDiagnosticsSignWarning",
+    text = "--",
+  },
+  {
+    name = "LspDiagnosticsSignInformation",
+    text = "--",
+  },
+  {
+    name = "LspDiagnosticsSignHint",
+    text = "--",
+  },
+})
 
 -- override diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
