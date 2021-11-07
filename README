@@ -8,6 +8,8 @@ Download tmux terminfo database:
 	$ gunzip terminfo.src.gz
 	$ tic -x terminfo.src
 
+To set up hardware acceleration in Firefox see commit b68998010db8a28e97ed7a9000b965ab948c4aab
+
 Usage
 -----
 cd ~
