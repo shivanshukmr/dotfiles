@@ -5,4 +5,4 @@
 # (see /etc/runit/2).
 
 /usr/bin/nice -n -20 /usr/bin/udevmon >/dev/null 2>/dev/null &
-/usr/bin/brightnessctl s 50% &
+/usr/bin/brightnessctl s 40% &
