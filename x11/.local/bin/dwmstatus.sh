@@ -1,28 +1,42 @@
 #!/bin/sh
 
 print_network() {
-	if=wlo1
-	if hash iw
-	then
-		wifi=$(iw $if link | grep SSID | sed 's,.*SSID: ,,')
-		if [ "$wifi" ]
-		then
-			echo "wifi/$wifi"
+	interf=wlo1
+	status=$(rfkill -nro SOFT)
+
+	if [ "$status" = "`printf 'blocked\nblocked'`" ]; then
+		printf "flightmode  "
+	else
+		if hash iw; then
+			wifi=$(iw $interf link | grep SSID | sed 's,.*SSID: ,,')
+			if [ "$wifi" ]; then
+				printf "wifi/%s  " "$wifi"
+			fi
 		fi
 	fi
 }
 
 print_battery() {
-	echo "bat/$(cat /sys/class/power_supply/BAT0/capacity)%"
+	local status=$(cat /sys/class/power_supply/BAT*/status)
+	if [ "$status" = "Charging" ]; then
+		printf "*"
+	fi
+	printf "bat/%s%%  " "$(cat /sys/class/power_supply/BAT*/capacity)"
 }
 
 print_volume() {
-	volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
-	if test "$volume" -gt 0
-	then
-		echo -e "vol/${volume}"
+	local volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+	if [ "$volume" -gt 0 ]; then
+		printf "vol/${volume}  "
 	else
-		echo -e "mute"
+		printf "mute  "
+	fi
+}
+
+print_notification_status() {
+	local status=$(dunstctl is-paused)
+	if [ "$status" = "true" ]; then
+		printf "silent  "
 	fi
 }
 
@@ -32,6 +46,6 @@ print_date() {
 
 while true
 do
-	xsetroot -name "$(print_network)  $(print_battery)  $(print_date)"
+	xsetroot -name "$(print_network)$(print_battery)$(print_notification_status)$(print_date)"
 	sleep 1s
 done

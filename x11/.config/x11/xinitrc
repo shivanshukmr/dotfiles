@@ -2,7 +2,6 @@ setxkbmap -option ''
 setxkbmap -layout us -variant dvp -option shift:both_capslock
 firefox &
 dwmstatus.sh &
-unclutter -idle 3 &
 dunst &
 clipmenud &
 exec dwm
