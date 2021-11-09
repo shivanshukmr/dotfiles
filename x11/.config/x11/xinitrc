@@ -4,4 +4,5 @@ firefox &
 dwmstatus.sh &
 dunst &
 clipmenud &
+xss-lock slock &
 exec dwm

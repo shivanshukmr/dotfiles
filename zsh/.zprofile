@@ -44,4 +44,4 @@ export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export XAUTHORITY="$XDG_DATA_HOME/x11/Xauthority"
 
 # Autostart X server on login
-[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XDG_CONFIG_HOME/x11/xinitrc"
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XDG_CONFIG_HOME/x11/xinitrc" 2>/tmp/.Xinit-errors
