@@ -30,7 +30,7 @@ local custom_attach = function(client, bufnr)
   nnoremap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next({ enable_popup = false })<CR>')
 
   -- completion
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  vim.bo.omnifunc = "v:lua.vim.lsp.omnifunc"
 end
 
 -- define signs

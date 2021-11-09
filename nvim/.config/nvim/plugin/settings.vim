@@ -13,7 +13,6 @@ set nojoinspaces noruler
 set sidescrolloff=5
 set ignorecase smartcase
 set shortmess+=Ic
-set laststatus=0 statusline=%=%f
 set signcolumn=number
 set fillchars=eob:\ ,
 set foldmethod=indent foldlevelstart=99
@@ -26,6 +25,15 @@ set pumheight=13
 set diffopt+=context:3,indent-heuristic,algorithm:patience
 set tabline=%!config#tabline#line()
 set mouse=a
+set termguicolors
+set statusline=%=%#Todo#%{&ft}%*\ %f\  laststatus=2
+
+if exists('$TMUX')
+  set laststatus=0  " statusline configured in tmux
+endif
+
+let g:gruvbox_filetype_hi_groups=1
+colorscheme gruvbox8
 
 if &diff
   syntax off
