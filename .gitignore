@@ -2,3 +2,4 @@
 .zcompdump*
 .netrwhist
 .uuid
+background.vim
