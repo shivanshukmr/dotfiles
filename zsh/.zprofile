@@ -2,7 +2,8 @@ export EDITOR="nvim"
 export TERMINAL="st"
 
 export PATH=$HOME/.local/bin:$HOME/.local/share/gem/bin:$PATH
-export XDEB_PKGROOT="$XDG_DATA_HOME/xdeb"
+
+export GPG_TTY=$(tty)
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -41,6 +42,7 @@ export STACK_ROOT="$XDG_DATA_HOME/stack"
 export GEM_HOME="$XDG_DATA_HOME/gem"
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export XAUTHORITY="$XDG_DATA_HOME/x11/Xauthority"
+export XDEB_PKGROOT="$XDG_DATA_HOME/xdeb"
 
 # Autostart X server on login
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XDG_CONFIG_HOME/x11/xinitrc" 2>/tmp/.Xinit-errors
