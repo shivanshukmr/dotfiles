@@ -1,7 +1,0 @@
-alias ls="ls --color=auto --group-directories-first"
-alias la="ls -a"
-alias ll="ls -al"
-alias grep="grep --color=auto"
-alias diff="diff --color=auto"
-alias vim="nvim"
-alias g="git"
