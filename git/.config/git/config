@@ -1,7 +1,7 @@
 [user]
 	name = Shivanshu Kumar
-	email = 60311696+shivanshukmr@users.noreply.github.com
-	signingkey = 10291D2206C5FD4374CA84C0CB4489F123CFBA5D
+	email = shivanshukmr@protonmail.com
+	signingkey = shivanshukmr@protonmail.com
 [alias]
 	a  = add
 	co = checkout
