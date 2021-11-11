@@ -3,8 +3,6 @@ export TERMINAL="st"
 
 export PATH=$HOME/.local/bin:$HOME/.local/share/gem/bin:$PATH
 
-export GPG_TTY=$(tty)
-
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"

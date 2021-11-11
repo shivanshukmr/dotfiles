@@ -1,4 +1,8 @@
 # vim: fdm=marker fdl=0
+# ENVS {{{
+export GPG_TTY=$(tty)
+# }}}
+
 # ALIASES {{{
 alias ls="ls --color=auto --group-directories-first"
 alias la="ls -a"
@@ -8,6 +12,7 @@ alias diff="diff --color=auto"
 alias vim="nvim"
 alias g="git"
 # }}}
+
 # COMPLETION {{{
 # Case Insensitive auto-completion
 autoload -U compinit && compinit
@@ -35,6 +40,7 @@ zstyle ':completion:*:descriptions' format %F{default}%B%{$__GENERAL[ITALIC_ON]%
 
 setopt glob_dots
 # }}}
+
 # PROMPT {{{
 autoload -Uz add-zsh-hook
 
@@ -68,6 +74,7 @@ add-zsh-hook chpwd auto-ls-after-cd
 
 add-zsh-hook precmd preprompt_render
 # }}}
+
 # SETTINGS {{{
 HYPHEN_INSENSITIVE="true"
 
@@ -87,6 +94,7 @@ setopt sharehistory
 
 autoload -Uz zcalc
 # }}}
+
 # KEYBINDINGS {{{
 bindkey -e
 WORDCHARS+=':'
@@ -119,4 +127,5 @@ bindkey '^[^?' delete-path-component
 bindkey '^[^A' beginning-of-line
 bindkey '^[^B' backward-char
 # }}}
+
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
