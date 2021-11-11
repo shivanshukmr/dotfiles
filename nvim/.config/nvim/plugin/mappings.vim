@@ -10,6 +10,7 @@ nnoremap <silent> <leader>x :silent confirm bd<CR>
 nnoremap <silent> <leader>X :bd!<CR>
 nmap <leader>b :b <C-d>
 " }}}
+
 " NORMAL {{{
 " Store relative line number jumps in the jumplist if they exceed a threshold(5)
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
@@ -33,6 +34,7 @@ nnoremap [<F35> [<C-I>
 nnoremap ]<F35> ]<C-I>
 inoremap <C-X><F35> <C-X><C-I>
 " }}}
+
 " CMDLINE {{{
 " CTRL-P/N acts like Up/Down in command mode, see :h c_<Up>
 cnoremap <expr> <C-P> pumvisible() ? "\<C-P>" : "\<Up>"
