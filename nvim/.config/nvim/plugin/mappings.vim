@@ -18,9 +18,13 @@ nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
 nnoremap / /\v
 nnoremap ? ?\v
 
+nnoremap <silent> <C-J> :cnext<CR>
+nnoremap <silent> <C-K> :cprevious<CR>
+
 nnoremap Y y$
 nnoremap c* *Ncgn
 nnoremap <silent> - :Explore<CR>
+nnoremap <silent> <Esc> :noh<CR>
 
 nnoremap <Tab> za
 " Configured st to send F35(C-F11) when pressing <C-I>

@@ -7,7 +7,7 @@ set autoindent cindent
 set undofile undodir=/tmp
 set number
 set nobackup nowritebackup
-set incsearch nohlsearch
+set incsearch
 set wildignorecase wildignore=*/.git/*,*/__pycache__/*,*/venv/*,*.o
 set nojoinspaces noruler
 set sidescrolloff=5
