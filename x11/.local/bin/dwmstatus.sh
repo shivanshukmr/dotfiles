@@ -29,11 +29,12 @@ print_battery() {
 }
 
 print_volume() {
-	local volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
-	if [ "$volume" -gt 0 ]; then
-		printf "vol/${volume}  "
-	else
+	local status=$(pactl get-sink-mute 0 | awk '{print $2}')
+	if [ "$status" = "yes" ]; then
 		printf "mute  "
+	else
+		local volume=$(pactl get-sink-volume 0 | awk '{print $5}')
+		printf "vol/%s  " "$volume"
 	fi
 }
 
@@ -50,6 +51,6 @@ print_date() {
 
 while true
 do
-	xsetroot -name "$(print_padding)$(print_network)$(print_battery)$(print_notification_status)$(print_date)"
+	xsetroot -name "$(print_padding)$(print_network)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
 	sleep 1s
 done
