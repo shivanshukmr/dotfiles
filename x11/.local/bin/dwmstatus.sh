@@ -20,6 +20,19 @@ print_network() {
 	fi
 }
 
+print_bluetooth() {
+	device=$(bluetoothctl paired-devices | cut -f2 -d ' '|
+		while read -r uuid
+		do
+			info=`bluetoothctl info $uuid`
+			echo "$info" | grep -e "Name\|Connected: yes" | grep -B1 "yes" | head -n 1 | cut -f2 -d ' '
+		done)
+
+	if [ "$device" ]; then
+		printf "bluetooth/%s  " "$device"
+	fi
+}
+
 print_battery() {
 	local status=$(cat /sys/class/power_supply/BAT*/status)
 	if [ "$status" = "Charging" ]; then
@@ -29,7 +42,7 @@ print_battery() {
 }
 
 print_volume() {
-	local status=$(pactl get-sink-mute 0 | awk '{print $2}')
+	local status=$(pactl get-sink-mute 0 | cut -f2 -d ' ')
 	if [ "$status" = "yes" ]; then
 		printf "mute  "
 	else
@@ -51,6 +64,6 @@ print_date() {
 
 while true
 do
-	xsetroot -name "$(print_padding)$(print_network)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
+	xsetroot -name "$(print_padding)$(print_network)$(print_bluetooth)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
 	sleep 1s
 done
