@@ -24,9 +24,9 @@ set virtualedit=block
 set pumheight=13
 set diffopt+=context:3,indent-heuristic,algorithm:patience
 set tabline=%!config#tabline#line()
-set mouse=a
 set termguicolors
 set statusline=%=%#Todo#%{&ft}%*\ %f\  laststatus=2
+set inccommand=nosplit
 
 if exists('$TMUX')
   set laststatus=0  " statusline configured in tmux
@@ -37,7 +37,6 @@ colorscheme gruvbox8_tmux
 
 if &diff
   syntax off
-  set norelativenumber
   set nolist
 endif
 

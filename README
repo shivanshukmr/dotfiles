@@ -13,9 +13,9 @@ To set up hardware acceleration in Firefox see commit b689980
 Usage
 -----
 cd ~
-git clone
+git clone --recurse-submodules <url>
 cd dotfiles
 stow *
 mkdir ~/.local/share/x11  # for Xauthority
 
-Uses GNU Stow – https://www.gnu.org/software/stow/
+GNU Stow – https://www.gnu.org/software/stow/
