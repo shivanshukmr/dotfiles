@@ -33,7 +33,7 @@ if exists('$TMUX')
 endif
 
 let g:gruvbox_filetype_hi_groups=1
-colorscheme gruvbox8_tmux
+colorscheme gruvbox8
 
 if &diff
   syntax off

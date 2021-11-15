@@ -41,4 +41,5 @@ cnoremap <expr> <C-P> pumvisible() ? "\<C-P>" : "\<Up>"
 cnoremap <expr> <C-N> pumvisible() ? "\<C-N>" : "\<Down>"
 
 cnoremap <C-A> <Home>
+cnoremap <expr> / config#verymagic#very_magic_slash()
 " }}}
