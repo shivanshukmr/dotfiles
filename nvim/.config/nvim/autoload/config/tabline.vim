@@ -1,3 +1,4 @@
+" https://github.com/wincent/wincent/commit/cfb1d8f36de56af87a7f7e122ecb4430c9ccc243
 function config#tabline#line() abort
   let l:line=''
   let l:current=tabpagenr()
