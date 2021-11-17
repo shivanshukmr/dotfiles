@@ -1,9 +1,5 @@
 #!/bin/sh
 
-print_padding() {
-	printf "                              "
-}
-
 print_network() {
 	interf=wlo1
 	status=$(rfkill -nro SOFT)
@@ -64,6 +60,6 @@ print_date() {
 
 while true
 do
-	xsetroot -name "$(print_padding)$(print_network)$(print_bluetooth)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
+	xsetroot -name " $(print_network)$(print_bluetooth)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
 	sleep 1s
 done
