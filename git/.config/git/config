@@ -1,7 +1,6 @@
 [user]
 	name = Shivanshu Kumar
 	email = shivanshukmr@protonmail.com
-	signingkey = shivanshukmr@protonmail.com
 [alias]
 	a  = add
 	co = checkout
@@ -26,5 +25,3 @@
 	algorithm = patience
 [difftool "nvimdiff"]
 	cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
-[commit]
-	gpgsign = true

@@ -127,5 +127,3 @@ bindkey '^[^?' delete-path-component
 bindkey '^[^A' beginning-of-line
 bindkey '^[^B' backward-char
 # }}}
-
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
