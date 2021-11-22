@@ -1,5 +1,4 @@
 if &loadplugins
-  packadd! command-t
   packadd! nvim-lspconfig
   packadd! ReplaceWithRegister
   packadd! vim-closer
