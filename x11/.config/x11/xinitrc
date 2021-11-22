@@ -1,6 +1,6 @@
 setxkbmap -option ''
 setxkbmap -layout us -variant dvp -option shift:both_capslock
-firefox &
+firefox -P me &
 dwmstatus.sh &
 dunst &
 clipmenud &

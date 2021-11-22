@@ -1,7 +1,7 @@
 export EDITOR="nvim"
 export TERMINAL="st"
 
-export PATH=$HOME/.local/bin:$HOME/.local/share/gem/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -11,6 +11,9 @@ if [ -z "$XDG_RUNTIME_DIR" ]; then
 	export XDG_RUNTIME_DIR="/tmp/$USER-runtime"
 	mkdir -pm 0700 "$XDG_RUNTIME_DIR"
 fi
+
+export FZF_DEFAULT_OPTS="--height 30% --info=hidden --prompt='>> ' --color='gutter:0,fg+:#121212,bg+:#83a598,pointer:#121212,hl:7:bold:underline,hl+:#121212,prompt:#928374:regular:italic,query::regular'"
+export FZF_DEFAULT_COMMAND="git ls-files || find ."
 
 # ~ cleanup:
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch-config"
