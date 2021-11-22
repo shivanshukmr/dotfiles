@@ -37,8 +37,8 @@ inoremap <C-X><F35> <C-X><C-I>
 
 " CMDLINE {{{
 " CTRL-P/N acts like Up/Down in command mode, see :h c_<Up>
-cnoremap <expr> <C-P> pumvisible() ? "\<C-P>" : "\<Up>"
-cnoremap <expr> <C-N> pumvisible() ? "\<C-N>" : "\<Down>"
+cnoremap <expr> <C-P> wildmenumode() ? "\<C-P>" : "\<Up>"
+cnoremap <expr> <C-N> wildmenumode() ? "\<C-N>" : "\<Down>"
 
 cnoremap <C-A> <Home>
 cnoremap <expr> / config#verymagic#very_magic_slash()

@@ -28,6 +28,7 @@ set termguicolors
 set statusline=%=%#Todo#%{&ft}%*\ %f\  laststatus=2
 set inccommand=nosplit
 set mouse=a
+set wildoptions=
 
 if exists('$TMUX')
   set laststatus=0  " statusline configured in tmux
