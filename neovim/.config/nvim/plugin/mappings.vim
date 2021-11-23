@@ -12,10 +12,6 @@ nmap <leader>b :b <C-d>
 " }}}
 
 " NORMAL {{{
-" Store relative line number jumps in the jumplist if they exceed a threshold(5)
-nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
-nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
-
 nnoremap / /\v
 nnoremap ? ?\v
 
