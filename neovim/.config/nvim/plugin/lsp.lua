@@ -60,6 +60,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
       severity_limit = "Warning",
     },
     virtual_text = {
+      prefix = "<>",
       severity_limit = "Warning",
     },
   }

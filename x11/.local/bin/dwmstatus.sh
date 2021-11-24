@@ -1,16 +1,22 @@
 #!/bin/sh
 
+print_padding() {
+	printf "  "
+}
+
 print_network() {
 	interf=wlo1
 	status=$(rfkill -nro SOFT)
 
 	if [ "$status" = "`printf 'blocked\nblocked'`" ]; then
-		printf "flightmode  "
+		printf "flightmode"
+		print_padding
 	else
 		if hash iw; then
 			wifi=$(iw $interf link | grep SSID | sed 's,.*SSID: ,,')
 			if [ "$wifi" ]; then
-				printf "wifi/%s  " "$wifi"
+				printf "%s" "$wifi"
+				print_padding
 			fi
 		fi
 	fi
@@ -25,7 +31,8 @@ print_bluetooth() {
 		done)
 
 	if [ "$device" ]; then
-		printf "bluetooth/%s  " "$device"
+		printf "%s" "$device"
+		print_padding
 	fi
 }
 
@@ -34,23 +41,26 @@ print_battery() {
 	if [ "$status" = "Charging" ]; then
 		printf "*"
 	fi
-	printf "bat/%s%%  " "$(cat /sys/class/power_supply/BAT*/capacity)"
+	printf "bat:%s%%" "$(cat /sys/class/power_supply/BAT*/capacity)"
+	print_padding
 }
 
 print_volume() {
-	local status=$(pactl get-sink-mute 0 | cut -f2 -d ' ')
+	local status=$(pactl get-sink-mute 0 | awk '{print $2}')
 	if [ "$status" = "yes" ]; then
-		printf "mute  "
+		printf "mute"
 	else
 		local volume=$(pactl get-sink-volume 0 | awk '{print $5}')
-		printf "vol/%s  " "$volume"
+		printf "vol:%s" "$volume"
 	fi
+	print_padding
 }
 
 print_notification_status() {
 	local status=$(dunstctl is-paused)
 	if [ "$status" = "true" ]; then
-		printf "silent  "
+		printf "silent"
+		print_padding
 	fi
 }
 
