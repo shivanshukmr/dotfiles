@@ -23,7 +23,6 @@ set completeopt=menu
 set virtualedit=block
 set pumheight=13
 set diffopt+=context:3,indent-heuristic,algorithm:patience
-set tabline=%!config#tabline#line()
 set termguicolors
 set statusline=%=%#Todo#%{&ft}%*\ %f\  laststatus=2
 set inccommand=nosplit

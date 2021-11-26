@@ -2,4 +2,4 @@
 .zcompdump*
 .netrwhist
 .uuid
-background.vim
+neovim/.config/nvim/plugin/background.vim

@@ -41,15 +41,15 @@ vim.fn.sign_define({
   },
   {
     name = "LspDiagnosticsSignWarning",
-    text = "--",
+    text = " ━",
   },
   {
     name = "LspDiagnosticsSignInformation",
-    text = "--",
+    text = " ━",
   },
   {
     name = "LspDiagnosticsSignHint",
-    text = "--",
+    text = " ━",
   },
 })
 
@@ -60,6 +60,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
       severity_limit = "Warning",
     },
     virtual_text = {
+      prefix = "▌",
       severity_limit = "Warning",
     },
   }
