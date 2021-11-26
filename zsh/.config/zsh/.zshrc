@@ -80,7 +80,7 @@ add-zsh-hook precmd preprompt_render
 HYPHEN_INSENSITIVE="true"
 
 # History in cache directory:
-HISTFILE=~/.cache/zsh/histfile
+HISTFILE=~/.cache/zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 

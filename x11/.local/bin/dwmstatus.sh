@@ -4,7 +4,7 @@ print_padding() {
 	printf "  "
 }
 
-print_network() {
+print_ssid() {
 	interf=wlo1
 	status=$(rfkill -nro SOFT)
 
@@ -41,7 +41,7 @@ print_battery() {
 	if [ "$status" = "Charging" ]; then
 		printf "*"
 	fi
-	printf "bat:%s%%" "$(cat /sys/class/power_supply/BAT*/capacity)"
+	printf "B:%s%%" "$(cat /sys/class/power_supply/BAT*/capacity)"
 	print_padding
 }
 
@@ -51,7 +51,7 @@ print_volume() {
 		printf "mute"
 	else
 		local volume=$(pactl get-sink-volume 0 | awk '{print $5}')
-		printf "vol:%s" "$volume"
+		printf "V:%s" "$volume"
 	fi
 	print_padding
 }
@@ -65,11 +65,11 @@ print_notification_status() {
 }
 
 print_date() {
-	date "+%a %b %d  %H:%M" | tr '[:upper:]' '[:lower:]'
+	date "+%a %b %d  %R"
 }
 
 while true
 do
-	xsetroot -name " $(print_network)$(print_bluetooth)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
+	xsetroot -name " $(print_ssid)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
 	sleep 1s
 done
