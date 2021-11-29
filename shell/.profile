@@ -11,14 +11,12 @@ if [ -z "$XDG_RUNTIME_DIR" ]; then
 	mkdir -pm 0700 "$XDG_RUNTIME_DIR"
 fi
 
-export HISTFILESIZE=5000
-export HISTFILE="$XDG_CACHE_HOME/bash_history"
-export HISTCONTROL=ignoreboth:erasedups
-
 export EDITOR="nvim"
-
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
 export FZF_DEFAULT_OPTS="-m --bind=ctrl-i:toggle --height=30% --info=hidden --prompt='>> ' --color='gutter:0,fg+:#121212,bg+:#83a598,pointer:#121212,hl:7:bold:underline,hl+:#121212,prompt:#928374:regular:italic,query::regular'"
 export FZF_DEFAULT_COMMAND="git ls-files || find ."
+export SVDIR="$XDG_DATA_HOME/service"
 
 # ~ cleanup:
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"

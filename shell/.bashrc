@@ -3,27 +3,25 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-# Env {{{
 PS1='\[$(tput bold)\]\[$(tput rev)\][\H \t \W]\[$(tput sgr0)\] '
-export GPG_TTY=$(tty)
-# }}}
+GPG_TTY=$(tty)
 
-# Options {{{
+# history
+shopt -s histappend
+HISTSIZE=10000
+HISTFILESIZE=10000
+HISTCONTROL=ignoreboth:erasedups
+HISTFILE="$XDG_CACHE_HOME/bash_history"
+
 shopt -s autocd
-# }}}
+shopt -s cdspell
 
-# Aliases {{{
 alias ls='ls --color=auto --group-directories-first'
 alias la='ls -a'
 alias ll='ls -al'
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
-alias vim='nvim'
 alias g='git'
-# }}}
 
-# Keybinds {{{
 bind 'set completion-ignore-case On'
-# }}}
-# vim: fdm=marker
