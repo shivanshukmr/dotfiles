@@ -28,8 +28,9 @@
 (defalias
   cesc (tap-hold-next-release 100 esc lctl)
   cret (tap-hold-next-release 100 ret rctl)
-  ls1 (layer-switch layer1)
-  ls2 (layer-switch layer2)
+
+  alt1 (tap-hold-next-release 150 (layer-switch layer1) lalt)
+  alt2 (tap-hold-next-release 150 (layer-switch layer2) ralt)
 )
 
 (deflayer layer1
@@ -38,16 +39,16 @@
   _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _      _     _     _     _
   @cesc _     _     _     _     _     _     _     _     _     _     _     @cret                          _     _     _
   _     _     _     _     _     _     _     _     _     _     _     _                       _            _     _     _     _
-  _     _     _                 _                 _     _     _     @ls2              _     _     _      _     _
+  _     _     _                 _                 @alt2 _     _     _                 _     _     _      _     _
 )
 
 (deflayer layer2
   _     _     _     _     _     _     _     _     _     _     _     _     _           _     _     _
   _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _      _     _     _     _
-  _     _     _     _     _     _     pgdn  home  _     _     rght  _     _     _     _     _     _      _     _     _     _
-  @cesc _     _     _     _     _     _     left  _     _     _     _     @cret                          _     _     _
-  _     _     _     down  up    _     pgup  _     _     _     _     _                       _            _     _     _     _
-  _     _     _                 _                 _     _     _     @ls1              _     _     _      _     _
+  _     _     _     _     _     _     _     home  _     _     rght  _     _     _     _     _     _      _     _     _     _
+  @cesc _     _     _     pgup  _     pgdn  left  _     _     _     _     @cret                          _     _     _
+  _     _     _     down  up    _     _     _     _     _     _     _                       _            _     _     _     _
+  _     _     @alt1             _                 _     _     _     _                 _     _     _      _     _
 )
 
-;; vim: ft=lisp cursorcolumn
+;; vim: ft=lisp cursorcolumn commentstring=;;%s
