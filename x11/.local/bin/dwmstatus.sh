@@ -36,6 +36,11 @@ print_bluetooth() {
 	fi
 }
 
+print_loadavg() {
+	printf "L:%s" "$(awk '{print $1,$2,$3}' /proc/loadavg)"
+	print_padding
+}
+
 print_battery() {
 	local status=$(cat /sys/class/power_supply/BAT*/status)
 	if [ "$status" = "Charging" ]; then
@@ -70,6 +75,6 @@ print_date() {
 
 while true
 do
-	xsetroot -name " $(print_ssid)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
+	xsetroot -name " $(print_ssid)$(print_loadavg)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
 	sleep 1s
 done
