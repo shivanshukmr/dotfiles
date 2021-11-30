@@ -12,7 +12,7 @@ if [ -z "$XDG_RUNTIME_DIR" ]; then
 fi
 
 export EDITOR="nvim"
-export MANPAGER='nvim +Man!'
+export MANPAGER='vim -M +MANPAGER'
 export MANWIDTH=999
 export FZF_DEFAULT_OPTS="-m --bind=ctrl-i:toggle --height=30% --info=hidden --prompt='>> ' --color='gutter:0,fg+:#121212,bg+:#83a598,pointer:#121212,hl:7:bold:underline,hl+:#121212,prompt:#928374:regular:italic,query::regular'"
 export FZF_DEFAULT_COMMAND="git ls-files || find ."

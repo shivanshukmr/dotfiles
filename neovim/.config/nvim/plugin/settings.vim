@@ -7,6 +7,7 @@ set autoindent cindent
 set undofile undodir=$XDG_RUNTIME_DIR,/tmp,.
 set directory=$XDG_RUNTIME_DIR,/tmp,.
 set number
+set signcolumn=number
 set nobackup nowritebackup
 set incsearch hlsearch
 set wildignorecase wildignore=*/.git/*,*/__pycache__/*,*/venv/*,*.o
@@ -14,7 +15,6 @@ set nojoinspaces noruler
 set sidescrolloff=5
 set ignorecase smartcase
 set shortmess+=Ic
-set signcolumn=number
 set fillchars=eob:\ ,vert:\│,
 set foldmethod=indent foldlevelstart=99
 set lazyredraw
