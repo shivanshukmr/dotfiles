@@ -7,12 +7,10 @@ let g:fzf_layout = { 'down': '30%' }
 
 let g:fzf_colors = {
       \ 'gutter':  ['bg', 'Normal'],
-      \ 'fg':      ['fg', 'Normal'],
-      \ 'bg':      ['bg', 'Normal'],
-      \ 'hl':      ['fg', 'Normal'],
-      \ 'hl+':     ['bg', 'Normal'],
-      \ 'fg+':     ['bg', 'Normal'],
+      \ 'fg+':     ['fg', 'PmenuSel'],
       \ 'bg+':     ['bg', 'PmenuSel'],
+      \ 'hl':      ['fg', 'Normal'],
+      \ 'hl+':     ['fg', 'PmenuSel'],
       \ 'prompt':  ['fg', 'Comment'],
       \ 'pointer': ['bg', 'Normal'],
       \ 'marker':  ['fg', 'Keyword'],

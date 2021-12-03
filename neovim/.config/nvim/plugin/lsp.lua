@@ -1,4 +1,5 @@
 if not package.loaded['lspconfig'] then return end
+
 local lspconfig = require'lspconfig'
 
 local custom_attach = function(client, bufnr)
@@ -23,20 +24,24 @@ end
 
 vim.fn.sign_define({
   {
-    name = "LspDiagnosticsSignError",
+    name = "DiagnosticSignError",
     text = " »",
+    texthl = "DiagnosticSignError",
   },
   {
-    name = "LspDiagnosticsSignWarning",
+    name = "DiagnosticSignWarn",
     text = " ━",
+    texthl = "DiagnosticSignWarn",
   },
   {
-    name = "LspDiagnosticsSignInformation",
+    name = "DiagnosticSignInfo",
     text = " ━",
+    texthl = "DiagnosticSignInfo",
   },
   {
-    name = "LspDiagnosticsSignHint",
+    name = "DiagnosticSignHint",
     text = " ━",
+    texthl = "DiagnosticSignHint",
   },
 })
 
@@ -45,13 +50,15 @@ lspconfig.clangd.setup {
   on_attach = custom_attach,
 }
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = {
-      severity_limit = "Warning",
+vim.diagnostic.config({
+  underline = {
+    severity = {
+      min = vim.diagnostic.severity.WARN,
     },
-    virtual_text = {
-      severity_limit = "Warning",
+  },
+  virtual_text = {
+    severity = {
+      min = vim.diagnostic.severity.WARN,
     },
-  }
-)
+  },
+})
