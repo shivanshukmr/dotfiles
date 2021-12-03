@@ -26,8 +26,8 @@
 )
 
 (defalias
-  cesc (tap-hold-next-release 100 esc lctl)
-  cret (tap-hold-next-release 100 ret rctl)
+  cesc (tap-hold-next-release 110 esc lctl)
+  cret (tap-hold-next-release 110 ret rctl)
 
   alt1 (tap-hold-next-release 150 (layer-switch layer1) lalt)
   alt2 (tap-hold-next-release 150 (layer-switch layer2) ralt)
