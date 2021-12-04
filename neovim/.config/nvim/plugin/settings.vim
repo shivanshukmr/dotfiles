@@ -6,7 +6,6 @@ set autoindent cindent
 set undofile undodir=$XDG_RUNTIME_DIR,/tmp,.
 set directory=$XDG_RUNTIME_DIR,/tmp,.
 set number
-set signcolumn=number
 set nobackup nowritebackup
 set incsearch hlsearch
 set wildignorecase wildignore=*/.git/*,*/__pycache__/*,*/venv/*,*.o
