@@ -12,7 +12,7 @@ set wildignorecase wildignore=*/.git/*,*/__pycache__/*,*/venv/*,*.o
 set nojoinspaces noruler
 set sidescrolloff=5
 set ignorecase smartcase
-set shortmess+=I shortmess-=S
+set shortmess-=S
 set fillchars=eob:\ ,vert:\│,fold:\·,
 set foldmethod=indent foldlevelstart=99
 set lazyredraw

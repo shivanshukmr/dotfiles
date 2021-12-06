@@ -25,4 +25,7 @@ alias ip='ip --color=auto'
 alias g='git'
 alias rm='rm -I'
 
+shopt -s autocd
+shopt -s cdspell
+
 bind 'set completion-ignore-case On'
