@@ -1,6 +1,7 @@
 augroup filetypes
   autocmd!
   autocmd FileType vim,lua setlocal tabstop=2 expandtab
+  autocmd FileType man setlocal nonumber
 augroup END
 
 if exists('$TMUX')
