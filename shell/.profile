@@ -13,7 +13,7 @@ fi
 
 export EDITOR="vim"
 export FZF_DEFAULT_OPTS="-m --bind=ctrl-i:toggle --height=30% --info=hidden --prompt='>> ' --color='gutter:0,fg+:#121212,bg+:#83a598,pointer:#121212,hl:7:bold:underline,hl+:#121212,prompt:#928374:regular:italic,query::regular'"
-export FZF_DEFAULT_COMMAND="git ls-files || find . -type f"
+export FZF_DEFAULT_COMMAND="git ls-files -co || find . -type f"
 export SVDIR="$XDG_DATA_HOME/service"
 
 # ~ cleanup:
