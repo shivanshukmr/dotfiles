@@ -28,5 +28,4 @@ export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export XAUTHORITY="$XDG_DATA_HOME/x11/Xauthority"
 export XDEB_PKGROOT="$XDG_DATA_HOME/xdeb"
 
-
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XDG_CONFIG_HOME/x11/xinitrc" 2>/tmp/.Xinit-errors

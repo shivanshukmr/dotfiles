@@ -13,6 +13,10 @@ HISTFILESIZE=10000
 HISTCONTROL=ignoreboth:erasedups
 HISTFILE="$XDG_CACHE_HOME/bash_history"
 
+# erase duplicates from history
+nl "$HISTFILE" | sort -k2 -k 1,1nr | uniq -f1 | sort -n | cut -f2- >"${HISTFILE}.temp" && mv "$HISTFILE"{.temp,}
+history -c; history -r
+
 shopt -s autocd
 shopt -s cdspell
 
