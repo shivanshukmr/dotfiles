@@ -3,8 +3,11 @@ if &loadplugins
   packadd! vim-closer
   packadd! vim-commentary
   packadd! vim-surround
+  runtime! ftplugin/man.vim
   if has('nvim')
     packadd! nvim-lspconfig
+  else
+    packadd! vim-lsc
   endif
 endif
 

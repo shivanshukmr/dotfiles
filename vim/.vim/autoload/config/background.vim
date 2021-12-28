@@ -4,6 +4,5 @@ function! config#background#change_background() abort
   else
     set bg=dark
   endif
-  let l:dir = substitute($MYVIMRC, '\/\a*\.*\a*$', '', '')
-  call writefile(['set bg=' . &bg], l:dir . '/plugin/background.vim')
+  call writefile(['set bg=' . &bg], expand('~/.vim/plugin/background.vim'))
 endfunction

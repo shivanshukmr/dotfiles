@@ -3,9 +3,10 @@ set hidden nowrap
 set list listchars=nbsp:_,tab:»\ ,trail:·,extends:>,precedes:<
 set tabstop=4 softtabstop=-1 shiftwidth=0
 set autoindent cindent
-set undofile undodir=$XDG_RUNTIME_DIR,/tmp,.
+set undofile undodir=$XDG_RUNTIME_DIR,.
 set directory=$XDG_RUNTIME_DIR,/tmp,.
 set number
+set showcmd
 set cursorline cursorlineopt=number
 set nobackup nowritebackup
 set incsearch hlsearch
@@ -15,7 +16,7 @@ set sidescrolloff=5
 set ignorecase smartcase
 set shortmess-=S
 set fillchars=eob:\ ,vert:\│,fold:\·,
-set foldmethod=indent foldlevelstart=99
+set foldmethod=syntax foldlevelstart=99
 set lazyredraw
 set grepprg=rg\ --vimgrep\ --smart-case
 set grepformat^=%f:%l:%c:%m
