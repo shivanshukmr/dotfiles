@@ -27,7 +27,7 @@ print_bluetooth() {
 		while read -r uuid
 		do
 			info=`bluetoothctl info $uuid`
-			echo "$info" | grep -e "Name\|Connected: yes" | grep -B1 "yes" | head -n 1 | cut -f2 -d ' '
+			echo "$info" | grep -e "Name\|Connected: yes" | grep -B1 "yes" | head -n 1 | awk '{$1="";print $0}' | sed 's/^ //'
 		done)
 
 	if [ "$device" ]; then
@@ -75,6 +75,6 @@ print_date() {
 
 while true
 do
-	xsetroot -name " $(print_ssid)$(print_loadavg)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
+	xsetroot -name " $(print_ssid)$(print_bluetooth)$(print_loadavg)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
 	sleep 1s
 done

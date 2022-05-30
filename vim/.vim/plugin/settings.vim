@@ -1,7 +1,7 @@
 set guicursor=
 set hidden nowrap
 set list listchars=nbsp:_,tab:»\ ,trail:·,extends:>,precedes:<
-set tabstop=4 softtabstop=-1 shiftwidth=0
+set softtabstop=-1 shiftwidth=0
 set autoindent cindent
 set undofile undodir=$XDG_RUNTIME_DIR,.
 set directory=$XDG_RUNTIME_DIR,/tmp,.
