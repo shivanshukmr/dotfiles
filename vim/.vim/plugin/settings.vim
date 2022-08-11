@@ -18,7 +18,7 @@ set shortmess-=S
 set fillchars=eob:\ ,vert:\│,fold:\·,
 set foldmethod=syntax foldlevelstart=99
 set lazyredraw
-set grepprg=rg\ --vimgrep\ --smart-case
+set grepprg=rg\ --vimgrep\ --smart-case\ -.
 set grepformat^=%f:%l:%c:%m
 set completeopt=menu pumheight=13
 set virtualedit=block

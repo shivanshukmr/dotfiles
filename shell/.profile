@@ -12,8 +12,6 @@ if [ -z "$XDG_RUNTIME_DIR" ]; then
 fi
 
 export EDITOR="vim"
-export FZF_DEFAULT_OPTS="-m --bind=ctrl-i:toggle --height=30% --info=hidden --prompt='>> ' --color='gutter:0,fg+:#121212,bg+:#83a598,pointer:#121212,hl:7:bold:underline,hl+:#121212,prompt:#928374:regular:italic,query::regular'"
-export FZF_DEFAULT_COMMAND="git ls-files -co || find . -type f"
 export SVDIR="$XDG_DATA_HOME/service"
 
 # ~ cleanup:
@@ -27,5 +25,9 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export XAUTHORITY="$XDG_DATA_HOME/x11/Xauthority"
 export XDEB_PKGROOT="$XDG_DATA_HOME/xdeb"
+
+# misc
+export FZF_DEFAULT_OPTS="-m --bind=ctrl-i:toggle --height=30% --info=hidden --prompt='>> ' --color='gutter:0,fg+:#121212,bg+:#83a598,pointer:#121212,hl:7:bold:underline,hl+:#121212,prompt:#928374:regular:italic,query::regular'"
+export FZF_DEFAULT_COMMAND="git ls-files -co || find . -type f"
 
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XDG_CONFIG_HOME/x11/xinitrc" 2>/tmp/.Xinit-errors
