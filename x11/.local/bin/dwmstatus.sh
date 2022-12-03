@@ -23,7 +23,7 @@ print_ssid() {
 }
 
 print_bluetooth() {
-	device=$(bluetoothctl paired-devices | cut -f2 -d ' '|
+	device=$(bluetoothctl devices Paired | cut -f2 -d ' '|
 		while read -r uuid
 		do
 			info=`bluetoothctl info $uuid`
