@@ -22,11 +22,6 @@ local custom_attach = function(client, bufnr)
   vim.bo.omnifunc = "v:lua.vim.lsp.omnifunc"
 end
 
--- server setup
-lspconfig.clangd.setup {
-  on_attach = custom_attach,
-}
-
 vim.diagnostic.config({
   underline = {
     severity = {
@@ -40,3 +35,8 @@ vim.diagnostic.config({
   },
   signs = false,
 })
+
+-- server setup
+lspconfig.clangd.setup {
+  on_attach = custom_attach,
+}
