@@ -26,7 +26,6 @@ alias ll='ls -al'
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
-alias g='git'
 alias rm='rm -I'
 
 shopt -s autocd

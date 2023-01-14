@@ -1,5 +1,3 @@
-if not package.loaded['lspconfig'] then return end
-
 local lspconfig = require'lspconfig'
 
 local custom_attach = function(client, bufnr)
