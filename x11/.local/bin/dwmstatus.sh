@@ -21,12 +21,7 @@ print_ssid() {
 }
 
 print_bluetooth() {
-	device=$(bluetoothctl devices Paired | cut -f2 -d ' '|
-		while read -r uuid
-		do
-			info=`bluetoothctl info $uuid`
-			echo "$info" | grep -e "Name\|Connected: yes" | grep -B1 "yes" | head -n 1 | awk '{$1="";print $0}' | sed 's/^ //'
-		done)
+	device=$(bluetoothctl devices Connected | cut -c26-)
 
 	if [ "$device" ]; then
 		printf "%s" "$device"
@@ -52,11 +47,12 @@ print_battery() {
 }
 
 print_volume() {
-	local status=$(pactl get-sink-mute 0 | awk '{print $2}')
+	local sink=$(pactl get-default-sink)
+	local status=$(pactl get-sink-mute $sink | awk '{print $2}')
 	if [ "$status" = "yes" ]; then
 		printf "mute"
 	else
-		local volume=$(pactl get-sink-volume 0 | awk '{print $5}')
+		local volume=$(pactl get-sink-volume $sink | awk '{print $5}')
 		printf "V:%s" "$volume"
 	fi
 	printf "$padding"
