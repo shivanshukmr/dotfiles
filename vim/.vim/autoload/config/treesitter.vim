@@ -43,7 +43,7 @@ function! config#treesitter#highlights() abort
     hi! link @storageclass StorageClass
     hi! link @attribute PreProc
     hi! link @field Identifier
-    hi! link @property Identifier
+    hi! link @property Normal
     hi! link @variable Normal
     hi! link @variable.builtin Special
     hi! link @constant Constant
