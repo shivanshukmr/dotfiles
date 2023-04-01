@@ -19,3 +19,6 @@
 [submodule "vim-lsc"]
 	path = vim/.vim/pack/bundle/opt/vim-lsc
 	url = https://github.com/natebosch/vim-lsc
+[submodule "vim/.vim/pack/bundle/opt/nvim-treesitter"]
+	path = vim/.vim/pack/bundle/opt/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter

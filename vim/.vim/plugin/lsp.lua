@@ -17,7 +17,7 @@ local custom_attach = function(client, bufnr)
   nnoremap('[d', '<cmd>lua vim.diagnostic.goto_prev({ float = false })<CR>')
   nnoremap(']d', '<cmd>lua vim.diagnostic.goto_next({ float = false })<CR>')
 
-  vim.bo.omnifunc = "v:lua.vim.lsp.omnifunc"
+  vim.bo.omnifunc = 'v:lua.vim.lsp.omnifunc'
 end
 
 vim.diagnostic.config({
@@ -27,14 +27,16 @@ vim.diagnostic.config({
     },
   },
   virtual_text = {
-    severity = {
-      min = vim.diagnostic.severity.WARN,
-    },
+    prefix = "■",
   },
   signs = false,
 })
 
 -- server setup
 lspconfig.clangd.setup {
+  on_attach = custom_attach,
+}
+
+lspconfig.tsserver.setup {
   on_attach = custom_attach,
 }
