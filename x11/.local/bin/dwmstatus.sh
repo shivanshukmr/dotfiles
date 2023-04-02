@@ -13,7 +13,7 @@ print_ssid() {
 		if hash iw; then
 			wifi=$(iw $interf link | grep SSID | sed 's,.*SSID: ,,')
 			if [ "$wifi" ]; then
-				printf "%s" "$wifi"
+				printf " %s" "$wifi"
 				printf "$padding"
 			fi
 		fi
@@ -30,7 +30,7 @@ print_bluetooth() {
 }
 
 print_loadavg() {
-	printf "L:%s" "$(awk '{print $1,$2,$3}' /proc/loadavg)"
+	printf " %s" "$(awk '{print $1,$2,$3}' /proc/loadavg)"
 	printf "$padding"
 }
 
@@ -38,11 +38,11 @@ print_battery() {
 	local status=$(cat /sys/class/power_supply/BAT*/status)
 	local battery=$(cat /sys/class/power_supply/BAT*/capacity)
 	if [ "$status" = "Charging" ]; then
-		printf "*"
+		printf "°"
 	elif [ $battery -lt 21 ]; then
 		printf "" # select 3rd color; output '\x03'
 	fi
-	printf "B:%s%%" "$battery"
+	printf " %s%%" "$battery"
 	printf "$padding"
 }
 
@@ -50,10 +50,10 @@ print_volume() {
 	local sink=$(pactl get-default-sink)
 	local status=$(pactl get-sink-mute $sink | awk '{print $2}')
 	if [ "$status" = "yes" ]; then
-		printf "mute"
+		printf ""
 	else
 		local volume=$(pactl get-sink-volume $sink | awk '{print $5}')
-		printf "V:%s" "$volume"
+		printf " %s" "$volume"
 	fi
 	printf "$padding"
 }
