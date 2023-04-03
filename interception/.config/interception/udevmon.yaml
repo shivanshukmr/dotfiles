@@ -1,4 +1,0 @@
-- JOB: /usr/bin/intercept -g $DEVNODE | /usr/local/bin/dual-function-keys -c /etc/interception/dual-function-keys/dual-function-keys.yaml | /usr/bin/uinput -d $DEVNODE
-  DEVICE:
-    EVENTS:
-      EV_KEY: [KEY_CAPSLOCK, KEY_ENTER]
