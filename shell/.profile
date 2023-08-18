@@ -1,5 +1,3 @@
-[[ -f ~/.bashrc ]] && . ~/.bashrc
-
 export PATH=$HOME/.local/bin:$PATH
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -31,3 +29,5 @@ export FZF_DEFAULT_OPTS="-m --bind=ctrl-i:toggle --height=30% --info=hidden --pr
 export FZF_DEFAULT_COMMAND="git ls-files -c || find . -type f"
 
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XDG_CONFIG_HOME/x11/xinitrc" 2>/tmp/.Xinit-errors
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc

@@ -1,4 +1,3 @@
-set guicursor=
 set hidden nowrap
 set list listchars=nbsp:_,tab:»\ ,trail:·,extends:>,precedes:<
 set softtabstop=-1 shiftwidth=0
