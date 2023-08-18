@@ -45,9 +45,9 @@
 (deflayer layer2
   _     _     _     _     _     _     _     _     _     _     _     _     _           _     _     _
   _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _      _     _     _     _
-  _     _     _     _     _     _     _     home  _     _     rght  _     _     _     _     _     _      _     _     _     _
-  @cesc _     _     _     pgup  _     pgdn  left  _     _     _     _     @cret                          _     _     _
-  _     _     _     down  up    _     _     _     _     _     _     _                       _            _     _     _     _
+  _     _     _     _     _     _     _     pgup  _     _     _     _     _     _     _     _     _      _     _     _     _
+  @cesc _     _     pgdn  _     home  left  down  up    rght  _     _     @cret                          _     _     _
+  _     _     _     _     _     _     _     _     _     _     _     _                       _            _     _     _     _
   _     _     @alt1             _                 _     _     _     _                 _     _     _      _     _
 )
 
