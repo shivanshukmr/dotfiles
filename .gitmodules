@@ -22,3 +22,6 @@
 [submodule "vim/.vim/pack/bundle/opt/nvim-treesitter"]
 	path = vim/.vim/pack/bundle/opt/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "vim/.vim/pack/bundle/opt/gruvbox.nvim"]
+	path = vim/.vim/pack/bundle/opt/gruvbox.nvim
+	url = https://github.com/ellisonleao/gruvbox.nvim

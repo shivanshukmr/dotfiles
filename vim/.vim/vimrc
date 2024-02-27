@@ -3,13 +3,14 @@ if &loadplugins
   packadd! vim-closer
   packadd! vim-commentary
   packadd! vim-surround
+  runtime! ftplugin/man.vim
   if has('nvim')
     packadd! nvim-lspconfig
+    packadd! nvim-treesitter
+    packadd! gruvbox.nvim
   else
     packadd! vim-lsc
   endif
-  packadd! nvim-treesitter
-  runtime! ftplugin/man.vim
 endif
 
 filetype plugin indent on

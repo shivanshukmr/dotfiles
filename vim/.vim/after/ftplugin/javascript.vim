@@ -1,1 +1,1 @@
-set expandtab tabstop=2
+set expandtab tabstop=4

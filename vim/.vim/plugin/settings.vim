@@ -15,14 +15,14 @@ set sidescrolloff=5
 set ignorecase smartcase
 set shortmess-=S
 set fillchars=eob:\ ,vert:\│,fold:\·,
-set foldmethod=syntax foldlevelstart=99
+set foldlevelstart=99
 set lazyredraw
 set grepprg=rg\ --vimgrep\ --smart-case\ -.
 set grepformat^=%f:%l:%c:%m
 set completeopt=menu pumheight=13
 set virtualedit=block
 set diffopt+=context:3,indent-heuristic,algorithm:patience
-set statusline=%=%#Todo#%{&ft}%*\ %f\  laststatus=2
+set statusline=%=%{&ft}%*\ %f\  laststatus=2
 set wildmenu wildoptions=
 set ttimeoutlen=50
 set history=10000
@@ -60,10 +60,7 @@ let &t_fd = "\<Esc>[?1004l"
 " colorscheme
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-let g:gruvbox_italicize_strings = 0
-let g:gruvbox_filetype_hi_groups=1
 set termguicolors
-colorscheme gruvbox8
 
 let g:netrw_banner=0
 let g:loaded_python_provider=0

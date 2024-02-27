@@ -1,5 +1,13 @@
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "javascript" , "java", "c", "cpp", "python" },
+local loaded, ts = pcall(require, 'nvim-treesitter.configs')
 
-  highlight = { enable = true }
+if not loaded then
+  return
+end
+
+ts.setup {
+  ensure_installed = { "javascript" , "java", "c", "cpp", "python" },
+  highlight = { enable = true },
+  indent = { enable = true },
 }
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
