@@ -5,4 +5,5 @@ function! config#background#change_background() abort
     set bg=dark
   endif
   call writefile(['set bg=' . &bg], expand('~/.vim/plugin/background.vim'))
+  exec('source ' .. expand('~/.vim/plugin/gruvbox.lua'))
 endfunction

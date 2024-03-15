@@ -1,3 +1,7 @@
+function clearhl(_, hi)
+  vim.api.nvim_set_hl(0, hi, {})
+end
+
 require("gruvbox").setup({
   italic = {
     strings = false
@@ -11,17 +15,10 @@ require("gruvbox").setup({
   },
   overrides = {
     Type = { link = "GruvboxAqua" },
-    ["Operator"] = { link = "Normal" },
-
     ["DiagnosticVirtualTextError"] = { link = "GruvboxRedSign" },
     ["DiagnosticVirtualTextWarn"] = { link = "GruvboxOrangeSign" },
     ["DiagnosticVirtualTextInfo"] = { link = "GruvboxBlueSign" },
     ["DiagnosticVirtualTextHint"] = { link = "GruvboxAquaSign" },
-
-    ["@punctuation"]           = { link = "Normal" },
-    ["@punctuation.delimiter"] = { link = "Normal" },
-    ["@punctuation.bracket"]   = { link = "Normal" },
-    ["@punctuation.special"]   = { link = "Normal" },
 
     ["@parameter"]          = { link = "GruvboxFg1" },
     ["@variable.parameter"] = { link = "GruvboxFg1" },
@@ -31,4 +28,14 @@ require("gruvbox").setup({
   },
   contrast = "soft"
 })
+
 vim.cmd("colorscheme gruvbox")
+
+to_clear = {
+  "Operator",
+  "@punctuation",
+  "@punctuation.delimiter",
+  "@punctuation.bracket",
+  "@punctuation.special",
+}
+table.foreach(to_clear, clearhl)

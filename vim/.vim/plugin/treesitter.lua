@@ -5,9 +5,10 @@ if not loaded then
 end
 
 ts.setup {
-  ensure_installed = { "javascript" , "java", "c", "cpp", "python" },
+  ensure_installed = { "javascript" , "java", "c", "cpp", "python", "kotlin", "go" },
   highlight = { enable = true },
   indent = { enable = true },
+  incremental_selection = { enable = true },
 }
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
