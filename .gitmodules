@@ -7,9 +7,6 @@
 [submodule "vim-closer"]
 	path = vim/.vim/pack/bundle/opt/vim-closer
 	url = https://github.com/rstacruz/vim-closer
-[submodule "vim-colortemplate"]
-	path = vim/.vim/pack/bundle/opt/vim-colortemplate
-	url = https://github.com/lifepillar/vim-colortemplate
 [submodule "vim-commentary"]
 	path = vim/.vim/pack/bundle/opt/vim-commentary
 	url = https://github.com/tpope/vim-commentary
@@ -25,3 +22,6 @@
 [submodule "vim/.vim/pack/bundle/opt/gruvbox.nvim"]
 	path = vim/.vim/pack/bundle/opt/gruvbox.nvim
 	url = https://github.com/ellisonleao/gruvbox.nvim
+[submodule "vim/.vim/pack/bundle/opt/emmet-vim"]
+	path = vim/.vim/pack/bundle/opt/emmet-vim
+	url = https://github.com/mattn/emmet-vim
