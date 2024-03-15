@@ -7,7 +7,7 @@ augroup END
 if exists('$TMUX')
   augroup tmuxstatus
     autocmd!
-    autocmd BufEnter,BufWrite,Filetype,VimEnter * call config#tmux#build(v:false)
+    autocmd VimEnter,VimResume,BufEnter,BufWrite,Filetype * call config#tmux#build(v:false)
     autocmd FocusGained * call config#tmux#build(v:true)
     autocmd VimLeave,VimSuspend,FocusLost * call config#tmux#clear()
   augroup END
