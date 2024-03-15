@@ -4,11 +4,11 @@ set softtabstop=-1 shiftwidth=0
 set autoindent cindent
 set undofile undodir=$XDG_RUNTIME_DIR,.
 set directory=$XDG_RUNTIME_DIR,/tmp,.
-set number
+set nonumber
+set nocursorline
 set showcmd
-set cursorline cursorlineopt=number
 set nobackup nowritebackup
-set incsearch hlsearch
+set incsearch nohlsearch
 set wildignorecase wildignore=*/.git/*,*/__pycache__/*,*/venv/*,*.o
 set nojoinspaces noruler
 set sidescrolloff=5

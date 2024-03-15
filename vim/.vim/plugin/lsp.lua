@@ -16,6 +16,7 @@ local custom_attach = function(client, bufnr)
 
   nnoremap('<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>')
   nnoremap('<C-]>', '<cmd>lua vim.lsp.buf.definition()<CR>')
+  nnoremap('<leader>i', '<cmd>lua vim.lsp.buf.implementation()<CR>')
   nnoremap('<leader>fr', '<cmd>lua vim.lsp.buf.references()<CR>')
   nnoremap('K', '<cmd>lua vim.lsp.buf.hover()<CR>')
   nnoremap('gq', '<cmd>lua vim.lsp.buf.format()<CR>')
@@ -36,25 +37,30 @@ vim.diagnostic.config({
     },
   },
   virtual_text = {
-    prefix = "■",
+    prefix = '■',
   },
   signs = false,
 })
 
 -- server setup
--- lspconfig.clangd.setup {
---   on_attach = custom_attach,
+
+servers = {
+  'gopls',
+  -- 'clangd',
+  -- 'tsserver',
+}
+
+for _, server in ipairs(servers) do
+  lspconfig[server].setup {
+    on_attach = custom_attach,
+  }
+end
+
+-- local jdtls_dir = vim.fn.expand('~/.local/share/jdtls/')
+-- lspconfig.jdtls.setup {
+--   cmd = {
+--     jdtls_dir .. 'bin/jdtls',
+--     '--jvm-arg=-javaagent:' .. jdtls_dir .. 'plugins/lombok.jar',
+--   },
+--   on_attach = custom_attach
 -- }
-
-local jdtls_dir = vim.fn.expand('~/.local/share/jdtls/')
-lspconfig.jdtls.setup {
-  cmd = {
-    jdtls_dir .. 'bin/jdtls',
-    '--jvm-arg=-javaagent:' .. jdtls_dir .. '/plugins/lombok.jar',
-  },
-  on_attach = custom_attach
-}
-
-lspconfig.tsserver.setup {
-  on_attach = custom_attach
-}
