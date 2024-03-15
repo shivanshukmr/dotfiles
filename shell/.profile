@@ -23,6 +23,13 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export XAUTHORITY="$XDG_DATA_HOME/x11/Xauthority"
 export XDEB_PKGROOT="$XDG_DATA_HOME/xdeb"
+export CALCHISTFILE="$XDG_CACHE_HOME/calc_history"
+export PYTHON_HISTORY="$XDG_CACHE_HOME/python/history"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+export PGDATA="$XDG_DATA_HOME/pgdata"
+export GOPATH="$XDG_DATA_HOME"/go
+export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
 
 # misc
 export FZF_DEFAULT_OPTS="-m --bind=ctrl-i:toggle --height=30% --info=hidden --prompt='>> ' --color='gutter:0,fg+:#121212,bg+:#83a598,pointer:#121212,hl:7:bold:underline,hl+:#121212,prompt:#928374:regular:italic,query::regular'"

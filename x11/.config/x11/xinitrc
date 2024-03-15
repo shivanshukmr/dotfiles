@@ -3,4 +3,5 @@ dwmstatus.sh &
 dunst &
 clipmenud &
 xss-lock slock &
+setxkbmap -option shift:both_capslock
 exec dwm
