@@ -10,7 +10,6 @@ if &loadplugins
     packadd! nvim-treesitter
     packadd! gruvbox.nvim
   else
-    packadd! vim-lsc
   endif
 endif
 
