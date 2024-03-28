@@ -4,7 +4,6 @@ if &loadplugins
   packadd! vim-commentary
   packadd! vim-surround
   packadd! emmet-vim
-  runtime! ftplugin/man.vim
   if has('nvim')
     packadd! nvim-lspconfig
     packadd! nvim-treesitter
