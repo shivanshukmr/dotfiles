@@ -2,6 +2,7 @@ augroup filetypes
   autocmd!
   autocmd FileType vim,lua setlocal tabstop=2 expandtab
   autocmd FileType man setlocal nonumber
+  autocmd FileType html,css,javascript setlocal tabstop=4 expandtab
 augroup END
 
 if exists('$TMUX')
