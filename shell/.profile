@@ -30,6 +30,7 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export PGDATA="$XDG_DATA_HOME/pgdata"
 export GOPATH="$XDG_DATA_HOME"/go
 export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
+export PATH=$PATH:$HOME/.local/share/go/bin
 
 # misc
 export FZF_DEFAULT_OPTS="-m --bind=ctrl-i:toggle --height=30% --info=hidden --prompt='>> ' --color='gutter:0,fg+:#121212,bg+:#83a598,pointer:#121212,hl:7:bold:underline,hl+:#121212,prompt:#928374:regular:italic,query::regular'"
