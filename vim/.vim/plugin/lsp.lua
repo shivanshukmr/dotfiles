@@ -6,6 +6,8 @@ end
 
 local custom_attach = function(client, bufnr)
 
+  client.server_capabilities.semanticTokensProvider = nil
+
   local nnoremap = function(lhs, rhs)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', lhs, rhs, { noremap = true, silent = true })
   end
@@ -46,7 +48,9 @@ vim.diagnostic.config({
 
 servers = {
   'gopls',
-  -- 'clangd',
+  'clangd',
+  'emmet_language_server',
+  'texlab',
   -- 'tsserver',
 }
 
@@ -56,11 +60,11 @@ for _, server in ipairs(servers) do
   }
 end
 
--- local jdtls_dir = vim.fn.expand('~/.local/share/jdtls/')
--- lspconfig.jdtls.setup {
---   cmd = {
---     jdtls_dir .. 'bin/jdtls',
---     '--jvm-arg=-javaagent:' .. jdtls_dir .. 'plugins/lombok.jar',
---   },
---   on_attach = custom_attach
--- }
+local jdtls_dir = vim.fn.expand('~/.local/share/jdtls/')
+lspconfig.jdtls.setup {
+  cmd = {
+    jdtls_dir .. 'bin/jdtls',
+    '--jvm-arg=-javaagent:' .. jdtls_dir .. 'plugins/lombok.jar',
+  },
+  on_attach = custom_attach
+}

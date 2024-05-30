@@ -5,7 +5,7 @@ set autoindent cindent
 set undofile undodir=$XDG_RUNTIME_DIR,.
 set directory=$XDG_RUNTIME_DIR,/tmp,.
 set nonumber
-set nocursorline
+set cursorline
 set showcmd
 set nobackup nowritebackup
 set incsearch nohlsearch
@@ -61,6 +61,7 @@ let &t_fd = "\<Esc>[?1004l"
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
+colorscheme gruvbox8_hard
 
 let g:netrw_banner=0
 let g:loaded_python_provider=0
