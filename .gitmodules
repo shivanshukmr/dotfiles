@@ -13,15 +13,9 @@
 [submodule "vim-surround"]
 	path = vim/.vim/pack/bundle/opt/vim-surround
 	url = https://github.com/tpope/vim-surround
-[submodule "vim-lsc"]
-	path = vim/.vim/pack/bundle/opt/vim-lsc
-	url = https://github.com/natebosch/vim-lsc
-[submodule "vim/.vim/pack/bundle/opt/nvim-treesitter"]
-	path = vim/.vim/pack/bundle/opt/nvim-treesitter
-	url = https://github.com/nvim-treesitter/nvim-treesitter
-[submodule "vim/.vim/pack/bundle/opt/gruvbox.nvim"]
-	path = vim/.vim/pack/bundle/opt/gruvbox.nvim
-	url = https://github.com/ellisonleao/gruvbox.nvim
 [submodule "vim/.vim/pack/bundle/opt/emmet-vim"]
 	path = vim/.vim/pack/bundle/opt/emmet-vim
 	url = https://github.com/mattn/emmet-vim
+[submodule "vim/.vim/pack/bundle/opt/vim-colortemplate"]
+	path = vim/.vim/pack/bundle/opt/vim-colortemplate
+	url = https://github.com/lifepillar/vim-colortemplate
