@@ -1,19 +1,35 @@
 #!/bin/sh
 
+# poll for monitor connection
+hdmi_connected=false
+xrandr_connect() {
+	local status=$(cat /sys/class/drm/card0-HDMI-A-1/status)
+
+	if [ "$status" = "connected" ]; then
+		if [ "$hdmi_connected" = false ]; then
+			xrandr --auto --output HDMI-A-0 --mode 1920x1080 --right-of eDP
+			hdmi_connected=true
+		fi
+	elif [ "$hdmi_connected" = true ]; then
+		xrandr --auto
+		hdmi_connected=false
+	fi
+}
+
 print_padding() {
 	printf "  "
 }
 
 print_ssid() {
-	interf=wlo1
-	status=$(rfkill -nro SOFT)
+	local interf=wlo1
+	local status=$(rfkill -nro SOFT)
 
 	if [ "$status" = "`printf 'blocked\nblocked'`" ]; then
 		printf "flightmode"
 		print_padding
 	else
 		if hash iw; then
-			wifi=$(iw $interf link | grep SSID | sed 's,.*SSID: ,,')
+			local wifi=$(iw $interf link | grep SSID | sed 's,.*SSID: ,,')
 			if [ "$wifi" ]; then
 				printf " %s" "$wifi"
 				print_padding
@@ -23,7 +39,7 @@ print_ssid() {
 }
 
 print_bluetooth() {
-	device=$(bluetoothctl devices Connected | cut -c26-)
+	local device=$(bluetoothctl devices Connected | cut -c26-)
 
 	if [ "$device" ]; then
 		printf "%s" "$device"
@@ -75,5 +91,7 @@ print_date() {
 while true
 do
 	xsetroot -name " $(print_ssid)$(print_bluetooth)$(print_loadavg)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
+	xrandr_connect
+
 	sleep 1s
 done
