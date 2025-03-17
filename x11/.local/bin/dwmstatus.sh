@@ -25,7 +25,7 @@ print_ssid() {
 	local status=$(rfkill -nro SOFT)
 
 	if [ "$status" = "`printf 'blocked\nblocked'`" ]; then
-		printf "flightmode"
+		printf ""
 		print_padding
 	else
 		if hash iw; then
@@ -67,6 +67,7 @@ print_battery() {
 print_volume() {
 	local sink=$(pactl get-default-sink)
 	local status=$(pactl get-sink-mute $sink | awk '{print $2}')
+
 	if [ "$status" = "yes" ]; then
 		printf ""
 	else
@@ -85,12 +86,12 @@ print_notification_status() {
 }
 
 print_date() {
-	date "+%a %b %d  %R"
+	date "+%a %b %d %l:%M %p"
 }
 
 while true
 do
-	xsetroot -name " $(print_ssid)$(print_bluetooth)$(print_loadavg)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
+	xsetroot -name " $(print_ssid)$(print_bluetooth)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
 	xrandr_connect
 
 	sleep 1s

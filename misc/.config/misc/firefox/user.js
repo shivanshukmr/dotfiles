@@ -5,7 +5,7 @@ user_pref("ui.key.menuAccessKey", 0);
 user_pref("identity.fxaccounts.enabled", false);
 user_pref("extensions.pocket.enabled", false);
 
-user_pref("privacy.resistFingerprinting", true);
+// user_pref("privacy.resistFingerprinting", true);
 
 // Hardware acceleration
 user_pref("gfx.webrender.all", true);
