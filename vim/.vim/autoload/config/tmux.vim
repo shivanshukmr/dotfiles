@@ -16,9 +16,10 @@ function! config#tmux#build(delay) abort
     return
   endif
 
-  let job='tmux set status-right "#[fg=white,bold,italics]' . &ft . ' #[default]' . expand('%:~:.') . ' "'
-  if a:delay == v:true  " delay on FocusGained event so another vim instance can clear the status
+  if a:delay " delay on FocusGained event so another vim instance can clear the status
     sleep 15m
   endif
+
+  let job='tmux set status-right "#[fg=white,bold,italics]' . &ft . ' #[default]' . expand('%:~:.') . ' "'
   call s:jobstart(job)
 endfunction

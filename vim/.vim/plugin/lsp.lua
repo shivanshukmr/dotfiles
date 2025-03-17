@@ -51,7 +51,7 @@ servers = {
   'clangd',
   'emmet_language_server',
   'texlab',
-  -- 'tsserver',
+  'tsserver',
 }
 
 for _, server in ipairs(servers) do

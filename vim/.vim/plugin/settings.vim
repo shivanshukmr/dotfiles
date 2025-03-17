@@ -1,5 +1,6 @@
 set hidden nowrap
-set list listchars=nbsp:_,tab:»\ ,trail:·,extends:>,precedes:<
+" set list listchars=nbsp:_,tab:»\ ,trail:·,extends:>,precedes:<
+set tabstop=4 noexpandtab
 set softtabstop=-1 shiftwidth=0
 set autoindent cindent
 set undofile undodir=$XDG_RUNTIME_DIR,.
@@ -27,7 +28,7 @@ set wildmenu wildoptions=
 set ttimeoutlen=50
 set history=10000
 set keywordprg=:Man
-set mouse=a
+" set mouse=a
 
 if !has('nvim')
   set ttymouse=sgr
@@ -62,6 +63,7 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 colorscheme gruvbox8_hard
+call config#treesitter#highlights()
 
 let g:netrw_banner=0
 let g:loaded_python_provider=0
