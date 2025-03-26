@@ -3,7 +3,7 @@ if &loadplugins
   packadd! vim-closer
   packadd! vim-commentary
   packadd! vim-surround
-  packadd! emmet-vim
+  " packadd! emmet-vim
   if has('nvim')
     packadd! nvim-lspconfig
   else
