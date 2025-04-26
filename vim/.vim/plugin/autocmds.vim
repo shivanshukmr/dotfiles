@@ -1,8 +1,8 @@
 augroup filetypes
   autocmd!
-  autocmd FileType vim,lua setlocal tabstop=2 expandtab
-  autocmd FileType man setlocal nonumber
-  autocmd FileType html,css,javascript setlocal tabstop=4 expandtab
+  autocmd FileType vim,lua,html,css,javascript,typescript,typescriptreact setlocal ts=2 expandtab
+  autocmd FileType man,qf setlocal nonumber
+  autocmd FileType gitcommit setlocal spell nonumber
 augroup END
 
 if exists('$TMUX')
@@ -13,3 +13,18 @@ if exists('$TMUX')
     autocmd VimLeave,VimSuspend,FocusLost * call config#tmux#clear()
   augroup END
 endif
+
+" https://github.com/neovim/neovim/issues/9019
+" FIXME: Fix hl-CursorLine priority issue (breaks diff)
+function! s:CustomizeColors()
+  if has('gui_running') || &termguicolors
+    hi CursorLine ctermfg=white
+  else
+    hi CursorLine guifg=white
+  endif
+endfunction
+
+augroup OnColorScheme
+  autocmd!
+  autocmd ColorScheme * call s:CustomizeColors()
+augroup END
