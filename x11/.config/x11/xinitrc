@@ -1,7 +1,9 @@
-firefox -P me &
+#firefox -P me &
+/home/me/Downloads/Zen/zen/zen &
 dwmstatus.sh &
 dunst &
 clipmenud &
 xss-lock slock &
+xwallpaper --zoom /home/me/Media/Pictures/Wallpapers/pixel-art-landscape.jpg
 setxkbmap -option shift:both_capslock
 exec dwm

@@ -20,6 +20,8 @@ history -c; history -r
 shopt -s autocd
 shopt -s cdspell
 
+bind 'set completion-ignore-case On'
+
 alias ls='ls --color=auto --group-directories-first'
 alias la='ls -a'
 alias ll='ls -al'
@@ -27,8 +29,4 @@ alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 alias rm='rm -I'
-
-shopt -s autocd
-shopt -s cdspell
-
-bind 'set completion-ignore-case On'
+alias sd='cd $(find \( -name node_modules -o -name .git -o -name .cache \) -prune -o -type d -print 2>/dev/null | fzf || printf ".")'

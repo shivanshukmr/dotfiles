@@ -25,13 +25,15 @@ print_ssid() {
 	local status=$(rfkill -nro SOFT)
 
 	if [ "$status" = "`printf 'blocked\nblocked'`" ]; then
-		printf ""
+		# printf ""
+		printf "flightmode"
 		print_padding
 	else
 		if hash iw; then
 			local wifi=$(iw $interf link | grep SSID | sed 's,.*SSID: ,,')
 			if [ "$wifi" ]; then
-				printf " %s" "$wifi"
+				# printf " %s" "$wifi"
+				printf "wifi/%s" "$wifi"
 				print_padding
 			fi
 		fi
@@ -42,7 +44,7 @@ print_bluetooth() {
 	local device=$(bluetoothctl devices Connected | cut -c26-)
 
 	if [ "$device" ]; then
-		printf "%s" "$device"
+		printf "bt/%s" "$device"
 		print_padding
 	fi
 }
@@ -60,7 +62,8 @@ print_battery() {
 	elif [ $battery -lt 21 ]; then
 		printf "" # select 3rd color; output '\x03'
 	fi
-	printf " %s%%" "$battery"
+	# printf " %s%%" "$battery"
+	printf "bat/%s%%" "$battery"
 	print_padding
 }
 
@@ -69,10 +72,12 @@ print_volume() {
 	local status=$(pactl get-sink-mute $sink | awk '{print $2}')
 
 	if [ "$status" = "yes" ]; then
-		printf ""
+		# printf ""
+		printf "mute"
 	else
 		local volume=$(pactl get-sink-volume $sink | awk '{print $5}')
-		printf " %s" "$volume"
+		# printf " %s" "$volume"
+		printf "vol/%s" "$volume"
 	fi
 	print_padding
 }
@@ -86,12 +91,12 @@ print_notification_status() {
 }
 
 print_date() {
-	date "+%a %b %d %l:%M %p"
+	date "+%a %b %d %l:%M %p" | tr '[:upper:]' '[:lower:]'
 }
 
 while true
 do
-	xsetroot -name " $(print_ssid)$(print_bluetooth)$(print_battery)$(print_volume)$(print_notification_status)$(print_date)"
+	xsetroot -name " $(print_notification_status)$(print_ssid)$(print_bluetooth)$(print_volume)$(print_battery)$(print_date)"
 	xrandr_connect
 
 	sleep 1s
