@@ -5,8 +5,9 @@ if not loaded then
 end
 
 local custom_attach = function(client, bufnr)
-
-  client.server_capabilities.semanticTokensProvider = nil
+  -- if client:supports_method('textDocument/completion') then
+  --   vim.lsp.completion.enable(true, client.id, bufnr)
+  -- end
 
   local nnoremap = function(lhs, rhs)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', lhs, rhs, { noremap = true, silent = true })
@@ -28,30 +29,28 @@ local custom_attach = function(client, bufnr)
   nnoremap('[d', '<cmd>lua vim.diagnostic.goto_prev({ float = false })<CR>')
   nnoremap(']d', '<cmd>lua vim.diagnostic.goto_next({ float = false })<CR>')
   inoremap('<C-K>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
-
-  vim.bo.omnifunc = 'v:lua.vim.lsp.omnifunc'
 end
 
 vim.diagnostic.config({
-  underline = {
-    severity = {
-      min = vim.diagnostic.severity.WARN,
-    },
-  },
-  virtual_text = {
-    prefix = '■',
+  underline = true,
+  -- virtual_text = {
+  --   prefix = '■',
+  -- },
+  virtual_lines = {
+    current_line = true,
   },
   signs = false,
+  update_in_insert = false,
 })
 
 -- server setup
-
 servers = {
   'gopls',
   'clangd',
-  'emmet_language_server',
-  'texlab',
-  'tsserver',
+  'ts_ls', -- typescript-language-server
+  'emmet_ls', -- emmet-ls
+  'tailwindcss', -- @tailwindcss/language-server
+  -- 'texlab',
 }
 
 for _, server in ipairs(servers) do
@@ -60,11 +59,11 @@ for _, server in ipairs(servers) do
   }
 end
 
-local jdtls_dir = vim.fn.expand('~/.local/share/jdtls/')
-lspconfig.jdtls.setup {
-  cmd = {
-    jdtls_dir .. 'bin/jdtls',
-    '--jvm-arg=-javaagent:' .. jdtls_dir .. 'plugins/lombok.jar',
-  },
-  on_attach = custom_attach
-}
+-- local jdtls_dir = vim.fn.expand('~/.local/share/jdtls/')
+-- lspconfig.jdtls.setup {
+--   cmd = {
+--     jdtls_dir .. 'bin/jdtls',
+--     '--jvm-arg=-javaagent:' .. jdtls_dir .. 'plugins/lombok.jar',
+--   },
+--   on_attach = custom_attach
+-- }
