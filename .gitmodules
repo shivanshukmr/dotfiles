@@ -19,3 +19,9 @@
 [submodule "vim/.vim/pack/bundle/opt/vim-colortemplate"]
 	path = vim/.vim/pack/bundle/opt/vim-colortemplate
 	url = https://github.com/lifepillar/vim-colortemplate
+[submodule "vim/.vim/pack/bundle/opt/mini.completion"]
+	path = vim/.vim/pack/bundle/opt/mini.completion
+	url = https://github.com/echasnovski/mini.completion
+[submodule "vim/.vim/pack/bundle/opt/nvim-treesitter"]
+	path = vim/.vim/pack/bundle/opt/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter

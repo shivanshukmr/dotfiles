@@ -1,11 +1,13 @@
 if &loadplugins
-  packadd! ReplaceWithRegister
   packadd! vim-closer
   packadd! vim-commentary
   packadd! vim-surround
-  " packadd! emmet-vim
   if has('nvim')
     packadd! nvim-lspconfig
+    packadd! nvim-treesitter
+    packadd! mini.completion
+    " packadd! nvim-cmp
+    " packadd! cmp-nvim-lsp
   else
   endif
 endif

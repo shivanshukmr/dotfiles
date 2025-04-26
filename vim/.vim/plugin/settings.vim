@@ -1,7 +1,7 @@
 set hidden nowrap
 " set list listchars=nbsp:_,tab:»\ ,trail:·,extends:>,precedes:<
 set list listchars=nbsp:_,tab:\ \ ,trail:·,extends:>,precedes:<
-set tabstop=4 noexpandtab
+set tabstop=4 expandtab
 set softtabstop=-1 shiftwidth=0
 set autoindent cindent
 set undofile undodir=$XDG_RUNTIME_DIR,.
@@ -17,18 +17,16 @@ set sidescrolloff=5
 set ignorecase smartcase
 set shortmess-=S
 set fillchars=eob:\ ,vert:\│,fold:\·,
-set foldlevelstart=99
+set foldmethod=indent foldlevelstart=99
 set lazyredraw
 set grepprg=rg\ --vimgrep\ --smart-case\ -.
 set grepformat^=%f:%l:%c:%m
-set completeopt=menu pumheight=13
+set completeopt=menuone,popup,noinsert,fuzzy pumheight=13
 set virtualedit=block
 set diffopt+=context:3,indent-heuristic,algorithm:patience
 set statusline=%=%{&ft}%*\ %f\  laststatus=2
-set wildmenu wildoptions=
 set ttimeoutlen=50
 set history=10000
-set keywordprg=:Man
 set mouse=a
 
 if !has('nvim')
@@ -38,6 +36,7 @@ endif
 
 if has('nvim')
   set undodir=/tmp,.
+  set winborder=rounded
 endif
 
 if exists('$TMUX')
