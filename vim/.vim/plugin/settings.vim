@@ -1,5 +1,4 @@
 set hidden nowrap
-" set list listchars=nbsp:_,tab:»\ ,trail:·,extends:>,precedes:<
 set list listchars=nbsp:_,tab:\ \ ,trail:·,extends:>,precedes:<
 set tabstop=4 expandtab
 set softtabstop=-1 shiftwidth=0
@@ -21,7 +20,7 @@ set foldmethod=indent foldlevelstart=99
 set lazyredraw
 set grepprg=rg\ --vimgrep\ --smart-case\ -.
 set grepformat^=%f:%l:%c:%m
-set completeopt=menuone,popup,noinsert,fuzzy pumheight=13
+set completeopt=menu,popup,fuzzy pumheight=13
 set virtualedit=block
 set diffopt+=context:3,indent-heuristic,algorithm:patience
 set statusline=%=%{&ft}%*\ %f\  laststatus=2
@@ -65,5 +64,6 @@ set termguicolors
 colorscheme gruvbox8
 
 let g:netrw_banner=0
-let g:loaded_python_provider=0
+let g:loaded_node_provider=0
+let g:loaded_perl_provider=0
 let g:loaded_python3_provider=0

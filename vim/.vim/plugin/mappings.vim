@@ -14,6 +14,8 @@ nnoremap Y y$
 nnoremap <expr> <F5> config#background#change_background()
 nnoremap <silent> - <cmd>Explore<CR>
 nnoremap <silent> <C-L> <cmd>nohlsearch <Bar> redraw! <CR>
+nnoremap <C-W><C-N> <cmd>vnew<CR>
+nnoremap <C-W>n     <cmd>vnew<CR>
 
 " CTRL-P/N acts like Up/Down in command mode, see :h c_<Up>
 cnoremap <expr> <C-P> wildmenumode() ? "\<C-P>" : "\<Up>"

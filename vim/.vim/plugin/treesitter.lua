@@ -5,7 +5,7 @@ if not loaded then
 end
 
 tsconfig.setup {
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'javascript', 'typescript', 'vim' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'javascript', 'typescript', 'vim' },
 
   highlight = { enable = true },
   indent = { enable = true },

@@ -6,8 +6,6 @@ if &loadplugins
     packadd! nvim-lspconfig
     packadd! nvim-treesitter
     packadd! mini.completion
-    " packadd! nvim-cmp
-    " packadd! cmp-nvim-lsp
   else
   endif
 endif
