@@ -5,7 +5,6 @@ if &loadplugins
   if has('nvim')
     packadd! nvim-lspconfig
     packadd! nvim-treesitter
-    packadd! mini.completion
   else
   endif
 endif

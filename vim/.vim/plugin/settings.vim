@@ -20,7 +20,7 @@ set foldmethod=indent foldlevelstart=99
 set lazyredraw
 set grepprg=rg\ --vimgrep\ --smart-case\ -.
 set grepformat^=%f:%l:%c:%m
-set completeopt=menu,popup,fuzzy pumheight=13
+set completeopt=menu,popup pumheight=13
 set virtualedit=block
 set diffopt+=context:3,indent-heuristic,algorithm:patience
 set statusline=%=%{&ft}%*\ %f\  laststatus=2
