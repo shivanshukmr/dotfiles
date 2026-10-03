@@ -8,8 +8,8 @@ GPG_TTY=$(tty)
 
 # history
 shopt -s histappend
-HISTSIZE=10000
-HISTFILESIZE=10000
+HISTSIZE=100000
+HISTFILESIZE=100000
 HISTCONTROL=ignoreboth:erasedups
 HISTFILE="$XDG_CACHE_HOME/bash_history"
 
@@ -29,4 +29,4 @@ alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 alias rm='rm -I'
-alias sd='cd $(find \( -name node_modules -o -name .git -o -name .cache \) -prune -o -type d -print 2>/dev/null | fzf || printf ".")'
+alias sd='cd "$(find \( -name node_modules -o -name .git -o -name .cache \) -prune -o -type d -printf "%P\n" 2>/dev/null | fzf || printf ".")"'

@@ -13,6 +13,7 @@ fi
 
 export EDITOR="vim"
 export SVDIR="$XDG_DATA_HOME/service"
+export LIBVA_DRIVER_NAME="radeonsi"
 
 # ~ cleanup:
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
@@ -43,6 +44,8 @@ export MESA_SHADER_CACHE_DIR="$XDG_CACHE_HOME/mesa_shader_cache_db"
 export FZF_DEFAULT_OPTS="-m --bind=ctrl-i:toggle --height=40% --border=rounded --info=right --prompt='» ' --pointer='' --no-scrollbar --color='gutter:0,fg+:#121212,bg+:#83a598,pointer:#121212,hl:7:bold:underline,hl+:#121212,prompt:#928374:regular,query::regular'"
 export FZF_DEFAULT_COMMAND="git ls-files -co --exclude-standard || find \( -name node_modules -o -name .git \) -prune -o -type f"
 
-[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XDG_CONFIG_HOME/x11/xinitrc" 2>/tmp/.Xinit-errors
+if [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+    dbus-run-session niri --session
+fi
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
