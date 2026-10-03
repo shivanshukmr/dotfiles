@@ -1,9 +1,13 @@
-#firefox -P me &
-/home/me/Downloads/Zen/zen/zen &
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+    eval "$(dbus-launch --sh-syntax --exit-with-session)"
+fi
+
+# firefox -P me &
+zen &
 dwmstatus.sh &
 dunst &
 clipmenud &
 xss-lock slock &
-xwallpaper --zoom /home/me/Media/Pictures/Wallpapers/pixel-art-landscape.jpg
+xwallpaper --zoom /home/me/Media/Pictures/Wallpapers/minimalism.png &
 setxkbmap -option shift:both_capslock
 exec dwm
