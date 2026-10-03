@@ -1,0 +1,189 @@
+{
+    "reload_style_on_change": true,
+    "layer": "top",
+    "position": "top",
+    "spacing": 0,
+    "height": 24,
+    "modules-left": [
+        "niri/workspaces",
+        "niri/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "group/tray-expander",
+        "custom/dunst",
+        "battery",
+        "network",
+        "bluetooth",
+        "group/group-audio"
+    ],
+
+    "niri/workspaces": {
+        "on-click": "activate",
+        "on-click-right": "niri msg action toggle-overview",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "active": "󱓻"
+        }
+    },
+    "niri/window": {
+        "format": "{app_id}"
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p  %a %d %b}",
+        "tooltip": false
+    },
+
+    // "group/group-backlight": {
+    //     "orientation": "inherit",
+    //     "drawer": {
+    //         "transition-duration": 200,
+    //         "children-class": "",
+    //         "transition-left-to-right": true
+    //     },
+    //     "modules": [
+    //         "backlight",
+    //         "backlight/slider"
+    //     ]
+    // },
+    // "backlight": {
+    //     "device": "amdgpu_bl0",
+    //     "tooltip": false,
+    //     "format": "{icon}",
+    //     "format-icons": [
+    //         "󰃞", "󰃟", "󰃠"
+    //     ]
+    // },
+    // "backlight/slider": {
+    //     "device": "amdgpu_bl0",
+    //     "orientation": "horizontal"
+    // },
+
+    "group/tray-expander": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "tray-group-item"
+        },
+        "modules": [
+            "custom/expand-icon"
+        ]
+    },
+    "custom/expand-icon": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/dunst": {
+        "exec": "~/.config/waybar/scripts/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "restart-interval": 1,
+        "tooltip": false
+    },
+
+    "battery": {
+        "format": "{icon}",
+        "format-discharging": "{icon}",
+        "format-charging": "{icon}",
+        "format-icons": {
+            "charging": [ "*", "*", "*", "*" ],
+            "discharging": [ "", "", "", "" ],
+            "default": [ "", "", "", "" ]
+        },
+        "format-full": "+",
+        "tooltip-format": "({capacity}%)",
+        "states": {
+            "warning": 20
+        }
+    },
+
+    "network": {
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "format": "{icon}",
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤭",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format-wifi": "{icon} {essid}",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click-middle": "xdg-open https://fast.com"
+    },
+
+    "bluetooth": {
+        "format": "󰂲",
+        "format-disabled": "󰂲",
+        "format-connected": "",
+        "tooltip-format": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t({device_battery_percentage}%)",
+        "on-click": "bluetoothctl power on"
+    },
+
+    "group/group-audio": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "children-class": "",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ]
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": [ "", "", "" ],
+            "default-muted": "",
+            // "headphone": "󰋋",
+            // "headphone-muted": "󰟎",
+            // "headset": "󰋋",
+            // "headset-muted": "󰟎"
+        },
+        "scroll-step": 5,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "tooltip-format": "Volume: {volume}%"
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+        "tooltip-format": "Volume: {volume}%"
+    },
+
+    "mpd": {
+        "format": "{stateIcon} {uri}",
+        "format-stopped": "",
+        "tooltip-format": "{title} by {artist} (Album: {album})",
+        "state-icons": {
+            "playing": "▶",
+            "paused": "⏸"
+        },
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop",
+        "on-click-middle": "dot-launch-or-focus-tui rmpc",
+        "on-scroll-up": "playerctl previous",
+        "on-scroll-down": "playerctl next"
+    }
+}
