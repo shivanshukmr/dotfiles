@@ -29,8 +29,14 @@
   ;; cesc (tap-hold-next-release 110 esc lctl)
   cret (tap-hold-next-release 110 ret rctl)
 
+  lshc (multi-tap 200 lsft caps)
+  rshc (multi-tap 200 rsft caps)
+
   alt1 (tap-hold-next-release 150 (layer-switch layer1) lalt)
   alt2 (tap-hold-next-release 150 (layer-switch layer2) ralt)
+)
+
+(defalias
 )
 
 (deflayer layer1
@@ -38,7 +44,7 @@
   _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _      _     _     _     _
   _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _      _     _     _     _
   lctl  _     _     _     _     _     _     _     _     _     _     _     @cret                          _     _     _
-  _     _     _     _     _     _     _     _     _     _     _     _                       _            _     _     _     _
+  @lshc _     _     _     _     _     _     _     _     _     _     @rshc                   _            _     _     _     _
   _     _     _                 _                 @alt2 _     _     _                 _     _     _      _     _
 )
 
@@ -47,7 +53,7 @@
   _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _      _     _     _     _
   _     _     _     _     _     _     _     pgup  _     _     _     _     _     _     _     _     _      _     _     _     _
   lctl  _     _     pgdn  _     home  left  down  up    rght  _     _     @cret                          _     _     _
-  _     _     _     _     _     _     _     _     _     _     _     _                       _            _     _     _     _
+  @lshc _     _     _     _     _     _     _     _     _     _     @rshc                   _            _     _     _     _
   _     _     @alt1             _                 _     _     _     _                 _     _     _      _     _
 )
 
