@@ -19,28 +19,25 @@
     # will be ignored.
     follow = mouse
 
-    ### Geometry ###
-    # 400x0-6+28
-
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
     width = 400
 
     # The maximum height of a single notification, excluding the frame.
-    height = 150
+    height = (0,150)
 
     # Position the notification in the top right corner
     origin = top-right
 
     # Offset from the origin
-    offset = 6x28
+    offset = (8,8)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
 
     # Maximum number of notification (0 means no limit)
-    notification_limit = 0
+    # notification_limit = 0
 
     ### Progress bar ###
 
@@ -230,7 +227,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 10
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -243,7 +240,7 @@
 
     # Uncomment this if you want to let notications appear under fullscreen
     # applications (default: overlay)
-    # layer = top
+    layer = top
 
     # Set this to true to use X11 output on Wayland.
     force_xwayland = false
@@ -292,21 +289,21 @@
 [urgency_low]
     background = "#081012"
     foreground = "#8ec07c"
-    timeout = 7
+    timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
     background = "#081012"
     foreground = "#cccccc"
-    timeout = 15
+    timeout = 7
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
     background = "#081012"
     foreground = "#d75f5f"
-    timeout = 15
+    timeout = 12
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
 
